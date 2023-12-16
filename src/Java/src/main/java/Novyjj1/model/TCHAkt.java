@@ -22,14 +22,24 @@ public class TCHAkt {
     @Column(name = "primarykey", length = 16, unique = true, nullable = false)
     private UUID primarykey;
 
-    @Column(name = "ЦенаЗаЕд")
-    private Float ценазаед;
-
     @Column(name = "Стоимость")
     private Float стоимость;
 
+    @Column(name = "ЦенаЗаЕд")
+    private Float ценазаед;
+
     @Column(name = "Количество")
     private Float количество;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "EdIzmer")
+    @Convert("EdIzmer")
+    @Column(name = "ЕдИзмер", length = 16, unique = true, nullable = false)
+    private UUID _edizmerid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "EdIzmer", insertable = false, updatable = false)
+    private EdIzmer edizmer;
 
     @EdmIgnore
     @Converter(converterClass = UUIDConverter.class, name = "AktVypRab")
@@ -54,20 +64,20 @@ public class TCHAkt {
         return primarykey;
     }
 
-    public Float getЦенаЗаЕд() {
-      return ценазаед;
-    }
-
-    public void setЦенаЗаЕд(Float ценазаед) {
-      this.ценазаед = ценазаед;
-    }
-
     public Float getСтоимость() {
       return стоимость;
     }
 
     public void setСтоимость(Float стоимость) {
       this.стоимость = стоимость;
+    }
+
+    public Float getЦенаЗаЕд() {
+      return ценазаед;
+    }
+
+    public void setЦенаЗаЕд(Float ценазаед) {
+      this.ценазаед = ценазаед;
     }
 
     public Float getКоличество() {

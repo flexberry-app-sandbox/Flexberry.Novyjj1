@@ -29,6 +29,13 @@
     {
       "polymorphic": false,
       "presence": true,
+      "name": "едИзмер",
+      "relatedTo": "i-i-s-novyjj1-ед-измер",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
       "name": "спрКонтраг",
       "relatedTo": "i-i-s-novyjj1-спр-контраг",
       "inverse": null
@@ -56,10 +63,31 @@
           "name": "общСметСт",
           "caption": "Общая сметная стоимость",
           "hidden": false,
-          "index": 1
+          "index": 3
         }
       ],
       "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ЕдИзмер",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Единицы измерения",
+              "hidden": false,
+              "index": 2
+            }
+          ],
+          "index": 1,
+          "type": "default",
+          "caption": "Единицы измерения",
+          "name": "едИзмер",
+          "relatedTo": "i-i-s-novyjj1-ед-измер",
+          "inverse": null
+        },
         {
           "lookupValue": null,
           "lookupValueField": null,
@@ -71,10 +99,10 @@
               "name": "наименование",
               "caption": "Контрагент",
               "hidden": false,
-              "index": 3
+              "index": 5
             }
           ],
-          "index": 2,
+          "index": 4,
           "type": "default",
           "caption": "Контрагент",
           "name": "спрКонтраг",
@@ -106,10 +134,31 @@
           "name": "общСметСт",
           "caption": "Общая сметная стоимость",
           "hidden": false,
-          "index": 1
+          "index": 2
         }
       ],
       "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ЕдИзмер",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Единицы измерения",
+              "hidden": false,
+              "index": 1
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Единицы измерения",
+          "name": "едИзмер",
+          "relatedTo": "i-i-s-novyjj1-ед-измер",
+          "inverse": null
+        },
         {
           "lookupValue": null,
           "lookupValueField": null,
@@ -121,7 +170,7 @@
               "name": "наименование",
               "caption": "Контрагент",
               "hidden": false,
-              "index": 2
+              "index": 3
             }
           ],
           "index": -1,

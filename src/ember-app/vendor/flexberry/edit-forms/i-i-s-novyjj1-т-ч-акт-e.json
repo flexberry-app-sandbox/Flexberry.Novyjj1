@@ -1,5 +1,14 @@
 ﻿{
-  "propertyLookup": [],
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "ЕдИзмер",
+      "projection": "ЕдИзмерL",
+      "detailModelName": null
+    }
+  ],
   "external": false,
   "caption": "Т ч акт",
   "name": "IISNovyjj1ТЧАктE",

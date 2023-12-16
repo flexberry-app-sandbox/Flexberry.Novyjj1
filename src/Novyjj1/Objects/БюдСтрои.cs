@@ -30,6 +30,8 @@ namespace IIS.Novyjj1
     [Caption("Бюджет строительства")]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("БюдСтроиE", new string[] {
+            "ЕдИзмер as \'Единицы измерения\'",
+            "ЕдИзмер.Наименование as \'Единицы измерения\'",
             "Объем as \'Объем\'",
             "НачРаб as \'Начала работ\'",
             "ОкоРаб as \'Окончания работ\'",
@@ -37,6 +39,7 @@ namespace IIS.Novyjj1
             "БазСт as \'Базовая стоимость\'",
             "СтоимИто as \'Стоимость итого\'"})]
     [View("БюдСтроиL", new string[] {
+            "ЕдИзмер.Наименование as \'Единицы измерения\'",
             "Объем as \'Объем\'",
             "НачРаб as \'Начало работ\'",
             "ОкоРаб as \'Окончания работ\'",
@@ -46,17 +49,19 @@ namespace IIS.Novyjj1
     public class БюдСтрои : ICSSoft.STORMNET.DataObject
     {
         
-        private float fОбъем;
+        private int fДлите;
         
         private System.DateTime fНачРаб;
         
-        private System.DateTime fОкоРаб;
+        private float fОбъем;
         
-        private int fДлите;
+        private float fСтоимИто;
         
         private float fБазСт;
         
-        private float fСтоимИто;
+        private System.DateTime fОкоРаб;
+        
+        private IIS.Novyjj1.ЕдИзмер fЕдИзмер;
         
         // *** Start programmer edit section *** (БюдСтрои CustomMembers)
 
@@ -246,6 +251,40 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (БюдСтрои.СтоимИто Set end)
 
                 // *** End programmer edit section *** (БюдСтрои.СтоимИто Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Бюд строи.
+        /// </summary>
+        // *** Start programmer edit section *** (БюдСтрои.ЕдИзмер CustomAttributes)
+
+        // *** End programmer edit section *** (БюдСтрои.ЕдИзмер CustomAttributes)
+        [PropertyStorage(new string[] {
+                "ЕдИзмер"})]
+        [NotNull()]
+        public virtual IIS.Novyjj1.ЕдИзмер ЕдИзмер
+        {
+            get
+            {
+                // *** Start programmer edit section *** (БюдСтрои.ЕдИзмер Get start)
+
+                // *** End programmer edit section *** (БюдСтрои.ЕдИзмер Get start)
+                IIS.Novyjj1.ЕдИзмер result = this.fЕдИзмер;
+                // *** Start programmer edit section *** (БюдСтрои.ЕдИзмер Get end)
+
+                // *** End programmer edit section *** (БюдСтрои.ЕдИзмер Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (БюдСтрои.ЕдИзмер Set start)
+
+                // *** End programmer edit section *** (БюдСтрои.ЕдИзмер Set start)
+                this.fЕдИзмер = value;
+                // *** Start programmer edit section *** (БюдСтрои.ЕдИзмер Set end)
+
+                // *** End programmer edit section *** (БюдСтрои.ЕдИзмер Set end)
             }
         }
         

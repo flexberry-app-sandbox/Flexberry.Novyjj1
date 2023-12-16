@@ -4,6 +4,14 @@
       "master": null,
       "displayAttributeName": null,
       "required": false,
+      "relationName": "ЕдИзмер",
+      "projection": "ЕдИзмерL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
       "relationName": "СпрСотр",
       "projection": "СпрСотрL",
       "detailModelName": null

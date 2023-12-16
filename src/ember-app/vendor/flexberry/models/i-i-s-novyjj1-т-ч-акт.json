@@ -38,6 +38,13 @@
     {
       "polymorphic": false,
       "presence": true,
+      "name": "едИзмер",
+      "relatedTo": "i-i-s-novyjj1-ед-измер",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
       "name": "актВыпРаб",
       "relatedTo": "i-i-s-novyjj1-акт-вып-раб",
       "inverse": "тЧАкт"
@@ -53,22 +60,44 @@
           "name": "ценаЗаЕд",
           "caption": "Цена за единицу",
           "hidden": false,
-          "index": 0
+          "index": 2
         },
         {
           "name": "количество",
           "caption": "Количество",
           "hidden": false,
-          "index": 1
+          "index": 3
         },
         {
           "name": "стоимость",
           "caption": "Стоимость",
           "hidden": false,
-          "index": 2
+          "index": 4
         }
       ],
-      "belongsTo": [],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ЕдИзмер",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Единицы измерения",
+              "hidden": false,
+              "index": 1
+            }
+          ],
+          "index": 0,
+          "type": "default",
+          "caption": "Единицы измерения",
+          "name": "едИзмер",
+          "relatedTo": "i-i-s-novyjj1-ед-измер",
+          "inverse": null
+        }
+      ],
       "hasMany": []
     },
     {
@@ -79,22 +108,44 @@
           "name": "ценаЗаЕд",
           "caption": "Цена за ед",
           "hidden": false,
-          "index": 0
+          "index": 1
         },
         {
           "name": "стоимость",
           "caption": "Стоимость",
           "hidden": false,
-          "index": 1
+          "index": 2
         },
         {
           "name": "количество",
           "caption": "Количество",
           "hidden": false,
-          "index": 2
+          "index": 3
         }
       ],
-      "belongsTo": [],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ЕдИзмер",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Единицы измерения",
+              "hidden": false,
+              "index": 0
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Единицы измерения",
+          "name": "едИзмер",
+          "relatedTo": "i-i-s-novyjj1-ед-измер",
+          "inverse": null
+        }
+      ],
       "hasMany": []
     }
   ],

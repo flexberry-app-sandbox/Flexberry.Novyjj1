@@ -8,6 +8,7 @@ export let Model = Mixin.create({
   количество: DS.attr('decimal'),
   стоимость: DS.attr('decimal'),
   ценаЗаЕд: DS.attr('decimal'),
+  едИзмер: DS.belongsTo('i-i-s-novyjj1-ед-измер', { inverse: null, async: false }),
   актВыпРаб: DS.belongsTo('i-i-s-novyjj1-акт-вып-раб', { inverse: 'тЧАкт', async: false })
 });
 
@@ -33,6 +34,13 @@ export let ValidationRules = {
       validator('number', { allowString: true, allowBlank: true }),
     ],
   },
+  едИзмер: {
+    descriptionKey: 'models.i-i-s-novyjj1-т-ч-акт.validations.едИзмер.__caption__',
+    validators: [
+      validator('ds-error'),
+      validator('presence', true),
+    ],
+  },
   актВыпРаб: {
     descriptionKey: 'models.i-i-s-novyjj1-т-ч-акт.validations.актВыпРаб.__caption__',
     validators: [
@@ -44,14 +52,20 @@ export let ValidationRules = {
 
 export let defineProjections = function (modelClass) {
   modelClass.defineProjection('ТЧАктE', 'i-i-s-novyjj1-т-ч-акт', {
-    ценаЗаЕд: attr('Цена за единицу', { index: 0 }),
-    количество: attr('Количество', { index: 1 }),
-    стоимость: attr('Стоимость', { index: 2 })
+    едИзмер: belongsTo('i-i-s-novyjj1-ед-измер', 'Единицы измерения', {
+      наименование: attr('Единицы измерения', { index: 1 })
+    }, { index: 0 }),
+    ценаЗаЕд: attr('Цена за единицу', { index: 2 }),
+    количество: attr('Количество', { index: 3 }),
+    стоимость: attr('Стоимость', { index: 4 })
   });
 
   modelClass.defineProjection('ТЧАктL', 'i-i-s-novyjj1-т-ч-акт', {
-    ценаЗаЕд: attr('Цена за ед', { index: 0 }),
-    стоимость: attr('Стоимость', { index: 1 }),
-    количество: attr('Количество', { index: 2 })
+    едИзмер: belongsTo('i-i-s-novyjj1-ед-измер', 'Единицы измерения', {
+      наименование: attr('Единицы измерения', { index: 0 })
+    }, { index: -1, hidden: true }),
+    ценаЗаЕд: attr('Цена за ед', { index: 1 }),
+    стоимость: attr('Стоимость', { index: 2 }),
+    количество: attr('Количество', { index: 3 })
   });
 };

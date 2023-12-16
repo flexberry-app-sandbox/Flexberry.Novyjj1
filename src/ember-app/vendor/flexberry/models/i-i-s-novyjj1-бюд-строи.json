@@ -61,7 +61,15 @@
       "ordered": false
     }
   ],
-  "belongsTo": [],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "едИзмер",
+      "relatedTo": "i-i-s-novyjj1-ед-измер",
+      "inverse": null
+    }
+  ],
   "hasMany": [],
   "projections": [
     {
@@ -72,40 +80,62 @@
           "name": "объем",
           "caption": "Объем",
           "hidden": false,
-          "index": 0
+          "index": 2
         },
         {
           "name": "начРаб",
           "caption": "Начала работ",
           "hidden": false,
-          "index": 1
+          "index": 3
         },
         {
           "name": "окоРаб",
           "caption": "Окончания работ",
           "hidden": false,
-          "index": 2
+          "index": 4
         },
         {
           "name": "длите",
           "caption": "Длительность",
           "hidden": false,
-          "index": 3
+          "index": 5
         },
         {
           "name": "базСт",
           "caption": "Базовая стоимость",
           "hidden": false,
-          "index": 4
+          "index": 6
         },
         {
           "name": "стоимИто",
           "caption": "Стоимость итого",
           "hidden": false,
-          "index": 5
+          "index": 7
         }
       ],
-      "belongsTo": [],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ЕдИзмер",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Единицы измерения",
+              "hidden": false,
+              "index": 1
+            }
+          ],
+          "index": 0,
+          "type": "default",
+          "caption": "Единицы измерения",
+          "name": "едИзмер",
+          "relatedTo": "i-i-s-novyjj1-ед-измер",
+          "inverse": null
+        }
+      ],
       "hasMany": []
     },
     {
@@ -116,40 +146,62 @@
           "name": "объем",
           "caption": "Объем",
           "hidden": false,
-          "index": 0
+          "index": 1
         },
         {
           "name": "начРаб",
           "caption": "Начало работ",
           "hidden": false,
-          "index": 1
+          "index": 2
         },
         {
           "name": "окоРаб",
           "caption": "Окончания работ",
           "hidden": false,
-          "index": 2
+          "index": 3
         },
         {
           "name": "длите",
           "caption": "Длительность",
           "hidden": false,
-          "index": 3
+          "index": 4
         },
         {
           "name": "базСт",
           "caption": "Базовая стоимость",
           "hidden": false,
-          "index": 4
+          "index": 5
         },
         {
           "name": "стоимИто",
           "caption": "Стоимость итого",
           "hidden": false,
-          "index": 5
+          "index": 6
         }
       ],
-      "belongsTo": [],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ЕдИзмер",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Единицы измерения",
+              "hidden": false,
+              "index": 0
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Единицы измерения",
+          "name": "едИзмер",
+          "relatedTo": "i-i-s-novyjj1-ед-измер",
+          "inverse": null
+        }
+      ],
       "hasMany": []
     }
   ],

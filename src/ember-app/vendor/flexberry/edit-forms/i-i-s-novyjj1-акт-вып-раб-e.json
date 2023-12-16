@@ -15,6 +15,14 @@
       "relationName": "СпрКонтраг",
       "projection": "СпрКонтрагL",
       "detailModelName": null
+    },
+    {
+      "master": "едИзмер",
+      "displayAttributeName": null,
+      "required": true,
+      "relationName": "ТЧАкт.ЕдИзмер",
+      "projection": "ЕдИзмерL",
+      "detailModelName": "i-i-s-novyjj1-т-ч-акт"
     }
   ],
   "external": false,

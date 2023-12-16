@@ -86,6 +86,8 @@ CREATE TABLE [БюдСтрои] (
 
 	 [СтоимИто] REAL  NULL,
 
+	 [ЕдИзмер] UNIQUEIDENTIFIER  NOT NULL,
+
 	 PRIMARY KEY ([primaryKey]))
 
 
@@ -174,6 +176,8 @@ CREATE TABLE [ОтОРасОсМат] (
 
 	 [ОстПоСмет] REAL  NULL,
 
+	 [ЕдИзмер] UNIQUEIDENTIFIER  NOT NULL,
+
 	 [СпрСотр] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
@@ -200,6 +204,8 @@ CREATE TABLE [ТЧАкт] (
 
 	 [ЦенаЗаЕд] REAL  NULL,
 
+	 [ЕдИзмер] UNIQUEIDENTIFIER  NOT NULL,
+
 	 [АктВыпРаб] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
@@ -212,6 +218,8 @@ CREATE TABLE [ДокСмета] (
 	 [НомСмеРас] INT  NULL,
 
 	 [ОбщСметСт] REAL  NULL,
+
+	 [ЕдИзмер] UNIQUEIDENTIFIER  NOT NULL,
 
 	 [СпрКонтраг] UNIQUEIDENTIFIER  NOT NULL,
 

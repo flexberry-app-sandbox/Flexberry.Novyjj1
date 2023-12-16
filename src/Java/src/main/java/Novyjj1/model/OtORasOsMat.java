@@ -47,6 +47,16 @@ public class OtORasOsMat {
     @JoinColumn(name = "SprSotr", insertable = false, updatable = false)
     private SprSotr sprsotr;
 
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "EdIzmer")
+    @Convert("EdIzmer")
+    @Column(name = "ЕдИзмер", length = 16, unique = true, nullable = false)
+    private UUID _edizmerid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "EdIzmer", insertable = false, updatable = false)
+    private EdIzmer edizmer;
+
 
     public OtORasOsMat() {
         super();

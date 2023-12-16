@@ -30,21 +30,26 @@ namespace IIS.Novyjj1
     [Caption("Табличная часть акта выполнения работ")]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("ТЧАктE", new string[] {
+            "ЕдИзмер as \'Единицы измерения\'",
+            "ЕдИзмер.Наименование as \'Единицы измерения\'",
             "ЦенаЗаЕд as \'Цена за единицу\'",
             "Количество as \'Количество\'",
             "Стоимость as \'Стоимость\'"})]
     [View("ТЧАктL", new string[] {
+            "ЕдИзмер.Наименование as \'Единицы измерения\'",
             "ЦенаЗаЕд as \'Цена за ед\'",
             "Стоимость as \'Стоимость\'",
             "Количество as \'Количество\'"})]
     public class ТЧАкт : ICSSoft.STORMNET.DataObject
     {
         
-        private float fЦенаЗаЕд;
-        
         private float fСтоимость;
         
+        private float fЦенаЗаЕд;
+        
         private float fКоличество;
+        
+        private IIS.Novyjj1.ЕдИзмер fЕдИзмер;
         
         private IIS.Novyjj1.АктВыпРаб fАктВыпРаб;
         
@@ -143,6 +148,40 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (ТЧАкт.ЦенаЗаЕд Set end)
 
                 // *** End programmer edit section *** (ТЧАкт.ЦенаЗаЕд Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Т ч акт.
+        /// </summary>
+        // *** Start programmer edit section *** (ТЧАкт.ЕдИзмер CustomAttributes)
+
+        // *** End programmer edit section *** (ТЧАкт.ЕдИзмер CustomAttributes)
+        [PropertyStorage(new string[] {
+                "ЕдИзмер"})]
+        [NotNull()]
+        public virtual IIS.Novyjj1.ЕдИзмер ЕдИзмер
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ТЧАкт.ЕдИзмер Get start)
+
+                // *** End programmer edit section *** (ТЧАкт.ЕдИзмер Get start)
+                IIS.Novyjj1.ЕдИзмер result = this.fЕдИзмер;
+                // *** Start programmer edit section *** (ТЧАкт.ЕдИзмер Get end)
+
+                // *** End programmer edit section *** (ТЧАкт.ЕдИзмер Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ТЧАкт.ЕдИзмер Set start)
+
+                // *** End programmer edit section *** (ТЧАкт.ЕдИзмер Set start)
+                this.fЕдИзмер = value;
+                // *** Start programmer edit section *** (ТЧАкт.ЕдИзмер Set end)
+
+                // *** End programmer edit section *** (ТЧАкт.ЕдИзмер Set end)
             }
         }
         

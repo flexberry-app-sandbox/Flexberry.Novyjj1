@@ -30,6 +30,8 @@ namespace IIS.Novyjj1
     [Caption("Отчет о расходах основных материалов")]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("ОтОРасОсМатE", new string[] {
+            "ЕдИзмер as \'Единицы измерения\'",
+            "ЕдИзмер.Наименование as \'Единицы измерения\'",
             "НормРасх as \'Норма расхода\'",
             "КолПоАкт as \'Количество по актам\'",
             "КолПоСме as \'Количество по смете\'",
@@ -38,6 +40,7 @@ namespace IIS.Novyjj1
             "СпрСотр as \'Сотрудник\'",
             "СпрСотр.ФИО as \'Сотрудник\'"})]
     [View("ОтОРасОсМатL", new string[] {
+            "ЕдИзмер.Наименование as \'Единицы измерения\'",
             "НормРасх as \'Норма расхода\'",
             "КолПоАкт as \'Количество по актам\'",
             "КолПоСме as \'Количество по смете\'",
@@ -58,6 +61,8 @@ namespace IIS.Novyjj1
         private float fКолПоСме;
         
         private IIS.Novyjj1.СпрСотр fСпрСотр;
+        
+        private IIS.Novyjj1.ЕдИзмер fЕдИзмер;
         
         // *** Start programmer edit section *** (ОтОРасОсМат CustomMembers)
 
@@ -216,6 +221,40 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (ОтОРасОсМат.ОстПоСмет Set end)
 
                 // *** End programmer edit section *** (ОтОРасОсМат.ОстПоСмет Set end)
+            }
+        }
+        
+        /// <summary>
+        /// От о рас ос мат.
+        /// </summary>
+        // *** Start programmer edit section *** (ОтОРасОсМат.ЕдИзмер CustomAttributes)
+
+        // *** End programmer edit section *** (ОтОРасОсМат.ЕдИзмер CustomAttributes)
+        [PropertyStorage(new string[] {
+                "ЕдИзмер"})]
+        [NotNull()]
+        public virtual IIS.Novyjj1.ЕдИзмер ЕдИзмер
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ОтОРасОсМат.ЕдИзмер Get start)
+
+                // *** End programmer edit section *** (ОтОРасОсМат.ЕдИзмер Get start)
+                IIS.Novyjj1.ЕдИзмер result = this.fЕдИзмер;
+                // *** Start programmer edit section *** (ОтОРасОсМат.ЕдИзмер Get end)
+
+                // *** End programmer edit section *** (ОтОРасОсМат.ЕдИзмер Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ОтОРасОсМат.ЕдИзмер Set start)
+
+                // *** End programmer edit section *** (ОтОРасОсМат.ЕдИзмер Set start)
+                this.fЕдИзмер = value;
+                // *** Start programmer edit section *** (ОтОРасОсМат.ЕдИзмер Set end)
+
+                // *** End programmer edit section *** (ОтОРасОсМат.ЕдИзмер Set end)
             }
         }
         

@@ -31,6 +31,8 @@ namespace IIS.Novyjj1
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("ДокСметаE", new string[] {
             "НомСмеРас as \'Номер сметных расчетов\'",
+            "ЕдИзмер as \'Единицы измерения\'",
+            "ЕдИзмер.Наименование as \'Единицы измерения\'",
             "ОбщСметСт as \'Общая сметная стоимость\'",
             "СпрКонтраг as \'Контрагент\'",
             "СпрКонтраг.Наименование as \'Контрагент\'"})]
@@ -38,6 +40,7 @@ namespace IIS.Novyjj1
             ""})]
     [View("ДокСметаL", new string[] {
             "НомСмеРас as \'Номер сметных расчетов\'",
+            "ЕдИзмер.Наименование as \'Единицы измерения\'",
             "ОбщСметСт as \'Общая сметная стоимость\'",
             "СпрКонтраг.Наименование as \'Контрагент\'"})]
     public class ДокСмета : ICSSoft.STORMNET.DataObject
@@ -48,6 +51,8 @@ namespace IIS.Novyjj1
         private int fНомСмеРас;
         
         private IIS.Novyjj1.СпрКонтраг fСпрКонтраг;
+        
+        private IIS.Novyjj1.ЕдИзмер fЕдИзмер;
         
         private IIS.Novyjj1.DetailArrayOfТЧСметы fТЧСметы;
         
@@ -115,6 +120,40 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (ДокСмета.ОбщСметСт Set end)
 
                 // *** End programmer edit section *** (ДокСмета.ОбщСметСт Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Док смета.
+        /// </summary>
+        // *** Start programmer edit section *** (ДокСмета.ЕдИзмер CustomAttributes)
+
+        // *** End programmer edit section *** (ДокСмета.ЕдИзмер CustomAttributes)
+        [PropertyStorage(new string[] {
+                "ЕдИзмер"})]
+        [NotNull()]
+        public virtual IIS.Novyjj1.ЕдИзмер ЕдИзмер
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ДокСмета.ЕдИзмер Get start)
+
+                // *** End programmer edit section *** (ДокСмета.ЕдИзмер Get start)
+                IIS.Novyjj1.ЕдИзмер result = this.fЕдИзмер;
+                // *** Start programmer edit section *** (ДокСмета.ЕдИзмер Get end)
+
+                // *** End programmer edit section *** (ДокСмета.ЕдИзмер Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ДокСмета.ЕдИзмер Set start)
+
+                // *** End programmer edit section *** (ДокСмета.ЕдИзмер Set start)
+                this.fЕдИзмер = value;
+                // *** Start programmer edit section *** (ДокСмета.ЕдИзмер Set end)
+
+                // *** End programmer edit section *** (ДокСмета.ЕдИзмер Set end)
             }
         }
         

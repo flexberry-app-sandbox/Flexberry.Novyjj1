@@ -7,6 +7,7 @@ import Novyjj1.utils.UUIDConverter;
 import javax.persistence.*;
 import java.util.UUID;
 
+import com.sap.olingo.jpa.metadata.core.edm.annotation.EdmIgnore;
 import java.util.Date;
 
 /**
@@ -22,23 +23,33 @@ public class ByudStroi {
     @Column(name = "primarykey", length = 16, unique = true, nullable = false)
     private UUID primarykey;
 
-    @Column(name = "Объем")
-    private Float объем;
+    @Column(name = "Длите")
+    private Integer длите;
 
     @Column(name = "НачРаб")
     private Date начраб;
 
-    @Column(name = "ОкоРаб")
-    private Date окораб;
+    @Column(name = "Объем")
+    private Float объем;
 
-    @Column(name = "Длите")
-    private Integer длите;
+    @Column(name = "СтоимИто")
+    private Float стоимито;
 
     @Column(name = "БазСт")
     private Float базст;
 
-    @Column(name = "СтоимИто")
-    private Float стоимито;
+    @Column(name = "ОкоРаб")
+    private Date окораб;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "EdIzmer")
+    @Convert("EdIzmer")
+    @Column(name = "ЕдИзмер", length = 16, unique = true, nullable = false)
+    private UUID _edizmerid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "EdIzmer", insertable = false, updatable = false)
+    private EdIzmer edizmer;
 
 
     public ByudStroi() {
@@ -53,12 +64,12 @@ public class ByudStroi {
         return primarykey;
     }
 
-    public Float getОбъем() {
-      return объем;
+    public Integer getДлите() {
+      return длите;
     }
 
-    public void setОбъем(Float объем) {
-      this.объем = объем;
+    public void setДлите(Integer длите) {
+      this.длите = длите;
     }
 
     public Date getНачРаб() {
@@ -69,20 +80,20 @@ public class ByudStroi {
       this.начраб = начраб;
     }
 
-    public Date getОкоРаб() {
-      return окораб;
+    public Float getОбъем() {
+      return объем;
     }
 
-    public void setОкоРаб(Date окораб) {
-      this.окораб = окораб;
+    public void setОбъем(Float объем) {
+      this.объем = объем;
     }
 
-    public Integer getДлите() {
-      return длите;
+    public Float getСтоимИто() {
+      return стоимито;
     }
 
-    public void setДлите(Integer длите) {
-      this.длите = длите;
+    public void setСтоимИто(Float стоимито) {
+      this.стоимито = стоимито;
     }
 
     public Float getБазСт() {
@@ -93,12 +104,12 @@ public class ByudStroi {
       this.базст = базст;
     }
 
-    public Float getСтоимИто() {
-      return стоимито;
+    public Date getОкоРаб() {
+      return окораб;
     }
 
-    public void setСтоимИто(Float стоимито) {
-      this.стоимито = стоимито;
+    public void setОкоРаб(Date окораб) {
+      this.окораб = окораб;
     }
 
 

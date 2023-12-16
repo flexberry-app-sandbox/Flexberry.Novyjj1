@@ -45,12 +45,13 @@ CREATE TABLE ЖурУчВыпРаб (
 
 CREATE TABLE БюдСтрои (
  primaryKey UUID NOT NULL,
- Объем REAL NULL,
- НачРаб TIMESTAMP(3) NULL,
- ОкоРаб TIMESTAMP(3) NULL,
  Длите INT NULL,
- БазСт REAL NULL,
+ НачРаб TIMESTAMP(3) NULL,
+ Объем REAL NULL,
  СтоимИто REAL NULL,
+ БазСт REAL NULL,
+ ОкоРаб TIMESTAMP(3) NULL,
+ ЕдИзмер UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
@@ -105,6 +106,7 @@ CREATE TABLE ОтОРасОсМат (
  ОстПоСмет REAL NULL,
  КолПоСме REAL NULL,
  СпрСотр UUID NOT NULL,
+ ЕдИзмер UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
@@ -117,9 +119,10 @@ CREATE TABLE ЕдИзмер (
 
 CREATE TABLE ТЧАкт (
  primaryKey UUID NOT NULL,
- ЦенаЗаЕд REAL NULL,
  Стоимость REAL NULL,
+ ЦенаЗаЕд REAL NULL,
  Количество REAL NULL,
+ ЕдИзмер UUID NOT NULL,
  АктВыпРаб UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
@@ -129,6 +132,7 @@ CREATE TABLE ДокСмета (
  ОбщСметСт REAL NULL,
  НомСмеРас INT NULL,
  СпрКонтраг UUID NOT NULL,
+ ЕдИзмер UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
@@ -252,6 +256,9 @@ CREATE INDEX Indexd551d1476f70bd293a7a6b5aacf1b1afb9e3c439 on ПлФАнВыпР
  ALTER TABLE ЖурУчВыпРаб ADD CONSTRAINT FK42d2b68f2cca30eca47e4632c19f012c7f61e45c FOREIGN KEY (СпрСотр) REFERENCES СпрСотр; 
 CREATE INDEX Index42d2b68f2cca30eca47e4632c19f012c7f61e45c on ЖурУчВыпРаб (СпрСотр); 
 
+ ALTER TABLE БюдСтрои ADD CONSTRAINT FK5d08607dc1e7932ab4d6d06155871e3c7db7d354 FOREIGN KEY (ЕдИзмер) REFERENCES ЕдИзмер; 
+CREATE INDEX Index5d08607dc1e7932ab4d6d06155871e3c7db7d354 on БюдСтрои (ЕдИзмер); 
+
  ALTER TABLE СпрСотр ADD CONSTRAINT FK84f5d0eee138f7821b89d17178555e868159e354 FOREIGN KEY (Должности) REFERENCES Должности; 
 CREATE INDEX Index84f5d0eee138f7821b89d17178555e868159e354 on СпрСотр (Должности); 
 
@@ -267,11 +274,20 @@ CREATE INDEX Index426f5ed0f4242552d3aeb5dee5a2c0c435596936 on АктВыпРаб
  ALTER TABLE ОтОРасОсМат ADD CONSTRAINT FK5216b05d83f8a41cf0f9d13d5513bd60b97613e3 FOREIGN KEY (СпрСотр) REFERENCES СпрСотр; 
 CREATE INDEX Index5216b05d83f8a41cf0f9d13d5513bd60b97613e3 on ОтОРасОсМат (СпрСотр); 
 
+ ALTER TABLE ОтОРасОсМат ADD CONSTRAINT FKb2e9502f46366905affcc4517617042b616f1f07 FOREIGN KEY (ЕдИзмер) REFERENCES ЕдИзмер; 
+CREATE INDEX Indexb2e9502f46366905affcc4517617042b616f1f07 on ОтОРасОсМат (ЕдИзмер); 
+
+ ALTER TABLE ТЧАкт ADD CONSTRAINT FK5446c44816d7e46a9a58ca38cbf06bc6dd31005f FOREIGN KEY (ЕдИзмер) REFERENCES ЕдИзмер; 
+CREATE INDEX Index5446c44816d7e46a9a58ca38cbf06bc6dd31005f on ТЧАкт (ЕдИзмер); 
+
  ALTER TABLE ТЧАкт ADD CONSTRAINT FK04aec31c7869a48f76d108d273fea955d8166839 FOREIGN KEY (АктВыпРаб) REFERENCES АктВыпРаб; 
 CREATE INDEX Index04aec31c7869a48f76d108d273fea955d8166839 on ТЧАкт (АктВыпРаб); 
 
  ALTER TABLE ДокСмета ADD CONSTRAINT FKfdcd57f6886b31c67ef3d79f10d0e20496a920a3 FOREIGN KEY (СпрКонтраг) REFERENCES СпрКонтраг; 
 CREATE INDEX Indexfdcd57f6886b31c67ef3d79f10d0e20496a920a3 on ДокСмета (СпрКонтраг); 
+
+ ALTER TABLE ДокСмета ADD CONSTRAINT FKf24a17eb896670836fe19d198bb57772e6e29aab FOREIGN KEY (ЕдИзмер) REFERENCES ЕдИзмер; 
+CREATE INDEX Indexf24a17eb896670836fe19d198bb57772e6e29aab on ДокСмета (ЕдИзмер); 
 
  ALTER TABLE ДокУсловДог ADD CONSTRAINT FKd6af110b36a4e825659018fa00c1edffcc03b17d FOREIGN KEY (СпрКонтраг) REFERENCES СпрКонтраг; 
 CREATE INDEX Indexd6af110b36a4e825659018fa00c1edffcc03b17d on ДокУсловДог (СпрКонтраг); 
