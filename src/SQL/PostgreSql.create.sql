@@ -92,6 +92,7 @@ CREATE TABLE ТЧСметы (
 CREATE TABLE АктВыпРаб (
  primaryKey UUID NOT NULL,
  ОбщСтоим REAL NULL,
+ СпрКонтраг UUID NOT NULL,
  СпрСотр UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
@@ -125,17 +126,19 @@ CREATE TABLE ТЧАкт (
 
 CREATE TABLE ДокСмета (
  primaryKey UUID NOT NULL,
- НомСмеРас INT NULL,
  ОбщСметСт REAL NULL,
+ НомСмеРас INT NULL,
+ СпрКонтраг UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
 CREATE TABLE ДокУсловДог (
  primaryKey UUID NOT NULL,
- ДатаНач TIMESTAMP(3) NULL,
- ДатаОконч TIMESTAMP(3) NULL,
  Объем REAL NULL,
+ ДатаОконч TIMESTAMP(3) NULL,
  Длительн INT NULL,
+ ДатаНач TIMESTAMP(3) NULL,
+ СпрКонтраг UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
@@ -255,6 +258,9 @@ CREATE INDEX Index84f5d0eee138f7821b89d17178555e868159e354 on СпрСотр (Д
  ALTER TABLE ТЧСметы ADD CONSTRAINT FKde8e67e13f04a0c989a951169ec41b415726974b FOREIGN KEY (ДокСмета) REFERENCES ДокСмета; 
 CREATE INDEX Indexde8e67e13f04a0c989a951169ec41b415726974b on ТЧСметы (ДокСмета); 
 
+ ALTER TABLE АктВыпРаб ADD CONSTRAINT FK51968361c3a8f4842b680d44988bfbbd65bf15c7 FOREIGN KEY (СпрКонтраг) REFERENCES СпрКонтраг; 
+CREATE INDEX Index51968361c3a8f4842b680d44988bfbbd65bf15c7 on АктВыпРаб (СпрКонтраг); 
+
  ALTER TABLE АктВыпРаб ADD CONSTRAINT FK426f5ed0f4242552d3aeb5dee5a2c0c435596936 FOREIGN KEY (СпрСотр) REFERENCES СпрСотр; 
 CREATE INDEX Index426f5ed0f4242552d3aeb5dee5a2c0c435596936 on АктВыпРаб (СпрСотр); 
 
@@ -263,6 +269,12 @@ CREATE INDEX Index5216b05d83f8a41cf0f9d13d5513bd60b97613e3 on ОтОРасОсМ
 
  ALTER TABLE ТЧАкт ADD CONSTRAINT FK04aec31c7869a48f76d108d273fea955d8166839 FOREIGN KEY (АктВыпРаб) REFERENCES АктВыпРаб; 
 CREATE INDEX Index04aec31c7869a48f76d108d273fea955d8166839 on ТЧАкт (АктВыпРаб); 
+
+ ALTER TABLE ДокСмета ADD CONSTRAINT FKfdcd57f6886b31c67ef3d79f10d0e20496a920a3 FOREIGN KEY (СпрКонтраг) REFERENCES СпрКонтраг; 
+CREATE INDEX Indexfdcd57f6886b31c67ef3d79f10d0e20496a920a3 on ДокСмета (СпрКонтраг); 
+
+ ALTER TABLE ДокУсловДог ADD CONSTRAINT FKd6af110b36a4e825659018fa00c1edffcc03b17d FOREIGN KEY (СпрКонтраг) REFERENCES СпрКонтраг; 
+CREATE INDEX Indexd6af110b36a4e825659018fa00c1edffcc03b17d on ДокУсловДог (СпрКонтраг); 
 
  ALTER TABLE STORMWEBSEARCH ADD CONSTRAINT FKc4378e39870eb056aec84088683297a01d2a6200 FOREIGN KEY (FilterSetting_m0) REFERENCES STORMFILTERSETTING; 
 

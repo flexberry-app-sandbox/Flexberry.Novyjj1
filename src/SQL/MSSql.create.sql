@@ -153,6 +153,8 @@ CREATE TABLE [АктВыпРаб] (
 
 	 [ОбщСтоим] REAL  NULL,
 
+	 [СпрКонтраг] UNIQUEIDENTIFIER  NOT NULL,
+
 	 [СпрСотр] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
@@ -211,6 +213,8 @@ CREATE TABLE [ДокСмета] (
 
 	 [ОбщСметСт] REAL  NULL,
 
+	 [СпрКонтраг] UNIQUEIDENTIFIER  NOT NULL,
+
 	 PRIMARY KEY ([primaryKey]))
 
 
@@ -225,6 +229,8 @@ CREATE TABLE [ДокУсловДог] (
 	 [Длительн] INT  NULL,
 
 	 [Объем] REAL  NULL,
+
+	 [СпрКонтраг] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
 

@@ -7,6 +7,7 @@ import Novyjj1.utils.UUIDConverter;
 import javax.persistence.*;
 import java.util.UUID;
 
+import com.sap.olingo.jpa.metadata.core.edm.annotation.EdmIgnore;
 import java.util.Date;
 
 /**
@@ -22,17 +23,27 @@ public class DokUslovDog {
     @Column(name = "primarykey", length = 16, unique = true, nullable = false)
     private UUID primarykey;
 
-    @Column(name = "ДатаНач")
-    private Date датанач;
+    @Column(name = "Объем")
+    private Float объем;
 
     @Column(name = "ДатаОконч")
     private Date датаоконч;
 
-    @Column(name = "Объем")
-    private Float объем;
-
     @Column(name = "Длительн")
     private Integer длительн;
+
+    @Column(name = "ДатаНач")
+    private Date датанач;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "SprKontrag")
+    @Convert("SprKontrag")
+    @Column(name = "СпрКонтраг", length = 16, unique = true, nullable = false)
+    private UUID _sprkontragid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "SprKontrag", insertable = false, updatable = false)
+    private SprKontrag sprkontrag;
 
 
     public DokUslovDog() {
@@ -47,12 +58,12 @@ public class DokUslovDog {
         return primarykey;
     }
 
-    public Date getДатаНач() {
-      return датанач;
+    public Float getОбъем() {
+      return объем;
     }
 
-    public void setДатаНач(Date датанач) {
-      this.датанач = датанач;
+    public void setОбъем(Float объем) {
+      this.объем = объем;
     }
 
     public Date getДатаОконч() {
@@ -63,20 +74,20 @@ public class DokUslovDog {
       this.датаоконч = датаоконч;
     }
 
-    public Float getОбъем() {
-      return объем;
-    }
-
-    public void setОбъем(Float объем) {
-      this.объем = объем;
-    }
-
     public Integer getДлительн() {
       return длительн;
     }
 
     public void setДлительн(Integer длительн) {
       this.длительн = длительн;
+    }
+
+    public Date getДатаНач() {
+      return датанач;
+    }
+
+    public void setДатаНач(Date датанач) {
+      this.датанач = датанач;
     }
 
 

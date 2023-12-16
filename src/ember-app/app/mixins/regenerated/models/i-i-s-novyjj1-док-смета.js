@@ -7,6 +7,7 @@ import { attr, belongsTo, hasMany } from 'ember-flexberry-data/utils/attributes'
 export let Model = Mixin.create({
   номСмеРас: DS.attr('number'),
   общСметСт: DS.attr('decimal'),
+  спрКонтраг: DS.belongsTo('i-i-s-novyjj1-спр-контраг', { inverse: null, async: false }),
   тЧСметы: DS.hasMany('i-i-s-novyjj1-т-ч-сметы', { inverse: 'докСмета', async: false })
 });
 
@@ -25,6 +26,13 @@ export let ValidationRules = {
       validator('number', { allowString: true, allowBlank: true }),
     ],
   },
+  спрКонтраг: {
+    descriptionKey: 'models.i-i-s-novyjj1-док-смета.validations.спрКонтраг.__caption__',
+    validators: [
+      validator('ds-error'),
+      validator('presence', true),
+    ],
+  },
   тЧСметы: {
     descriptionKey: 'models.i-i-s-novyjj1-док-смета.validations.тЧСметы.__caption__',
     validators: [
@@ -38,6 +46,9 @@ export let defineProjections = function (modelClass) {
   modelClass.defineProjection('ДокСметаE', 'i-i-s-novyjj1-док-смета', {
     номСмеРас: attr('Номер сметных расчетов', { index: 0 }),
     общСметСт: attr('Общая сметная стоимость', { index: 1 }),
+    спрКонтраг: belongsTo('i-i-s-novyjj1-спр-контраг', 'Контрагент', {
+      наименование: attr('Контрагент', { index: 3 })
+    }, { index: 2 }),
     тЧСметы: hasMany('i-i-s-novyjj1-т-ч-сметы', 'Табличная часть сметы', {
       стСтроиРаб: attr('Стоимость строительных работ', { index: 0 }),
       стМонтРаб: attr('Стоимость монтажных работ', { index: 1 }),
@@ -47,6 +58,9 @@ export let defineProjections = function (modelClass) {
 
   modelClass.defineProjection('ДокСметаL', 'i-i-s-novyjj1-док-смета', {
     номСмеРас: attr('Номер сметных расчетов', { index: 0 }),
-    общСметСт: attr('Общая сметная стоимость', { index: 1 })
+    общСметСт: attr('Общая сметная стоимость', { index: 1 }),
+    спрКонтраг: belongsTo('i-i-s-novyjj1-спр-контраг', 'Контрагент', {
+      наименование: attr('Контрагент', { index: 2 })
+    }, { index: -1, hidden: true })
   });
 };

@@ -25,7 +25,15 @@
       "ordered": false
     }
   ],
-  "belongsTo": [],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "спрКонтраг",
+      "relatedTo": "i-i-s-novyjj1-спр-контраг",
+      "inverse": null
+    }
+  ],
   "hasMany": [
     {
       "name": "тЧСметы",
@@ -51,7 +59,29 @@
           "index": 1
         }
       ],
-      "belongsTo": [],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "СпрКонтраг",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Контрагент",
+              "hidden": false,
+              "index": 3
+            }
+          ],
+          "index": 2,
+          "type": "default",
+          "caption": "Контрагент",
+          "name": "спрКонтраг",
+          "relatedTo": "i-i-s-novyjj1-спр-контраг",
+          "inverse": null
+        }
+      ],
       "hasMany": [
         {
           "projectionName": "ТЧСметыE",
@@ -79,7 +109,29 @@
           "index": 1
         }
       ],
-      "belongsTo": [],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "СпрКонтраг",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Контрагент",
+              "hidden": false,
+              "index": 2
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Контрагент",
+          "name": "спрКонтраг",
+          "relatedTo": "i-i-s-novyjj1-спр-контраг",
+          "inverse": null
+        }
+      ],
       "hasMany": []
     }
   ],

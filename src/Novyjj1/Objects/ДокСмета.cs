@@ -31,18 +31,23 @@ namespace IIS.Novyjj1
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("ДокСметаE", new string[] {
             "НомСмеРас as \'Номер сметных расчетов\'",
-            "ОбщСметСт as \'Общая сметная стоимость\'"})]
+            "ОбщСметСт as \'Общая сметная стоимость\'",
+            "СпрКонтраг as \'Контрагент\'",
+            "СпрКонтраг.Наименование as \'Контрагент\'"})]
     [AssociatedDetailViewAttribute("ДокСметаE", "ТЧСметы", "ТЧСметыE", true, "", "Табличная часть сметы", true, new string[] {
             ""})]
     [View("ДокСметаL", new string[] {
             "НомСмеРас as \'Номер сметных расчетов\'",
-            "ОбщСметСт as \'Общая сметная стоимость\'"})]
+            "ОбщСметСт as \'Общая сметная стоимость\'",
+            "СпрКонтраг.Наименование as \'Контрагент\'"})]
     public class ДокСмета : ICSSoft.STORMNET.DataObject
     {
         
+        private float fОбщСметСт;
+        
         private int fНомСмеРас;
         
-        private float fОбщСметСт;
+        private IIS.Novyjj1.СпрКонтраг fСпрКонтраг;
         
         private IIS.Novyjj1.DetailArrayOfТЧСметы fТЧСметы;
         
@@ -110,6 +115,40 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (ДокСмета.ОбщСметСт Set end)
 
                 // *** End programmer edit section *** (ДокСмета.ОбщСметСт Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Док смета.
+        /// </summary>
+        // *** Start programmer edit section *** (ДокСмета.СпрКонтраг CustomAttributes)
+
+        // *** End programmer edit section *** (ДокСмета.СпрКонтраг CustomAttributes)
+        [PropertyStorage(new string[] {
+                "СпрКонтраг"})]
+        [NotNull()]
+        public virtual IIS.Novyjj1.СпрКонтраг СпрКонтраг
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ДокСмета.СпрКонтраг Get start)
+
+                // *** End programmer edit section *** (ДокСмета.СпрКонтраг Get start)
+                IIS.Novyjj1.СпрКонтраг result = this.fСпрКонтраг;
+                // *** Start programmer edit section *** (ДокСмета.СпрКонтраг Get end)
+
+                // *** End programmer edit section *** (ДокСмета.СпрКонтраг Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ДокСмета.СпрКонтраг Set start)
+
+                // *** End programmer edit section *** (ДокСмета.СпрКонтраг Set start)
+                this.fСпрКонтраг = value;
+                // *** Start programmer edit section *** (ДокСмета.СпрКонтраг Set end)
+
+                // *** End programmer edit section *** (ДокСмета.СпрКонтраг Set end)
             }
         }
         

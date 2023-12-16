@@ -7,6 +7,7 @@ import Novyjj1.utils.UUIDConverter;
 import javax.persistence.*;
 import java.util.UUID;
 
+import com.sap.olingo.jpa.metadata.core.edm.annotation.EdmIgnore;
 import java.util.List;
 
 /**
@@ -22,11 +23,21 @@ public class DokSmeta {
     @Column(name = "primarykey", length = 16, unique = true, nullable = false)
     private UUID primarykey;
 
+    @Column(name = "ОбщСметСт")
+    private Float общсметст;
+
     @Column(name = "НомСмеРас")
     private Integer номсмерас;
 
-    @Column(name = "ОбщСметСт")
-    private Float общсметст;
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "SprKontrag")
+    @Convert("SprKontrag")
+    @Column(name = "СпрКонтраг", length = 16, unique = true, nullable = false)
+    private UUID _sprkontragid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "SprKontrag", insertable = false, updatable = false)
+    private SprKontrag sprkontrag;
 
     @OneToMany(mappedBy = "doksmeta", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<TCHSmety> tchsmetys;
@@ -44,20 +55,20 @@ public class DokSmeta {
         return primarykey;
     }
 
-    public Integer getНомСмеРас() {
-      return номсмерас;
-    }
-
-    public void setНомСмеРас(Integer номсмерас) {
-      this.номсмерас = номсмерас;
-    }
-
     public Float getОбщСметСт() {
       return общсметст;
     }
 
     public void setОбщСметСт(Float общсметст) {
       this.общсметст = общсметст;
+    }
+
+    public Integer getНомСмеРас() {
+      return номсмерас;
+    }
+
+    public void setНомСмеРас(Integer номсмерас) {
+      this.номсмерас = номсмерас;
     }
 
 

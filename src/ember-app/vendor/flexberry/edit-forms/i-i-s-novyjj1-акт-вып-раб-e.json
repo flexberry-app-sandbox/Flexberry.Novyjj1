@@ -7,6 +7,14 @@
       "relationName": "СпрСотр",
       "projection": "СпрСотрL",
       "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "СпрКонтраг",
+      "projection": "СпрКонтрагL",
+      "detailModelName": null
     }
   ],
   "external": false,

@@ -1,5 +1,14 @@
 ﻿{
-  "propertyLookup": [],
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "СпрКонтраг",
+      "projection": "СпрКонтрагL",
+      "detailModelName": null
+    }
+  ],
   "external": false,
   "caption": "Документ смета",
   "name": "IISNovyjj1ДокСметаE",

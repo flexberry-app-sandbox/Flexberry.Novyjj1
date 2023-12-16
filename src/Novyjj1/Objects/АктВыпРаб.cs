@@ -32,16 +32,21 @@ namespace IIS.Novyjj1
     [View("АктВыпРабE", new string[] {
             "ОбщСтоим as \'Общая стоимость\'",
             "СпрСотр as \'Сотрудник\'",
-            "СпрСотр.ФИО as \'Сотрудник\'"})]
+            "СпрСотр.ФИО as \'Сотрудник\'",
+            "СпрКонтраг as \'Контрагент\'",
+            "СпрКонтраг.Наименование as \'Контрагент\'"})]
     [AssociatedDetailViewAttribute("АктВыпРабE", "ТЧАкт", "ТЧАктE", true, "", "Табличная часть акта выполнения работ", true, new string[] {
             ""})]
     [View("АктВыпРабL", new string[] {
             "ОбщСтоим as \'Общая стоимость\'",
-            "СпрСотр.ФИО as \'Сотрудник\'"})]
+            "СпрСотр.ФИО as \'Сотрудник\'",
+            "СпрКонтраг.Наименование as \'Контрагент\'"})]
     public class АктВыпРаб : ICSSoft.STORMNET.DataObject
     {
         
         private float fОбщСтоим;
+        
+        private IIS.Novyjj1.СпрКонтраг fСпрКонтраг;
         
         private IIS.Novyjj1.СпрСотр fСпрСотр;
         
@@ -80,6 +85,40 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (АктВыпРаб.ОбщСтоим Set end)
 
                 // *** End programmer edit section *** (АктВыпРаб.ОбщСтоим Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Акт вып раб.
+        /// </summary>
+        // *** Start programmer edit section *** (АктВыпРаб.СпрКонтраг CustomAttributes)
+
+        // *** End programmer edit section *** (АктВыпРаб.СпрКонтраг CustomAttributes)
+        [PropertyStorage(new string[] {
+                "СпрКонтраг"})]
+        [NotNull()]
+        public virtual IIS.Novyjj1.СпрКонтраг СпрКонтраг
+        {
+            get
+            {
+                // *** Start programmer edit section *** (АктВыпРаб.СпрКонтраг Get start)
+
+                // *** End programmer edit section *** (АктВыпРаб.СпрКонтраг Get start)
+                IIS.Novyjj1.СпрКонтраг result = this.fСпрКонтраг;
+                // *** Start programmer edit section *** (АктВыпРаб.СпрКонтраг Get end)
+
+                // *** End programmer edit section *** (АктВыпРаб.СпрКонтраг Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (АктВыпРаб.СпрКонтраг Set start)
+
+                // *** End programmer edit section *** (АктВыпРаб.СпрКонтраг Set start)
+                this.fСпрКонтраг = value;
+                // *** Start programmer edit section *** (АктВыпРаб.СпрКонтраг Set end)
+
+                // *** End programmer edit section *** (АктВыпРаб.СпрКонтраг Set end)
             }
         }
         

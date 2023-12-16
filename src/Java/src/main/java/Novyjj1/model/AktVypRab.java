@@ -27,6 +27,16 @@ public class AktVypRab {
     private Float общстоим;
 
     @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "SprKontrag")
+    @Convert("SprKontrag")
+    @Column(name = "СпрКонтраг", length = 16, unique = true, nullable = false)
+    private UUID _sprkontragid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "SprKontrag", insertable = false, updatable = false)
+    private SprKontrag sprkontrag;
+
+    @EdmIgnore
     @Converter(converterClass = UUIDConverter.class, name = "SprSotr")
     @Convert("SprSotr")
     @Column(name = "СпрСотр", length = 16, unique = true, nullable = false)

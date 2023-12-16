@@ -172,6 +172,8 @@ CREATE TABLE "АктВыпРаб"
 
 	"ОбщСтоим" FLOAT(53) NULL,
 
+	"СпрКонтраг" RAW(16) NOT NULL,
+
 	"СпрСотр" RAW(16) NOT NULL,
 
 	 PRIMARY KEY ("primaryKey")
@@ -234,9 +236,11 @@ CREATE TABLE "ДокСмета"
 
 	"primaryKey" RAW(16) NOT NULL,
 
+	"ОбщСметСт" FLOAT(53) NULL,
+
 	"НомСмеРас" NUMBER(10) NULL,
 
-	"ОбщСметСт" FLOAT(53) NULL,
+	"СпрКонтраг" RAW(16) NOT NULL,
 
 	 PRIMARY KEY ("primaryKey")
 ) ;
@@ -247,13 +251,15 @@ CREATE TABLE "ДокУсловДог"
 
 	"primaryKey" RAW(16) NOT NULL,
 
-	"ДатаНач" DATE NULL,
+	"Объем" FLOAT(53) NULL,
 
 	"ДатаОконч" DATE NULL,
 
-	"Объем" FLOAT(53) NULL,
-
 	"Длительн" NUMBER(10) NULL,
+
+	"ДатаНач" DATE NULL,
+
+	"СпрКонтраг" RAW(16) NOT NULL,
 
 	 PRIMARY KEY ("primaryKey")
 ) ;
@@ -478,6 +484,11 @@ ALTER TABLE "ТЧСметы"
 CREATE INDEX "ТЧСметы_IДокС_6163" on "ТЧСметы" ("ДокСмета");
 
 ALTER TABLE "АктВыпРаб"
+	ADD CONSTRAINT "АктВыпРаб_FСп_2444" FOREIGN KEY ("СпрКонтраг") REFERENCES "СпрКонтраг" ("primaryKey");
+
+CREATE INDEX "АктВыпРаб_IСп_5183" on "АктВыпРаб" ("СпрКонтраг");
+
+ALTER TABLE "АктВыпРаб"
 	ADD CONSTRAINT "АктВыпРаб_FСп_8214" FOREIGN KEY ("СпрСотр") REFERENCES "СпрСотр" ("primaryKey");
 
 CREATE INDEX "АктВыпРаб_IСп_5470" on "АктВыпРаб" ("СпрСотр");
@@ -491,6 +502,16 @@ ALTER TABLE "ТЧАкт"
 	ADD CONSTRAINT "ТЧАкт_FАктВып_6821" FOREIGN KEY ("АктВыпРаб") REFERENCES "АктВыпРаб" ("primaryKey");
 
 CREATE INDEX "ТЧАкт_IАктВыпРаб" on "ТЧАкт" ("АктВыпРаб");
+
+ALTER TABLE "ДокСмета"
+	ADD CONSTRAINT "ДокСмета_FСпр_4492" FOREIGN KEY ("СпрКонтраг") REFERENCES "СпрКонтраг" ("primaryKey");
+
+CREATE INDEX "ДокСмета_IСпр_3353" on "ДокСмета" ("СпрКонтраг");
+
+ALTER TABLE "ДокУсловДог"
+	ADD CONSTRAINT "ДокУсловДог_F_2838" FOREIGN KEY ("СпрКонтраг") REFERENCES "СпрКонтраг" ("primaryKey");
+
+CREATE INDEX "ДокУсловДог_I_5945" on "ДокУсловДог" ("СпрКонтраг");
 
 ALTER TABLE "STORMWEBSEARCH"
 	ADD CONSTRAINT "STORMWEBSEARCH_FSTORMFILT_6521" FOREIGN KEY ("FilterSetting_m0") REFERENCES "STORMFILTERSETTING" ("primaryKey");

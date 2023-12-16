@@ -8,7 +8,8 @@ export let Model = Mixin.create({
   датаНач: DS.attr('date'),
   датаОконч: DS.attr('date'),
   длительн: DS.attr('number'),
-  объем: DS.attr('decimal')
+  объем: DS.attr('decimal'),
+  спрКонтраг: DS.belongsTo('i-i-s-novyjj1-спр-контраг', { inverse: null, async: false })
 });
 
 export let ValidationRules = {
@@ -40,6 +41,13 @@ export let ValidationRules = {
       validator('number', { allowString: true, allowBlank: true }),
     ],
   },
+  спрКонтраг: {
+    descriptionKey: 'models.i-i-s-novyjj1-док-услов-дог.validations.спрКонтраг.__caption__',
+    validators: [
+      validator('ds-error'),
+      validator('presence', true),
+    ],
+  },
 };
 
 export let defineProjections = function (modelClass) {
@@ -47,13 +55,19 @@ export let defineProjections = function (modelClass) {
     объем: attr('Объем', { index: 0 }),
     датаНач: attr('Дата начала', { index: 1 }),
     датаОконч: attr('Дата окончания', { index: 2 }),
-    длительн: attr('Длительность', { index: 3 })
+    длительн: attr('Длительность', { index: 3 }),
+    спрКонтраг: belongsTo('i-i-s-novyjj1-спр-контраг', 'Контрагент', {
+      наименование: attr('Контрагент', { index: 5 })
+    }, { index: 4 })
   });
 
   modelClass.defineProjection('ДокУсловДогL', 'i-i-s-novyjj1-док-услов-дог', {
     объем: attr('Объем', { index: 0 }),
     датаНач: attr('Дата начала', { index: 1 }),
     датаОконч: attr('Дата окончания', { index: 2 }),
-    длительн: attr('Длительность', { index: 3 })
+    длительн: attr('Длительность', { index: 3 }),
+    спрКонтраг: belongsTo('i-i-s-novyjj1-спр-контраг', 'Контрагент', {
+      наименование: attr('Контрагент', { index: 4 })
+    }, { index: -1, hidden: true })
   });
 };
