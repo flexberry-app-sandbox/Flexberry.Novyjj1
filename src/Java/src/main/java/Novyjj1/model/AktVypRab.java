@@ -7,6 +7,7 @@ import Novyjj1.utils.UUIDConverter;
 import javax.persistence.*;
 import java.util.UUID;
 
+import java.util.List;
 
 /**
  * Entity implementation class for Entity: АктВыпРаб
@@ -23,6 +24,9 @@ public class AktVypRab {
 
     @Column(name = "ОбщСтоим")
     private Float общстоим;
+
+    @OneToMany(mappedBy = "aktvyprab", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    private List<TCHAkt> tchakts;
 
 
     public AktVypRab() {

@@ -213,6 +213,8 @@ CREATE TABLE "ТЧАкт"
 
 	"Количество" FLOAT(53) NULL,
 
+	"АктВыпРаб" RAW(16) NOT NULL,
+
 	 PRIMARY KEY ("primaryKey")
 ) ;
 
@@ -449,6 +451,11 @@ ALTER TABLE "СпрСотр"
 	ADD CONSTRAINT "СпрСотр_FДолж_4392" FOREIGN KEY ("Должности") REFERENCES "Должности" ("primaryKey");
 
 CREATE INDEX "СпрСотр_IДолж_3754" on "СпрСотр" ("Должности");
+
+ALTER TABLE "ТЧАкт"
+	ADD CONSTRAINT "ТЧАкт_FАктВып_6821" FOREIGN KEY ("АктВыпРаб") REFERENCES "АктВыпРаб" ("primaryKey");
+
+CREATE INDEX "ТЧАкт_IАктВыпРаб" on "ТЧАкт" ("АктВыпРаб");
 
 ALTER TABLE "STORMWEBSEARCH"
 	ADD CONSTRAINT "STORMWEBSEARCH_FSTORMFILT_6521" FOREIGN KEY ("FilterSetting_m0") REFERENCES "STORMFILTERSETTING" ("primaryKey");

@@ -17,7 +17,13 @@
     }
   ],
   "belongsTo": [],
-  "hasMany": [],
+  "hasMany": [
+    {
+      "name": "тЧАкт",
+      "relatedTo": "i-i-s-novyjj1-т-ч-акт",
+      "inverse": "актВыпРаб"
+    }
+  ],
   "projections": [
     {
       "name": "АктВыпРабE",
@@ -31,7 +37,15 @@
         }
       ],
       "belongsTo": [],
-      "hasMany": []
+      "hasMany": [
+        {
+          "projectionName": "ТЧАктE",
+          "caption": "Табличная часть акта выполнения работ",
+          "name": "тЧАкт",
+          "relatedTo": "i-i-s-novyjj1-т-ч-акт",
+          "inverse": null
+        }
+      ]
     },
     {
       "name": "АктВыпРабL",

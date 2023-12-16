@@ -188,6 +188,8 @@ CREATE TABLE [ТЧАкт] (
 
 	 [ЦенаЗаЕд] REAL  NULL,
 
+	 [АктВыпРаб] UNIQUEIDENTIFIER  NOT NULL,
+
 	 PRIMARY KEY ([primaryKey]))
 
 

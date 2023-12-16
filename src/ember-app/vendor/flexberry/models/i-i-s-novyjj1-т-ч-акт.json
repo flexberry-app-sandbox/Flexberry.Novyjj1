@@ -34,7 +34,15 @@
       "ordered": false
     }
   ],
-  "belongsTo": [],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "актВыпРаб",
+      "relatedTo": "i-i-s-novyjj1-акт-вып-раб",
+      "inverse": "тЧАкт"
+    }
+  ],
   "hasMany": [],
   "projections": [
     {

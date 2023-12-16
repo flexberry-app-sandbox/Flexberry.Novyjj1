@@ -31,12 +31,16 @@ namespace IIS.Novyjj1
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("АктВыпРабE", new string[] {
             "ОбщСтоим as \'Общая стоимость\'"})]
+    [AssociatedDetailViewAttribute("АктВыпРабE", "ТЧАкт", "ТЧАктE", true, "", "Табличная часть акта выполнения работ", true, new string[] {
+            ""})]
     [View("АктВыпРабL", new string[] {
             "ОбщСтоим as \'Общая стоимость\'"})]
     public class АктВыпРаб : ICSSoft.STORMNET.DataObject
     {
         
         private float fОбщСтоим;
+        
+        private IIS.Novyjj1.DetailArrayOfТЧАкт fТЧАкт;
         
         // *** Start programmer edit section *** (АктВыпРаб CustomMembers)
 
@@ -71,6 +75,41 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (АктВыпРаб.ОбщСтоим Set end)
 
                 // *** End programmer edit section *** (АктВыпРаб.ОбщСтоим Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Акт вып раб.
+        /// </summary>
+        // *** Start programmer edit section *** (АктВыпРаб.ТЧАкт CustomAttributes)
+
+        // *** End programmer edit section *** (АктВыпРаб.ТЧАкт CustomAttributes)
+        public virtual IIS.Novyjj1.DetailArrayOfТЧАкт ТЧАкт
+        {
+            get
+            {
+                // *** Start programmer edit section *** (АктВыпРаб.ТЧАкт Get start)
+
+                // *** End programmer edit section *** (АктВыпРаб.ТЧАкт Get start)
+                if ((this.fТЧАкт == null))
+                {
+                    this.fТЧАкт = new IIS.Novyjj1.DetailArrayOfТЧАкт(this);
+                }
+                IIS.Novyjj1.DetailArrayOfТЧАкт result = this.fТЧАкт;
+                // *** Start programmer edit section *** (АктВыпРаб.ТЧАкт Get end)
+
+                // *** End programmer edit section *** (АктВыпРаб.ТЧАкт Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (АктВыпРаб.ТЧАкт Set start)
+
+                // *** End programmer edit section *** (АктВыпРаб.ТЧАкт Set start)
+                this.fТЧАкт = value;
+                // *** Start programmer edit section *** (АктВыпРаб.ТЧАкт Set end)
+
+                // *** End programmer edit section *** (АктВыпРаб.ТЧАкт Set end)
             }
         }
         

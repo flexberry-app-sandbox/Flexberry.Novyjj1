@@ -7,6 +7,7 @@ import Novyjj1.utils.UUIDConverter;
 import javax.persistence.*;
 import java.util.UUID;
 
+import com.sap.olingo.jpa.metadata.core.edm.annotation.EdmIgnore;
 
 /**
  * Entity implementation class for Entity: ТЧАкт
@@ -29,6 +30,16 @@ public class TCHAkt {
 
     @Column(name = "Количество")
     private Float количество;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "AktVypRab")
+    @Convert("AktVypRab")
+    @Column(name = "АктВыпРаб", length = 16, unique = true, nullable = false)
+    private UUID _aktvyprabid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "AktVypRab", insertable = false, updatable = false)
+    private AktVypRab aktvyprab;
 
 
     public TCHAkt() {

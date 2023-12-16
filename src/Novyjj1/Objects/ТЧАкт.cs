@@ -46,6 +46,8 @@ namespace IIS.Novyjj1
         
         private float fКоличество;
         
+        private IIS.Novyjj1.АктВыпРаб fАктВыпРаб;
+        
         // *** Start programmer edit section *** (ТЧАкт CustomMembers)
 
         // *** End programmer edit section *** (ТЧАкт CustomMembers)
@@ -145,6 +147,41 @@ namespace IIS.Novyjj1
         }
         
         /// <summary>
+        /// мастеровая ссылка на шапку IIS.Novyjj1.АктВыпРаб.
+        /// </summary>
+        // *** Start programmer edit section *** (ТЧАкт.АктВыпРаб CustomAttributes)
+
+        // *** End programmer edit section *** (ТЧАкт.АктВыпРаб CustomAttributes)
+        [Agregator()]
+        [NotNull()]
+        [PropertyStorage(new string[] {
+                "АктВыпРаб"})]
+        public virtual IIS.Novyjj1.АктВыпРаб АктВыпРаб
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ТЧАкт.АктВыпРаб Get start)
+
+                // *** End programmer edit section *** (ТЧАкт.АктВыпРаб Get start)
+                IIS.Novyjj1.АктВыпРаб result = this.fАктВыпРаб;
+                // *** Start programmer edit section *** (ТЧАкт.АктВыпРаб Get end)
+
+                // *** End programmer edit section *** (ТЧАкт.АктВыпРаб Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ТЧАкт.АктВыпРаб Set start)
+
+                // *** End programmer edit section *** (ТЧАкт.АктВыпРаб Set start)
+                this.fАктВыпРаб = value;
+                // *** Start programmer edit section *** (ТЧАкт.АктВыпРаб Set end)
+
+                // *** End programmer edit section *** (ТЧАкт.АктВыпРаб Set end)
+            }
+        }
+        
+        /// <summary>
         /// Class views container.
         /// </summary>
         public class Views
@@ -171,6 +208,48 @@ namespace IIS.Novyjj1
                     return ICSSoft.STORMNET.Information.GetView("ТЧАктL", typeof(IIS.Novyjj1.ТЧАкт));
                 }
             }
+        }
+    }
+    
+    /// <summary>
+    /// Detail array of ТЧАкт.
+    /// </summary>
+    // *** Start programmer edit section *** (DetailArrayDetailArrayOfТЧАкт CustomAttributes)
+
+    // *** End programmer edit section *** (DetailArrayDetailArrayOfТЧАкт CustomAttributes)
+    public class DetailArrayOfТЧАкт : ICSSoft.STORMNET.DetailArray
+    {
+        
+        // *** Start programmer edit section *** (IIS.Novyjj1.DetailArrayOfТЧАкт members)
+
+        // *** End programmer edit section *** (IIS.Novyjj1.DetailArrayOfТЧАкт members)
+
+        
+        /// <summary>
+        /// Construct detail array.
+        /// </summary>
+        /// <summary>
+        /// Returns object with type ТЧАкт by index.
+        /// </summary>
+        /// <summary>
+        /// Adds object with type ТЧАкт.
+        /// </summary>
+        public DetailArrayOfТЧАкт(IIS.Novyjj1.АктВыпРаб fАктВыпРаб) : 
+                base(typeof(ТЧАкт), ((ICSSoft.STORMNET.DataObject)(fАктВыпРаб)))
+        {
+        }
+        
+        public IIS.Novyjj1.ТЧАкт this[int index]
+        {
+            get
+            {
+                return ((IIS.Novyjj1.ТЧАкт)(this.ItemByIndex(index)));
+            }
+        }
+        
+        public virtual void Add(IIS.Novyjj1.ТЧАкт dataobject)
+        {
+            this.AddObject(((ICSSoft.STORMNET.DataObject)(dataobject)));
         }
     }
 }
