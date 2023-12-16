@@ -28,90 +28,90 @@ export default Controller.extend({
             link: 'i-i-s-novyjj1-должности-l',
             caption: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-должности-l.caption'),
             title: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-должности-l.title'),
-            icon: 'chart line',
+            icon: 'table',
             children: null
           }, {
             link: 'i-i-s-novyjj1-пл-ф-ан-вып-раб-l',
             caption: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-пл-ф-ан-вып-раб-l.caption'),
             title: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-пл-ф-ан-вып-раб-l.title'),
-            icon: 'chart line',
+            icon: 'folder',
             children: null
           }, {
             link: 'i-i-s-novyjj1-планиров-с-м-р-l',
             caption: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-планиров-с-м-р-l.caption'),
             title: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-планиров-с-м-р-l.title'),
-            icon: 'briefcase',
+            icon: 'phone',
             children: null
           }, {
             link: 'i-i-s-novyjj1-жур-уч-вып-раб-l',
             caption: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-жур-уч-вып-раб-l.caption'),
             title: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-жур-уч-вып-раб-l.title'),
-            icon: 'archive',
+            icon: 'calendar',
             children: null
           }, {
             link: 'i-i-s-novyjj1-бюд-строи-l',
             caption: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-бюд-строи-l.caption'),
             title: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-бюд-строи-l.title'),
-            icon: 'tasks',
+            icon: 'folder open',
             children: null
           }, {
             link: 'i-i-s-novyjj1-номенклатура-l',
             caption: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-номенклатура-l.caption'),
             title: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-номенклатура-l.title'),
-            icon: 'paperclip',
+            icon: 'list',
             children: null
           }, {
             link: 'i-i-s-novyjj1-спр-контраг-l',
             caption: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-спр-контраг-l.caption'),
             title: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-спр-контраг-l.title'),
+            icon: 'file',
             children: null
           }, {
             link: 'i-i-s-novyjj1-спр-сотр-l',
             caption: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-спр-сотр-l.caption'),
             title: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-спр-сотр-l.title'),
-            icon: 'suitcase',
             children: null
           }, {
             link: 'i-i-s-novyjj1-т-ч-сметы-l',
             caption: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-т-ч-сметы-l.caption'),
             title: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-т-ч-сметы-l.title'),
-            icon: 'briefcase',
+            icon: 'folder open',
             children: null
           }, {
             link: 'i-i-s-novyjj1-акт-вып-раб-l',
             caption: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-акт-вып-раб-l.caption'),
             title: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-акт-вып-раб-l.title'),
-            icon: 'file',
+            icon: 'book',
             children: null
           }, {
             link: 'i-i-s-novyjj1-от-о-рас-ос-мат-l',
             caption: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-от-о-рас-ос-мат-l.caption'),
             title: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-от-о-рас-ос-мат-l.title'),
-            icon: 'edit',
+            icon: 'building',
             children: null
           }, {
             link: 'i-i-s-novyjj1-ед-измер-l',
             caption: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-ед-измер-l.caption'),
             title: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-ед-измер-l.title'),
-            icon: 'suitcase',
+            icon: 'table',
             children: null
           }, {
             link: 'i-i-s-novyjj1-т-ч-акт-l',
             caption: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-т-ч-акт-l.caption'),
             title: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-т-ч-акт-l.title'),
-            icon: 'building',
+            icon: 'suitcase',
             children: null
           }, {
             link: 'i-i-s-novyjj1-док-смета-l',
             caption: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-док-смета-l.caption'),
             title: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-док-смета-l.title'),
-            icon: 'briefcase',
+            icon: 'paperclip',
             children: null
           }, {
             link: 'i-i-s-novyjj1-док-услов-дог-l',
             caption: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-док-услов-дог-l.caption'),
             title: i18n.t('forms.application.sitemap.novyjj1.i-i-s-novyjj1-док-услов-дог-l.title'),
-            icon: 'paperclip',
+            icon: 'building',
             children: null
           }]
         }

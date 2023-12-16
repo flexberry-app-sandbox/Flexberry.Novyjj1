@@ -7,6 +7,7 @@ import Novyjj1.utils.UUIDConverter;
 import javax.persistence.*;
 import java.util.UUID;
 
+import com.sap.olingo.jpa.metadata.core.edm.annotation.EdmIgnore;
 
 /**
  * Entity implementation class for Entity: ОтОРасОсМат
@@ -21,20 +22,30 @@ public class OtORasOsMat {
     @Column(name = "primarykey", length = 16, unique = true, nullable = false)
     private UUID primarykey;
 
+    @Column(name = "КолПоАкт")
+    private Float колпоакт;
+
     @Column(name = "ОбРабПоСм")
     private Float обрабпосм;
 
     @Column(name = "НормРасх")
     private Float нормрасх;
 
-    @Column(name = "КолПоСме")
-    private Float колпосме;
-
     @Column(name = "ОстПоСмет")
     private Float остпосмет;
 
-    @Column(name = "КолПоАкт")
-    private Float колпоакт;
+    @Column(name = "КолПоСме")
+    private Float колпосме;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "SprSotr")
+    @Convert("SprSotr")
+    @Column(name = "СпрСотр", length = 16, unique = true, nullable = false)
+    private UUID _sprsotrid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "SprSotr", insertable = false, updatable = false)
+    private SprSotr sprsotr;
 
 
     public OtORasOsMat() {
@@ -47,6 +58,14 @@ public class OtORasOsMat {
 
     public UUID getPrimarykey() {
         return primarykey;
+    }
+
+    public Float getКолПоАкт() {
+      return колпоакт;
+    }
+
+    public void setКолПоАкт(Float колпоакт) {
+      this.колпоакт = колпоакт;
     }
 
     public Float getОбРабПоСм() {
@@ -65,14 +84,6 @@ public class OtORasOsMat {
       this.нормрасх = нормрасх;
     }
 
-    public Float getКолПоСме() {
-      return колпосме;
-    }
-
-    public void setКолПоСме(Float колпосме) {
-      this.колпосме = колпосме;
-    }
-
     public Float getОстПоСмет() {
       return остпосмет;
     }
@@ -81,12 +92,12 @@ public class OtORasOsMat {
       this.остпосмет = остпосмет;
     }
 
-    public Float getКолПоАкт() {
-      return колпоакт;
+    public Float getКолПоСме() {
+      return колпосме;
     }
 
-    public void setКолПоАкт(Float колпоакт) {
-      this.колпоакт = колпоакт;
+    public void setКолПоСме(Float колпосме) {
+      this.колпосме = колпосме;
     }
 
 

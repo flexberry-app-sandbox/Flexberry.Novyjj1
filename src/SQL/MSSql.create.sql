@@ -33,6 +33,8 @@ CREATE TABLE [ПлФАнВыпРаб] (
 
 	 [РеализоСум] REAL  NULL,
 
+	 [СпрСотр] UNIQUEIDENTIFIER  NOT NULL,
+
 	 PRIMARY KEY ([primaryKey]))
 
 
@@ -62,6 +64,8 @@ CREATE TABLE [ЖурУчВыпРаб] (
 	 [ПерВыпПо] DATETIME  NULL,
 
 	 [ПерВыпС] DATETIME  NULL,
+
+	 [СпрСотр] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
 
@@ -167,6 +171,8 @@ CREATE TABLE [ОтОРасОсМат] (
 	 [ОбРабПоСм] REAL  NULL,
 
 	 [ОстПоСмет] REAL  NULL,
+
+	 [СпрСотр] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
 

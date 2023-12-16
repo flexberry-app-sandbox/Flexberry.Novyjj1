@@ -7,6 +7,7 @@ import Novyjj1.utils.UUIDConverter;
 import javax.persistence.*;
 import java.util.UUID;
 
+import com.sap.olingo.jpa.metadata.core.edm.annotation.EdmIgnore;
 
 /**
  * Entity implementation class for Entity: ПлФАнВыпРаб
@@ -21,11 +22,8 @@ public class PlFAnVypRab {
     @Column(name = "primarykey", length = 16, unique = true, nullable = false)
     private UUID primarykey;
 
-    @Column(name = "ВсегоОб")
-    private Float всегооб;
-
-    @Column(name = "ПланСум")
-    private Float плансум;
+    @Column(name = "ВыпСум")
+    private Float выпсум;
 
     @Column(name = "ВсегоСум")
     private Float всегосум;
@@ -33,17 +31,30 @@ public class PlFAnVypRab {
     @Column(name = "ПланОб")
     private Float планоб;
 
-    @Column(name = "РеализовОб")
-    private Float реализовоб;
+    @Column(name = "ВыпОб")
+    private Float выпоб;
+
+    @Column(name = "ВсегоОб")
+    private Float всегооб;
+
+    @Column(name = "ПланСум")
+    private Float плансум;
 
     @Column(name = "РеализоСум")
     private Float реализосум;
 
-    @Column(name = "ВыпОб")
-    private Float выпоб;
+    @Column(name = "РеализовОб")
+    private Float реализовоб;
 
-    @Column(name = "ВыпСум")
-    private Float выпсум;
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "SprSotr")
+    @Convert("SprSotr")
+    @Column(name = "СпрСотр", length = 16, unique = true, nullable = false)
+    private UUID _sprsotrid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "SprSotr", insertable = false, updatable = false)
+    private SprSotr sprsotr;
 
 
     public PlFAnVypRab() {
@@ -58,20 +69,12 @@ public class PlFAnVypRab {
         return primarykey;
     }
 
-    public Float getВсегоОб() {
-      return всегооб;
+    public Float getВыпСум() {
+      return выпсум;
     }
 
-    public void setВсегоОб(Float всегооб) {
-      this.всегооб = всегооб;
-    }
-
-    public Float getПланСум() {
-      return плансум;
-    }
-
-    public void setПланСум(Float плансум) {
-      this.плансум = плансум;
+    public void setВыпСум(Float выпсум) {
+      this.выпсум = выпсум;
     }
 
     public Float getВсегоСум() {
@@ -90,12 +93,28 @@ public class PlFAnVypRab {
       this.планоб = планоб;
     }
 
-    public Float getРеализовОб() {
-      return реализовоб;
+    public Float getВыпОб() {
+      return выпоб;
     }
 
-    public void setРеализовОб(Float реализовоб) {
-      this.реализовоб = реализовоб;
+    public void setВыпОб(Float выпоб) {
+      this.выпоб = выпоб;
+    }
+
+    public Float getВсегоОб() {
+      return всегооб;
+    }
+
+    public void setВсегоОб(Float всегооб) {
+      this.всегооб = всегооб;
+    }
+
+    public Float getПланСум() {
+      return плансум;
+    }
+
+    public void setПланСум(Float плансум) {
+      this.плансум = плансум;
     }
 
     public Float getРеализоСум() {
@@ -106,20 +125,12 @@ public class PlFAnVypRab {
       this.реализосум = реализосум;
     }
 
-    public Float getВыпОб() {
-      return выпоб;
+    public Float getРеализовОб() {
+      return реализовоб;
     }
 
-    public void setВыпОб(Float выпоб) {
-      this.выпоб = выпоб;
-    }
-
-    public Float getВыпСум() {
-      return выпсум;
-    }
-
-    public void setВыпСум(Float выпсум) {
-      this.выпсум = выпсум;
+    public void setРеализовОб(Float реализовоб) {
+      this.реализовоб = реализовоб;
     }
 
 

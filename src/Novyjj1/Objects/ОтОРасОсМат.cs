@@ -34,25 +34,30 @@ namespace IIS.Novyjj1
             "КолПоАкт as \'Количество по актам\'",
             "КолПоСме as \'Количество по смете\'",
             "ОбРабПоСм as \'Объем работ по смете\'",
-            "ОстПоСмет as \'Остаток по смете\'"})]
+            "ОстПоСмет as \'Остаток по смете\'",
+            "СпрСотр as \'Сотрудник\'",
+            "СпрСотр.ФИО as \'Сотрудник\'"})]
     [View("ОтОРасОсМатL", new string[] {
             "НормРасх as \'Норма расхода\'",
             "КолПоАкт as \'Количество по актам\'",
             "КолПоСме as \'Количество по смете\'",
             "ОбРабПоСм as \'Объем работ по смете\'",
-            "ОстПоСмет as \'Остаток по смете\'"})]
+            "ОстПоСмет as \'Остаток по смете\'",
+            "СпрСотр.ФИО as \'Сотрудник\'"})]
     public class ОтОРасОсМат : ICSSoft.STORMNET.DataObject
     {
+        
+        private float fКолПоАкт;
         
         private float fОбРабПоСм;
         
         private float fНормРасх;
         
-        private float fКолПоСме;
-        
         private float fОстПоСмет;
         
-        private float fКолПоАкт;
+        private float fКолПоСме;
+        
+        private IIS.Novyjj1.СпрСотр fСпрСотр;
         
         // *** Start programmer edit section *** (ОтОРасОсМат CustomMembers)
 
@@ -211,6 +216,40 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (ОтОРасОсМат.ОстПоСмет Set end)
 
                 // *** End programmer edit section *** (ОтОРасОсМат.ОстПоСмет Set end)
+            }
+        }
+        
+        /// <summary>
+        /// От о рас ос мат.
+        /// </summary>
+        // *** Start programmer edit section *** (ОтОРасОсМат.СпрСотр CustomAttributes)
+
+        // *** End programmer edit section *** (ОтОРасОсМат.СпрСотр CustomAttributes)
+        [PropertyStorage(new string[] {
+                "СпрСотр"})]
+        [NotNull()]
+        public virtual IIS.Novyjj1.СпрСотр СпрСотр
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ОтОРасОсМат.СпрСотр Get start)
+
+                // *** End programmer edit section *** (ОтОРасОсМат.СпрСотр Get start)
+                IIS.Novyjj1.СпрСотр result = this.fСпрСотр;
+                // *** Start programmer edit section *** (ОтОРасОсМат.СпрСотр Get end)
+
+                // *** End programmer edit section *** (ОтОРасОсМат.СпрСотр Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ОтОРасОсМат.СпрСотр Set start)
+
+                // *** End programmer edit section *** (ОтОРасОсМат.СпрСотр Set start)
+                this.fСпрСотр = value;
+                // *** Start programmer edit section *** (ОтОРасОсМат.СпрСотр Set end)
+
+                // *** End programmer edit section *** (ОтОРасОсМат.СпрСотр Set end)
             }
         }
         

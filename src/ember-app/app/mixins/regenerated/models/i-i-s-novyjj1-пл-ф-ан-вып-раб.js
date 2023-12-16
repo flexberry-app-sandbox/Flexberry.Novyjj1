@@ -12,7 +12,8 @@ export let Model = Mixin.create({
   планОб: DS.attr('decimal'),
   планСум: DS.attr('decimal'),
   реализовОб: DS.attr('decimal'),
-  реализоСум: DS.attr('decimal')
+  реализоСум: DS.attr('decimal'),
+  спрСотр: DS.belongsTo('i-i-s-novyjj1-спр-сотр', { inverse: null, async: false })
 });
 
 export let ValidationRules = {
@@ -72,6 +73,13 @@ export let ValidationRules = {
       validator('number', { allowString: true, allowBlank: true }),
     ],
   },
+  спрСотр: {
+    descriptionKey: 'models.i-i-s-novyjj1-пл-ф-ан-вып-раб.validations.спрСотр.__caption__',
+    validators: [
+      validator('ds-error'),
+      validator('presence', true),
+    ],
+  },
 };
 
 export let defineProjections = function (modelClass) {
@@ -83,7 +91,10 @@ export let defineProjections = function (modelClass) {
     выпОб: attr('Выполнено объем', { index: 4 }),
     выпСум: attr('Выполнено сумма', { index: 5 }),
     всегоОб: attr('Всего объем', { index: 6 }),
-    всегоСум: attr('Всего сумма', { index: 7 })
+    всегоСум: attr('Всего сумма', { index: 7 }),
+    спрСотр: belongsTo('i-i-s-novyjj1-спр-сотр', 'Сотрудник', {
+      фИО: attr('Сотрудник', { index: 9 })
+    }, { index: 8 })
   });
 
   modelClass.defineProjection('ПлФАнВыпРабL', 'i-i-s-novyjj1-пл-ф-ан-вып-раб', {
@@ -94,6 +105,9 @@ export let defineProjections = function (modelClass) {
     выпОб: attr('Выполнено объем', { index: 4 }),
     выпСум: attr('Выполнено сумма', { index: 5 }),
     всегоОб: attr('Всего объем', { index: 6 }),
-    всегоСум: attr('Всего сумма', { index: 7 })
+    всегоСум: attr('Всего сумма', { index: 7 }),
+    спрСотр: belongsTo('i-i-s-novyjj1-спр-сотр', 'Сотрудник', {
+      фИО: attr('Сотрудник', { index: 8 })
+    }, { index: -1, hidden: true })
   });
 };

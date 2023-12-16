@@ -37,7 +37,9 @@ namespace IIS.Novyjj1
             "ВыпОб as \'Выполнено объем\'",
             "ВыпСум as \'Выполнено сумма\'",
             "ВсегоОб as \'Всего объем\'",
-            "ВсегоСум as \'Всего сумма\'"})]
+            "ВсегоСум as \'Всего сумма\'",
+            "СпрСотр as \'Сотрудник\'",
+            "СпрСотр.ФИО as \'Сотрудник\'"})]
     [View("ПлФАнВыпРабL", new string[] {
             "ПланОб as \'План объем\'",
             "ПланСум as \'План сумма\'",
@@ -46,25 +48,28 @@ namespace IIS.Novyjj1
             "ВыпОб as \'Выполнено объем\'",
             "ВыпСум as \'Выполнено сумма\'",
             "ВсегоОб as \'Всего объем\'",
-            "ВсегоСум as \'Всего сумма\'"})]
+            "ВсегоСум as \'Всего сумма\'",
+            "СпрСотр.ФИО as \'Сотрудник\'"})]
     public class ПлФАнВыпРаб : ICSSoft.STORMNET.DataObject
     {
         
-        private float fВсегоОб;
-        
-        private float fПланСум;
+        private float fВыпСум;
         
         private float fВсегоСум;
         
         private float fПланОб;
         
-        private float fРеализовОб;
+        private float fВыпОб;
+        
+        private float fВсегоОб;
+        
+        private float fПланСум;
         
         private float fРеализоСум;
         
-        private float fВыпОб;
+        private float fРеализовОб;
         
-        private float fВыпСум;
+        private IIS.Novyjj1.СпрСотр fСпрСотр;
         
         // *** Start programmer edit section *** (ПлФАнВыпРаб CustomMembers)
 
@@ -316,6 +321,40 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (ПлФАнВыпРаб.РеализоСум Set end)
 
                 // *** End programmer edit section *** (ПлФАнВыпРаб.РеализоСум Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Пл ф ан вып раб.
+        /// </summary>
+        // *** Start programmer edit section *** (ПлФАнВыпРаб.СпрСотр CustomAttributes)
+
+        // *** End programmer edit section *** (ПлФАнВыпРаб.СпрСотр CustomAttributes)
+        [PropertyStorage(new string[] {
+                "СпрСотр"})]
+        [NotNull()]
+        public virtual IIS.Novyjj1.СпрСотр СпрСотр
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ПлФАнВыпРаб.СпрСотр Get start)
+
+                // *** End programmer edit section *** (ПлФАнВыпРаб.СпрСотр Get start)
+                IIS.Novyjj1.СпрСотр result = this.fСпрСотр;
+                // *** Start programmer edit section *** (ПлФАнВыпРаб.СпрСотр Get end)
+
+                // *** End programmer edit section *** (ПлФАнВыпРаб.СпрСотр Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ПлФАнВыпРаб.СпрСотр Set start)
+
+                // *** End programmer edit section *** (ПлФАнВыпРаб.СпрСотр Set start)
+                this.fСпрСотр = value;
+                // *** Start programmer edit section *** (ПлФАнВыпРаб.СпрСотр Set end)
+
+                // *** End programmer edit section *** (ПлФАнВыпРаб.СпрСотр Set end)
             }
         }
         

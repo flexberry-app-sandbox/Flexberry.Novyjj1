@@ -20,21 +20,23 @@ CREATE TABLE "ПлФАнВыпРаб"
 
 	"primaryKey" RAW(16) NOT NULL,
 
-	"ВсегоОб" FLOAT(53) NULL,
-
-	"ПланСум" FLOAT(53) NULL,
+	"ВыпСум" FLOAT(53) NULL,
 
 	"ВсегоСум" FLOAT(53) NULL,
 
 	"ПланОб" FLOAT(53) NULL,
 
-	"РеализовОб" FLOAT(53) NULL,
+	"ВыпОб" FLOAT(53) NULL,
+
+	"ВсегоОб" FLOAT(53) NULL,
+
+	"ПланСум" FLOAT(53) NULL,
 
 	"РеализоСум" FLOAT(53) NULL,
 
-	"ВыпОб" FLOAT(53) NULL,
+	"РеализовОб" FLOAT(53) NULL,
 
-	"ВыпСум" FLOAT(53) NULL,
+	"СпрСотр" RAW(16) NOT NULL,
 
 	 PRIMARY KEY ("primaryKey")
 ) ;
@@ -62,13 +64,15 @@ CREATE TABLE "ЖурУчВыпРаб"
 
 	"primaryKey" RAW(16) NOT NULL,
 
+	"Длит" NUMBER(10) NULL,
+
+	"ПерВыпПо" DATE NULL,
+
 	"ВыпОбРаб" FLOAT(53) NULL,
 
 	"ПерВыпС" DATE NULL,
 
-	"ПерВыпПо" DATE NULL,
-
-	"Длит" NUMBER(10) NULL,
+	"СпрСотр" RAW(16) NOT NULL,
 
 	 PRIMARY KEY ("primaryKey")
 ) ;
@@ -179,15 +183,17 @@ CREATE TABLE "ОтОРасОсМат"
 
 	"primaryKey" RAW(16) NOT NULL,
 
+	"КолПоАкт" FLOAT(53) NULL,
+
 	"ОбРабПоСм" FLOAT(53) NULL,
 
 	"НормРасх" FLOAT(53) NULL,
 
-	"КолПоСме" FLOAT(53) NULL,
-
 	"ОстПоСмет" FLOAT(53) NULL,
 
-	"КолПоАкт" FLOAT(53) NULL,
+	"КолПоСме" FLOAT(53) NULL,
+
+	"СпрСотр" RAW(16) NOT NULL,
 
 	 PRIMARY KEY ("primaryKey")
 ) ;
@@ -451,6 +457,16 @@ CREATE TABLE "ApplicationLog"
 
 
 
+ALTER TABLE "ПлФАнВыпРаб"
+	ADD CONSTRAINT "ПлФАнВыпРаб_F_7078" FOREIGN KEY ("СпрСотр") REFERENCES "СпрСотр" ("primaryKey");
+
+CREATE INDEX "ПлФАнВыпРаб_I_6016" on "ПлФАнВыпРаб" ("СпрСотр");
+
+ALTER TABLE "ЖурУчВыпРаб"
+	ADD CONSTRAINT "ЖурУчВыпРаб_F_3605" FOREIGN KEY ("СпрСотр") REFERENCES "СпрСотр" ("primaryKey");
+
+CREATE INDEX "ЖурУчВыпРаб_I_2347" on "ЖурУчВыпРаб" ("СпрСотр");
+
 ALTER TABLE "СпрСотр"
 	ADD CONSTRAINT "СпрСотр_FДолж_4392" FOREIGN KEY ("Должности") REFERENCES "Должности" ("primaryKey");
 
@@ -465,6 +481,11 @@ ALTER TABLE "АктВыпРаб"
 	ADD CONSTRAINT "АктВыпРаб_FСп_8214" FOREIGN KEY ("СпрСотр") REFERENCES "СпрСотр" ("primaryKey");
 
 CREATE INDEX "АктВыпРаб_IСп_5470" on "АктВыпРаб" ("СпрСотр");
+
+ALTER TABLE "ОтОРасОсМат"
+	ADD CONSTRAINT "ОтОРасОсМат_F_5315" FOREIGN KEY ("СпрСотр") REFERENCES "СпрСотр" ("primaryKey");
+
+CREATE INDEX "ОтОРасОсМат_I_4943" on "ОтОРасОсМат" ("СпрСотр");
 
 ALTER TABLE "ТЧАкт"
 	ADD CONSTRAINT "ТЧАкт_FАктВып_6821" FOREIGN KEY ("АктВыпРаб") REFERENCES "АктВыпРаб" ("primaryKey");

@@ -7,6 +7,7 @@ import Novyjj1.utils.UUIDConverter;
 import javax.persistence.*;
 import java.util.UUID;
 
+import com.sap.olingo.jpa.metadata.core.edm.annotation.EdmIgnore;
 import java.util.Date;
 
 /**
@@ -22,17 +23,27 @@ public class ZHurUchVypRab {
     @Column(name = "primarykey", length = 16, unique = true, nullable = false)
     private UUID primarykey;
 
+    @Column(name = "Длит")
+    private Integer длит;
+
+    @Column(name = "ПерВыпПо")
+    private Date первыппо;
+
     @Column(name = "ВыпОбРаб")
     private Float выпобраб;
 
     @Column(name = "ПерВыпС")
     private Date первыпс;
 
-    @Column(name = "ПерВыпПо")
-    private Date первыппо;
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "SprSotr")
+    @Convert("SprSotr")
+    @Column(name = "СпрСотр", length = 16, unique = true, nullable = false)
+    private UUID _sprsotrid;
 
-    @Column(name = "Длит")
-    private Integer длит;
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "SprSotr", insertable = false, updatable = false)
+    private SprSotr sprsotr;
 
 
     public ZHurUchVypRab() {
@@ -45,6 +56,22 @@ public class ZHurUchVypRab {
 
     public UUID getPrimarykey() {
         return primarykey;
+    }
+
+    public Integer getДлит() {
+      return длит;
+    }
+
+    public void setДлит(Integer длит) {
+      this.длит = длит;
+    }
+
+    public Date getПерВыпПо() {
+      return первыппо;
+    }
+
+    public void setПерВыпПо(Date первыппо) {
+      this.первыппо = первыппо;
     }
 
     public Float getВыпОбРаб() {
@@ -61,22 +88,6 @@ public class ZHurUchVypRab {
 
     public void setПерВыпС(Date первыпс) {
       this.первыпс = первыпс;
-    }
-
-    public Date getПерВыпПо() {
-      return первыппо;
-    }
-
-    public void setПерВыпПо(Date первыппо) {
-      this.первыппо = первыппо;
-    }
-
-    public Integer getДлит() {
-      return длит;
-    }
-
-    public void setДлит(Integer длит) {
-      this.длит = длит;
     }
 
 

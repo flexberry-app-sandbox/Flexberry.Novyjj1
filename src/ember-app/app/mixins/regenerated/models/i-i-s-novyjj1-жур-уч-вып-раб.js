@@ -8,7 +8,8 @@ export let Model = Mixin.create({
   выпОбРаб: DS.attr('decimal'),
   длит: DS.attr('number'),
   перВыпПо: DS.attr('date'),
-  перВыпС: DS.attr('date')
+  перВыпС: DS.attr('date'),
+  спрСотр: DS.belongsTo('i-i-s-novyjj1-спр-сотр', { inverse: null, async: false })
 });
 
 export let ValidationRules = {
@@ -40,6 +41,13 @@ export let ValidationRules = {
       validator('date'),
     ],
   },
+  спрСотр: {
+    descriptionKey: 'models.i-i-s-novyjj1-жур-уч-вып-раб.validations.спрСотр.__caption__',
+    validators: [
+      validator('ds-error'),
+      validator('presence', true),
+    ],
+  },
 };
 
 export let defineProjections = function (modelClass) {
@@ -47,13 +55,19 @@ export let defineProjections = function (modelClass) {
     выпОбРаб: attr('Выполнение объема работ', { index: 0 }),
     перВыпС: attr('Дата начала выполнения работ', { index: 1 }),
     перВыпПо: attr('Дата окончания выполнения работ', { index: 2 }),
-    длит: attr('Длительность', { index: 3 })
+    длит: attr('Длительность', { index: 3 }),
+    спрСотр: belongsTo('i-i-s-novyjj1-спр-сотр', 'Сотрудник', {
+      фИО: attr('Сотрудник', { index: 5 })
+    }, { index: 4 })
   });
 
   modelClass.defineProjection('ЖурУчВыпРабL', 'i-i-s-novyjj1-жур-уч-вып-раб', {
     выпОбРаб: attr('Выполнение объема работ', { index: 0 }),
     перВыпС: attr('Дата начала выполнения работ', { index: 1 }),
     перВыпПо: attr('Дата окончания выполнения работ', { index: 2 }),
-    длит: attr('Длительность', { index: 3 })
+    длит: attr('Длительность', { index: 3 }),
+    спрСотр: belongsTo('i-i-s-novyjj1-спр-сотр', 'Сотрудник', {
+      фИО: attr('Сотрудник', { index: 4 })
+    }, { index: -1, hidden: true })
   });
 };

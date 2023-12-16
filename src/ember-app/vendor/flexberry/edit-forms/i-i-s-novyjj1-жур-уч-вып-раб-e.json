@@ -1,5 +1,14 @@
 ﻿{
-  "propertyLookup": [],
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "СпрСотр",
+      "projection": "СпрСотрL",
+      "detailModelName": null
+    }
+  ],
   "external": false,
   "caption": "Журнал учета выполнения работа",
   "name": "IISNovyjj1ЖурУчВыпРабE",

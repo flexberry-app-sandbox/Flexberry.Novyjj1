@@ -33,22 +33,27 @@ namespace IIS.Novyjj1
             "ВыпОбРаб as \'Выполнение объема работ\'",
             "ПерВыпС as \'Дата начала выполнения работ\'",
             "ПерВыпПо as \'Дата окончания выполнения работ\'",
-            "Длит as \'Длительность\'"})]
+            "Длит as \'Длительность\'",
+            "СпрСотр as \'Сотрудник\'",
+            "СпрСотр.ФИО as \'Сотрудник\'"})]
     [View("ЖурУчВыпРабL", new string[] {
             "ВыпОбРаб as \'Выполнение объема работ\'",
             "ПерВыпС as \'Дата начала выполнения работ\'",
             "ПерВыпПо as \'Дата окончания выполнения работ\'",
-            "Длит as \'Длительность\'"})]
+            "Длит as \'Длительность\'",
+            "СпрСотр.ФИО as \'Сотрудник\'"})]
     public class ЖурУчВыпРаб : ICSSoft.STORMNET.DataObject
     {
+        
+        private int fДлит;
+        
+        private System.DateTime fПерВыпПо;
         
         private float fВыпОбРаб;
         
         private System.DateTime fПерВыпС;
         
-        private System.DateTime fПерВыпПо;
-        
-        private int fДлит;
+        private IIS.Novyjj1.СпрСотр fСпрСотр;
         
         // *** Start programmer edit section *** (ЖурУчВыпРаб CustomMembers)
 
@@ -176,6 +181,40 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (ЖурУчВыпРаб.ПерВыпС Set end)
 
                 // *** End programmer edit section *** (ЖурУчВыпРаб.ПерВыпС Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Жур уч вып раб.
+        /// </summary>
+        // *** Start programmer edit section *** (ЖурУчВыпРаб.СпрСотр CustomAttributes)
+
+        // *** End programmer edit section *** (ЖурУчВыпРаб.СпрСотр CustomAttributes)
+        [PropertyStorage(new string[] {
+                "СпрСотр"})]
+        [NotNull()]
+        public virtual IIS.Novyjj1.СпрСотр СпрСотр
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ЖурУчВыпРаб.СпрСотр Get start)
+
+                // *** End programmer edit section *** (ЖурУчВыпРаб.СпрСотр Get start)
+                IIS.Novyjj1.СпрСотр result = this.fСпрСотр;
+                // *** Start programmer edit section *** (ЖурУчВыпРаб.СпрСотр Get end)
+
+                // *** End programmer edit section *** (ЖурУчВыпРаб.СпрСотр Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ЖурУчВыпРаб.СпрСотр Set start)
+
+                // *** End programmer edit section *** (ЖурУчВыпРаб.СпрСотр Set start)
+                this.fСпрСотр = value;
+                // *** Start programmer edit section *** (ЖурУчВыпРаб.СпрСотр Set end)
+
+                // *** End programmer edit section *** (ЖурУчВыпРаб.СпрСотр Set end)
             }
         }
         

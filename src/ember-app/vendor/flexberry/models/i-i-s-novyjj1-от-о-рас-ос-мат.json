@@ -52,7 +52,15 @@
       "ordered": false
     }
   ],
-  "belongsTo": [],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "спрСотр",
+      "relatedTo": "i-i-s-novyjj1-спр-сотр",
+      "inverse": null
+    }
+  ],
   "hasMany": [],
   "projections": [
     {
@@ -90,7 +98,29 @@
           "index": 4
         }
       ],
-      "belongsTo": [],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "СпрСотр",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "Сотрудник",
+              "hidden": false,
+              "index": 6
+            }
+          ],
+          "index": 5,
+          "type": "default",
+          "caption": "Сотрудник",
+          "name": "спрСотр",
+          "relatedTo": "i-i-s-novyjj1-спр-сотр",
+          "inverse": null
+        }
+      ],
       "hasMany": []
     },
     {
@@ -128,7 +158,29 @@
           "index": 4
         }
       ],
-      "belongsTo": [],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "СпрСотр",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "Сотрудник",
+              "hidden": false,
+              "index": 5
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Сотрудник",
+          "name": "спрСотр",
+          "relatedTo": "i-i-s-novyjj1-спр-сотр",
+          "inverse": null
+        }
+      ],
       "hasMany": []
     }
   ],
