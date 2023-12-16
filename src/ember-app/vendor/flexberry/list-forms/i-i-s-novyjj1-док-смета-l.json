@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-novyjj1-док-смета-e",
+  "editForm": "i-i-s-novyjj1-док-смета-e",
+  "external": false,
+  "caption": "Документ смета",
+  "name": "IISNovyjj1ДокСметаL",
+  "className": "ДокСметаL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-док-смета",
+      "modelProjection": "ДокСметаL"
+    }
+  ]
+}

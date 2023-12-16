@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-novyjj1-от-о-рас-ос-мат-e",
+  "editForm": "i-i-s-novyjj1-от-о-рас-ос-мат-e",
+  "external": false,
+  "caption": "Отчет о расходах основных материалов",
+  "name": "IISNovyjj1ОтОРасОсМатL",
+  "className": "ОтОРасОсМатL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-от-о-рас-ос-мат",
+      "modelProjection": "ОтОРасОсМатL"
+    }
+  ]
+}

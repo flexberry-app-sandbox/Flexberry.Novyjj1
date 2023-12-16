@@ -1,0 +1,96 @@
+﻿{
+  "name": "IISNovyjj1ТЧСметы",
+  "modelName": "i-i-s-novyjj1-т-ч-сметы",
+  "className": "ТЧСметы",
+  "nameSpace": "IIS.Novyjj1",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "стМонтРаб",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "стОборуд",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "стСтроиРаб",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ТЧСметыE",
+      "modelName": "i-i-s-novyjj1-т-ч-сметы",
+      "attrs": [
+        {
+          "name": "стСтроиРаб",
+          "caption": "Стоимость строительных работ",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "стМонтРаб",
+          "caption": "Стоимость монтажных работ",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "стОборуд",
+          "caption": "Стоимость оборудования",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "ТЧСметыL",
+      "modelName": "i-i-s-novyjj1-т-ч-сметы",
+      "attrs": [
+        {
+          "name": "стСтроиРаб",
+          "caption": "Ст строи раб",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "стМонтРаб",
+          "caption": "Ст монт раб",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "стОборуд",
+          "caption": "Ст оборуд",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

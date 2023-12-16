@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Справочник сотрудники",
+  "name": "IISNovyjj1СпрСотрE",
+  "className": "СпрСотрE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-спр-сотр",
+      "modelProjection": "СпрСотрE"
+    }
+  ]
+}

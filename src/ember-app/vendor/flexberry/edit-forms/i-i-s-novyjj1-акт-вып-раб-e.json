@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Акт выполнения работ",
+  "name": "IISNovyjj1АктВыпРабE",
+  "className": "АктВыпРабE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-акт-вып-раб",
+      "modelProjection": "АктВыпРабE"
+    }
+  ]
+}

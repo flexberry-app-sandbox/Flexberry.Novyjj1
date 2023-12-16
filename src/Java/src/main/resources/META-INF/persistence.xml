@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistencehttp://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="Olingo4PG">
+        <class>Novyjj1.model.Dolzhnosti</class>
+        <class>Novyjj1.model.PlFAnVypRab</class>
+        <class>Novyjj1.model.PlanirovSMR</class>
+        <class>Novyjj1.model.ZHurUchVypRab</class>
+        <class>Novyjj1.model.ByudStroi</class>
+        <class>Novyjj1.model.Nomenklatura</class>
+        <class>Novyjj1.model.SprKontrag</class>
+        <class>Novyjj1.model.SprSotr</class>
+        <class>Novyjj1.model.TCHSmety</class>
+        <class>Novyjj1.model.AktVypRab</class>
+        <class>Novyjj1.model.OtORasOsMat</class>
+        <class>Novyjj1.model.EdIzmer</class>
+        <class>Novyjj1.model.TCHAkt</class>
+        <class>Novyjj1.model.DokSmeta</class>
+        <class>Novyjj1.model.DokUslovDog</class>
+        <class>Novyjj1.model.FlexberryAdvLimit</class>
+        <class>Novyjj1.model.NewPlatformFlexberryFlexberryUserSetting</class>
+        <class>Novyjj1.model.NewPlatformFlexberryServicesLock</class>
+        <class>Novyjj1.model.IISCaseberryLoggingObjectsApplicationLog</class>
+
+    </persistence-unit>
+</persistence>

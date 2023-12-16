@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Планирование СМР",
+  "name": "IISNovyjj1ПланировСМРE",
+  "className": "ПланировСМРE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-планиров-с-м-р",
+      "modelProjection": "ПланировСМРE"
+    }
+  ]
+}

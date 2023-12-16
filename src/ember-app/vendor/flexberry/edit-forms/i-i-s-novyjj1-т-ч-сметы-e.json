@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Т ч сметы",
+  "name": "IISNovyjj1ТЧСметыE",
+  "className": "ТЧСметыE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-т-ч-сметы",
+      "modelProjection": "ТЧСметыE"
+    }
+  ]
+}

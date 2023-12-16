@@ -1,0 +1,57 @@
+<h3 class="ui header">{{t "forms.i-i-s-novyjj1-т-ч-сметы-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.стСтроиРаб
+      class=(if (v-get validationModel "стСтроиРаб" "isInvalid") "error")
+      label=(t "forms.i-i-s-novyjj1-т-ч-сметы-e.стСтроиРаб-caption")
+      data-test-i-i-s-novyjj1-т-ч-сметы-e-стСтроиРаб=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "стСтроиРаб" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.стМонтРаб
+      class=(if (v-get validationModel "стМонтРаб" "isInvalid") "error")
+      label=(t "forms.i-i-s-novyjj1-т-ч-сметы-e.стМонтРаб-caption")
+      data-test-i-i-s-novyjj1-т-ч-сметы-e-стМонтРаб=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "стМонтРаб" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.стОборуд
+      class=(if (v-get validationModel "стОборуд" "isInvalid") "error")
+      label=(t "forms.i-i-s-novyjj1-т-ч-сметы-e.стОборуд-caption")
+      data-test-i-i-s-novyjj1-т-ч-сметы-e-стОборуд=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "стОборуд" "message")}}
+  </div>
+</form>

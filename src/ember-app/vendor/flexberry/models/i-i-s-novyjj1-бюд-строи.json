@@ -1,0 +1,159 @@
+﻿{
+  "name": "IISNovyjj1БюдСтрои",
+  "modelName": "i-i-s-novyjj1-бюд-строи",
+  "className": "БюдСтрои",
+  "nameSpace": "IIS.Novyjj1",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "базСт",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "длите",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "начРаб",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "объем",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "окоРаб",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "стоимИто",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "БюдСтроиE",
+      "modelName": "i-i-s-novyjj1-бюд-строи",
+      "attrs": [
+        {
+          "name": "объем",
+          "caption": "Объем",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "начРаб",
+          "caption": "Начала работ",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "окоРаб",
+          "caption": "Окончания работ",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "длите",
+          "caption": "Длительность",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "базСт",
+          "caption": "Базовая стоимость",
+          "hidden": false,
+          "index": 4
+        },
+        {
+          "name": "стоимИто",
+          "caption": "Стоимость итого",
+          "hidden": false,
+          "index": 5
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "БюдСтроиL",
+      "modelName": "i-i-s-novyjj1-бюд-строи",
+      "attrs": [
+        {
+          "name": "объем",
+          "caption": "Объем",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "начРаб",
+          "caption": "Начало работ",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "окоРаб",
+          "caption": "Окончания работ",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "длите",
+          "caption": "Длительность",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "базСт",
+          "caption": "Базовая стоимость",
+          "hidden": false,
+          "index": 4
+        },
+        {
+          "name": "стоимИто",
+          "caption": "Стоимость итого",
+          "hidden": false,
+          "index": 5
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

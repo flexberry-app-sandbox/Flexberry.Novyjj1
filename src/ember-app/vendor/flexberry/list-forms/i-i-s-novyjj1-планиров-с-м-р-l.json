@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-novyjj1-планиров-с-м-р-e",
+  "editForm": "i-i-s-novyjj1-планиров-с-м-р-e",
+  "external": false,
+  "caption": "Планирование СМР",
+  "name": "IISNovyjj1ПланировСМРL",
+  "className": "ПланировСМРL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-планиров-с-м-р",
+      "modelProjection": "ПланировСМРL"
+    }
+  ]
+}

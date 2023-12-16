@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Документ бюджет строительства",
+  "name": "IISNovyjj1БюдСтроиE",
+  "className": "БюдСтроиE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-бюд-строи",
+      "modelProjection": "БюдСтроиE"
+    }
+  ]
+}

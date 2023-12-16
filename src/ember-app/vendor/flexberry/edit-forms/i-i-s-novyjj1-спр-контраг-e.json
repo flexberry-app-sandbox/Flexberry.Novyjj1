@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Справочник контрагенты",
+  "name": "IISNovyjj1СпрКонтрагE",
+  "className": "СпрКонтрагE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-спр-контраг",
+      "modelProjection": "СпрКонтрагE"
+    }
+  ]
+}

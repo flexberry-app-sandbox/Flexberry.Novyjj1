@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-novyjj1-спр-сотр-e",
+  "editForm": "i-i-s-novyjj1-спр-сотр-e",
+  "external": false,
+  "caption": "Справочник сотрудники",
+  "name": "IISNovyjj1СпрСотрL",
+  "className": "СпрСотрL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-спр-сотр",
+      "modelProjection": "СпрСотрL"
+    }
+  ]
+}

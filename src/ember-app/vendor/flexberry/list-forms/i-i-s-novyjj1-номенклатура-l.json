@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-novyjj1-номенклатура-e",
+  "editForm": "i-i-s-novyjj1-номенклатура-e",
+  "external": false,
+  "caption": "Справочник номенклатура",
+  "name": "IISNovyjj1НоменклатураL",
+  "className": "НоменклатураL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-номенклатура",
+      "modelProjection": "НоменклатураL"
+    }
+  ]
+}

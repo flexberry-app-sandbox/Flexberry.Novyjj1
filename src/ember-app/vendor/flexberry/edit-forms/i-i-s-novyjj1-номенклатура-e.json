@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Справочник номенклатура",
+  "name": "IISNovyjj1НоменклатураE",
+  "className": "НоменклатураE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-номенклатура",
+      "modelProjection": "НоменклатураE"
+    }
+  ]
+}

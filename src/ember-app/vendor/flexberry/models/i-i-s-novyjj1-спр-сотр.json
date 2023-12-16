@@ -1,0 +1,75 @@
+﻿{
+  "name": "IISNovyjj1СпрСотр",
+  "modelName": "i-i-s-novyjj1-спр-сотр",
+  "className": "СпрСотр",
+  "nameSpace": "IIS.Novyjj1",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "iDСотр",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "фИО",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "СпрСотрE",
+      "modelName": "i-i-s-novyjj1-спр-сотр",
+      "attrs": [
+        {
+          "name": "фИО",
+          "caption": "ФИО",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "iDСотр",
+          "caption": "ID Сотрудника",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "СпрСотрL",
+      "modelName": "i-i-s-novyjj1-спр-сотр",
+      "attrs": [
+        {
+          "name": "фИО",
+          "caption": "ФИО",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "iDСотр",
+          "caption": "ID Сотрудника",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

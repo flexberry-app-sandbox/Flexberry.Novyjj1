@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Отчет о расходах основных материалов",
+  "name": "IISNovyjj1ОтОРасОсМатE",
+  "className": "ОтОРасОсМатE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-от-о-рас-ос-мат",
+      "modelProjection": "ОтОРасОсМатE"
+    }
+  ]
+}

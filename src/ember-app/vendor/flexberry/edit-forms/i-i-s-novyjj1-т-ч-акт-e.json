@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Т ч акт",
+  "name": "IISNovyjj1ТЧАктE",
+  "className": "ТЧАктE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-т-ч-акт",
+      "modelProjection": "ТЧАктE"
+    }
+  ]
+}

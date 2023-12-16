@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-novyjj1-должности-e",
+  "editForm": "i-i-s-novyjj1-должности-e",
+  "external": false,
+  "caption": "Справочник должности",
+  "name": "IISNovyjj1ДолжностиL",
+  "className": "ДолжностиL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-должности",
+      "modelProjection": "ДолжностиL"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+﻿{
+  "name": "IISNovyjj1ДокУсловДог",
+  "modelName": "i-i-s-novyjj1-док-услов-дог",
+  "className": "ДокУсловДог",
+  "nameSpace": "IIS.Novyjj1",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "датаНач",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "датаОконч",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "длительн",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "объем",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ДокУсловДогE",
+      "modelName": "i-i-s-novyjj1-док-услов-дог",
+      "attrs": [
+        {
+          "name": "объем",
+          "caption": "Объем",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "датаНач",
+          "caption": "Дата начала",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "датаОконч",
+          "caption": "Дата окончания",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "длительн",
+          "caption": "Длительность",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "ДокУсловДогL",
+      "modelName": "i-i-s-novyjj1-док-услов-дог",
+      "attrs": [
+        {
+          "name": "объем",
+          "caption": "Объем",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "датаНач",
+          "caption": "Дата начала",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "датаОконч",
+          "caption": "Дата окончания",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "длительн",
+          "caption": "Длительность",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

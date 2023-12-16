@@ -1,0 +1,54 @@
+﻿{
+  "name": "IISNovyjj1АктВыпРаб",
+  "modelName": "i-i-s-novyjj1-акт-вып-раб",
+  "className": "АктВыпРаб",
+  "nameSpace": "IIS.Novyjj1",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "общСтоим",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "АктВыпРабE",
+      "modelName": "i-i-s-novyjj1-акт-вып-раб",
+      "attrs": [
+        {
+          "name": "общСтоим",
+          "caption": "Общая стоимость",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "АктВыпРабL",
+      "modelName": "i-i-s-novyjj1-акт-вып-раб",
+      "attrs": [
+        {
+          "name": "общСтоим",
+          "caption": "Общая стоимость",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

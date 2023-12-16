@@ -1,0 +1,75 @@
+﻿{
+  "name": "IISNovyjj1ДокСмета",
+  "modelName": "i-i-s-novyjj1-док-смета",
+  "className": "ДокСмета",
+  "nameSpace": "IIS.Novyjj1",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "номСмеРас",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "общСметСт",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ДокСметаE",
+      "modelName": "i-i-s-novyjj1-док-смета",
+      "attrs": [
+        {
+          "name": "номСмеРас",
+          "caption": "Номер сметных расчетов",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "общСметСт",
+          "caption": "Общая сметная стоимость",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "ДокСметаL",
+      "modelName": "i-i-s-novyjj1-док-смета",
+      "attrs": [
+        {
+          "name": "номСмеРас",
+          "caption": "Номер сметных расчетов",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "общСметСт",
+          "caption": "Общая сметная стоимость",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

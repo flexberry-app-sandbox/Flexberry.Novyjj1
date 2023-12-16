@@ -1,0 +1,138 @@
+﻿{
+  "name": "IISNovyjj1ОтОРасОсМат",
+  "modelName": "i-i-s-novyjj1-от-о-рас-ос-мат",
+  "className": "ОтОРасОсМат",
+  "nameSpace": "IIS.Novyjj1",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "колПоАкт",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "колПоСме",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "нормРасх",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "обРабПоСм",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "остПоСмет",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ОтОРасОсМатE",
+      "modelName": "i-i-s-novyjj1-от-о-рас-ос-мат",
+      "attrs": [
+        {
+          "name": "нормРасх",
+          "caption": "Норма расхода",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "колПоАкт",
+          "caption": "Количество по актам",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "колПоСме",
+          "caption": "Количество по смете",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "обРабПоСм",
+          "caption": "Объем работ по смете",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "остПоСмет",
+          "caption": "Остаток по смете",
+          "hidden": false,
+          "index": 4
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "ОтОРасОсМатL",
+      "modelName": "i-i-s-novyjj1-от-о-рас-ос-мат",
+      "attrs": [
+        {
+          "name": "нормРасх",
+          "caption": "Норма расхода",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "колПоАкт",
+          "caption": "Количество по актам",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "колПоСме",
+          "caption": "Количество по смете",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "обРабПоСм",
+          "caption": "Объем работ по смете",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "остПоСмет",
+          "caption": "Остаток по смете",
+          "hidden": false,
+          "index": 4
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

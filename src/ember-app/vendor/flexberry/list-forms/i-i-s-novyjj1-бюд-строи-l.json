@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-novyjj1-бюд-строи-e",
+  "editForm": "i-i-s-novyjj1-бюд-строи-e",
+  "external": false,
+  "caption": "Бюджет стротельства",
+  "name": "IISNovyjj1БюдСтроиL",
+  "className": "БюдСтроиL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-бюд-строи",
+      "modelProjection": "БюдСтроиL"
+    }
+  ]
+}

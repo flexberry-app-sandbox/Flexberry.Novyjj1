@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Журнал учета выполнения работа",
+  "name": "IISNovyjj1ЖурУчВыпРабE",
+  "className": "ЖурУчВыпРабE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-жур-уч-вып-раб",
+      "modelProjection": "ЖурУчВыпРабE"
+    }
+  ]
+}

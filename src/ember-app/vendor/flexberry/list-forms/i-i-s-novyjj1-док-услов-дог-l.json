@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-novyjj1-док-услов-дог-e",
+  "editForm": "i-i-s-novyjj1-док-услов-дог-e",
+  "external": false,
+  "caption": "Документ условия договора",
+  "name": "IISNovyjj1ДокУсловДогL",
+  "className": "ДокУсловДогL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-док-услов-дог",
+      "modelProjection": "ДокУсловДогL"
+    }
+  ]
+}

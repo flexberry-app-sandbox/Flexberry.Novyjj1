@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-novyjj1-жур-уч-вып-раб-e",
+  "editForm": "i-i-s-novyjj1-жур-уч-вып-раб-e",
+  "external": false,
+  "caption": "Журнал учета выполнения работ",
+  "name": "IISNovyjj1ЖурУчВыпРабL",
+  "className": "ЖурУчВыпРабL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-жур-уч-вып-раб",
+      "modelProjection": "ЖурУчВыпРабL"
+    }
+  ]
+}

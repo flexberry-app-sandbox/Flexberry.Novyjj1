@@ -1,0 +1,117 @@
+﻿{
+  "name": "IISNovyjj1ЖурУчВыпРаб",
+  "modelName": "i-i-s-novyjj1-жур-уч-вып-раб",
+  "className": "ЖурУчВыпРаб",
+  "nameSpace": "IIS.Novyjj1",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "выпОбРаб",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "длит",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "перВыпПо",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "перВыпС",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ЖурУчВыпРабE",
+      "modelName": "i-i-s-novyjj1-жур-уч-вып-раб",
+      "attrs": [
+        {
+          "name": "выпОбРаб",
+          "caption": "Выполнение объема работ",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "перВыпС",
+          "caption": "Дата начала выполнения работ",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "перВыпПо",
+          "caption": "Дата окончания выполнения работ",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "длит",
+          "caption": "Длительность",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "ЖурУчВыпРабL",
+      "modelName": "i-i-s-novyjj1-жур-уч-вып-раб",
+      "attrs": [
+        {
+          "name": "выпОбРаб",
+          "caption": "Выполнение объема работ",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "перВыпС",
+          "caption": "Дата начала выполнения работ",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "перВыпПо",
+          "caption": "Дата окончания выполнения работ",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "длит",
+          "caption": "Длительность",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

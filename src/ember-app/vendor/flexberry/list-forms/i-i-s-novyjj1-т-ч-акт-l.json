@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-novyjj1-т-ч-акт-e",
+  "editForm": "i-i-s-novyjj1-т-ч-акт-e",
+  "external": false,
+  "caption": "Т ч акт",
+  "name": "IISNovyjj1ТЧАктL",
+  "className": "ТЧАктL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-т-ч-акт",
+      "modelProjection": "ТЧАктL"
+    }
+  ]
+}

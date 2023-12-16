@@ -1,0 +1,107 @@
+<h3 class="ui header">{{t "forms.i-i-s-novyjj1-пл-ф-ан-вып-раб-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.планОб
+      class=(if (v-get validationModel "планОб" "isInvalid") "error")
+      label=(t "forms.i-i-s-novyjj1-пл-ф-ан-вып-раб-e.планОб-caption")
+      data-test-i-i-s-novyjj1-пл-ф-ан-вып-раб-e-планОб=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "планОб" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.планСум
+      class=(if (v-get validationModel "планСум" "isInvalid") "error")
+      label=(t "forms.i-i-s-novyjj1-пл-ф-ан-вып-раб-e.планСум-caption")
+      data-test-i-i-s-novyjj1-пл-ф-ан-вып-раб-e-планСум=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "планСум" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.реализовОб
+      class=(if (v-get validationModel "реализовОб" "isInvalid") "error")
+      label=(t "forms.i-i-s-novyjj1-пл-ф-ан-вып-раб-e.реализовОб-caption")
+      data-test-i-i-s-novyjj1-пл-ф-ан-вып-раб-e-реализовОб=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "реализовОб" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.реализоСум
+      class=(if (v-get validationModel "реализоСум" "isInvalid") "error")
+      label=(t "forms.i-i-s-novyjj1-пл-ф-ан-вып-раб-e.реализоСум-caption")
+      data-test-i-i-s-novyjj1-пл-ф-ан-вып-раб-e-реализоСум=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "реализоСум" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.выпОб
+      class=(if (v-get validationModel "выпОб" "isInvalid") "error")
+      label=(t "forms.i-i-s-novyjj1-пл-ф-ан-вып-раб-e.выпОб-caption")
+      data-test-i-i-s-novyjj1-пл-ф-ан-вып-раб-e-выпОб=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "выпОб" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.выпСум
+      class=(if (v-get validationModel "выпСум" "isInvalid") "error")
+      label=(t "forms.i-i-s-novyjj1-пл-ф-ан-вып-раб-e.выпСум-caption")
+      data-test-i-i-s-novyjj1-пл-ф-ан-вып-раб-e-выпСум=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "выпСум" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.всегоОб
+      class=(if (v-get validationModel "всегоОб" "isInvalid") "error")
+      label=(t "forms.i-i-s-novyjj1-пл-ф-ан-вып-раб-e.всегоОб-caption")
+      data-test-i-i-s-novyjj1-пл-ф-ан-вып-раб-e-всегоОб=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "всегоОб" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.всегоСум
+      class=(if (v-get validationModel "всегоСум" "isInvalid") "error")
+      label=(t "forms.i-i-s-novyjj1-пл-ф-ан-вып-раб-e.всегоСум-caption")
+      data-test-i-i-s-novyjj1-пл-ф-ан-вып-раб-e-всегоСум=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "всегоСум" "message")}}
+  </div>
+</form>

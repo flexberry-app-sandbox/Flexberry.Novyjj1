@@ -1,0 +1,69 @@
+<h3 class="ui header">{{t "forms.i-i-s-novyjj1-жур-уч-вып-раб-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.выпОбРаб
+      class=(if (v-get validationModel "выпОбРаб" "isInvalid") "error")
+      label=(t "forms.i-i-s-novyjj1-жур-уч-вып-раб-e.выпОбРаб-caption")
+      data-test-i-i-s-novyjj1-жур-уч-вып-раб-e-выпОбРаб=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "выпОбРаб" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-novyjj1-жур-уч-вып-раб-e.перВыпС-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.перВыпС
+      class=(if (v-get validationModel "перВыпС" "isInvalid") "error")
+      data-test-i-i-s-novyjj1-жур-уч-вып-раб-e-перВыпС=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "перВыпС" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-novyjj1-жур-уч-вып-раб-e.перВыпПо-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.перВыпПо
+      class=(if (v-get validationModel "перВыпПо" "isInvalid") "error")
+      data-test-i-i-s-novyjj1-жур-уч-вып-раб-e-перВыпПо=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "перВыпПо" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.длит
+      class=(if (v-get validationModel "длит" "isInvalid") "error")
+      label=(t "forms.i-i-s-novyjj1-жур-уч-вып-раб-e.длит-caption")
+      data-test-i-i-s-novyjj1-жур-уч-вып-раб-e-длит=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "длит" "message")}}
+  </div>
+</form>

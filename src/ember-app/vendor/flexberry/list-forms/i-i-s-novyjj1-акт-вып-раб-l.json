@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-novyjj1-акт-вып-раб-e",
+  "editForm": "i-i-s-novyjj1-акт-вып-раб-e",
+  "external": false,
+  "caption": "Акт выполнения работ",
+  "name": "IISNovyjj1АктВыпРабL",
+  "className": "АктВыпРабL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-акт-вып-раб",
+      "modelProjection": "АктВыпРабL"
+    }
+  ]
+}

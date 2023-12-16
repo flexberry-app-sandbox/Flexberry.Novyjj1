@@ -1,0 +1,75 @@
+﻿{
+  "name": "IISNovyjj1Номенклатура",
+  "modelName": "i-i-s-novyjj1-номенклатура",
+  "className": "Номенклатура",
+  "nameSpace": "IIS.Novyjj1",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "кодНаим",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "наимРабот",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "НоменклатураE",
+      "modelName": "i-i-s-novyjj1-номенклатура",
+      "attrs": [
+        {
+          "name": "кодНаим",
+          "caption": "Код наименования",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "наимРабот",
+          "caption": "Номенклатура",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "НоменклатураL",
+      "modelName": "i-i-s-novyjj1-номенклатура",
+      "attrs": [
+        {
+          "name": "кодНаим",
+          "caption": "Код наименования",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "наимРабот",
+          "caption": "Номенклатура",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

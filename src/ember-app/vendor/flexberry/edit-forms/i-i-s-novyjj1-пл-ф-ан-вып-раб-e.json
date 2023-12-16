@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "План фактный анализ выполнения работ",
+  "name": "IISNovyjj1ПлФАнВыпРабE",
+  "className": "ПлФАнВыпРабE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-пл-ф-ан-вып-раб",
+      "modelProjection": "ПлФАнВыпРабE"
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+﻿{
+  "name": "IISNovyjj1ПлФАнВыпРаб",
+  "modelName": "i-i-s-novyjj1-пл-ф-ан-вып-раб",
+  "className": "ПлФАнВыпРаб",
+  "nameSpace": "IIS.Novyjj1",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "всегоОб",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "всегоСум",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "выпОб",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "выпСум",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "планОб",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "планСум",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "реализовОб",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "реализоСум",
+      "type": "decimal",
+      "flexberryType": "float",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ПлФАнВыпРабE",
+      "modelName": "i-i-s-novyjj1-пл-ф-ан-вып-раб",
+      "attrs": [
+        {
+          "name": "планОб",
+          "caption": "План объем",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "планСум",
+          "caption": "План сумма",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "реализовОб",
+          "caption": "Реализовано объем",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "реализоСум",
+          "caption": "Реализовано сумма",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "выпОб",
+          "caption": "Выполнено объем",
+          "hidden": false,
+          "index": 4
+        },
+        {
+          "name": "выпСум",
+          "caption": "Выполнено сумма",
+          "hidden": false,
+          "index": 5
+        },
+        {
+          "name": "всегоОб",
+          "caption": "Всего объем",
+          "hidden": false,
+          "index": 6
+        },
+        {
+          "name": "всегоСум",
+          "caption": "Всего сумма",
+          "hidden": false,
+          "index": 7
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "ПлФАнВыпРабL",
+      "modelName": "i-i-s-novyjj1-пл-ф-ан-вып-раб",
+      "attrs": [
+        {
+          "name": "планОб",
+          "caption": "План объем",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "планСум",
+          "caption": "План сумма",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "реализовОб",
+          "caption": "Реализовано объем",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "реализоСум",
+          "caption": "Реализовано сумма",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "выпОб",
+          "caption": "Выполнено объем",
+          "hidden": false,
+          "index": 4
+        },
+        {
+          "name": "выпСум",
+          "caption": "Выполнено сумма",
+          "hidden": false,
+          "index": 5
+        },
+        {
+          "name": "всегоОб",
+          "caption": "Всего объем",
+          "hidden": false,
+          "index": 6
+        },
+        {
+          "name": "всегоСум",
+          "caption": "Всего сумма",
+          "hidden": false,
+          "index": 7
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

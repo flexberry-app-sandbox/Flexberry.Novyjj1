@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-novyjj1-ед-измер-e",
+  "editForm": "i-i-s-novyjj1-ед-измер-e",
+  "external": false,
+  "caption": "Справочник единицы измерения",
+  "name": "IISNovyjj1ЕдИзмерL",
+  "className": "ЕдИзмерL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-ед-измер",
+      "modelProjection": "ЕдИзмерL"
+    }
+  ]
+}

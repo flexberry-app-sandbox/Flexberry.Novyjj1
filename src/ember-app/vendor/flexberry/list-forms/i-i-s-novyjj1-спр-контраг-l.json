@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-novyjj1-спр-контраг-e",
+  "editForm": "i-i-s-novyjj1-спр-контраг-e",
+  "external": false,
+  "caption": "Справочник контрагент",
+  "name": "IISNovyjj1СпрКонтрагL",
+  "className": "СпрКонтрагL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-спр-контраг",
+      "modelProjection": "СпрКонтрагL"
+    }
+  ]
+}

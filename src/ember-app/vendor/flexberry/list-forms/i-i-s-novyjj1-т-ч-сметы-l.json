@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-novyjj1-т-ч-сметы-e",
+  "editForm": "i-i-s-novyjj1-т-ч-сметы-e",
+  "external": false,
+  "caption": "Т ч сметы",
+  "name": "IISNovyjj1ТЧСметыL",
+  "className": "ТЧСметыL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-novyjj1-т-ч-сметы",
+      "modelProjection": "ТЧСметыL"
+    }
+  ]
+}
