@@ -33,6 +33,8 @@ CREATE TABLE [ПлФАнВыпРаб] (
 
 	 [РеализоСум] REAL  NULL,
 
+	 [Номенклатура] UNIQUEIDENTIFIER  NOT NULL,
+
 	 [СпрСотр] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
@@ -50,6 +52,8 @@ CREATE TABLE [ПланировСМР] (
 
 	 [КодСДР] INT  NULL,
 
+	 [Номенклатура] UNIQUEIDENTIFIER  NOT NULL,
+
 	 PRIMARY KEY ([primaryKey]))
 
 
@@ -64,6 +68,8 @@ CREATE TABLE [ЖурУчВыпРаб] (
 	 [ПерВыпПо] DATETIME  NULL,
 
 	 [ПерВыпС] DATETIME  NULL,
+
+	 [Номенклатура] UNIQUEIDENTIFIER  NOT NULL,
 
 	 [СпрСотр] UNIQUEIDENTIFIER  NOT NULL,
 
@@ -87,6 +93,8 @@ CREATE TABLE [БюдСтрои] (
 	 [СтоимИто] REAL  NULL,
 
 	 [ЕдИзмер] UNIQUEIDENTIFIER  NOT NULL,
+
+	 [Номенклатура] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
 
@@ -155,6 +163,8 @@ CREATE TABLE [АктВыпРаб] (
 
 	 [ОбщСтоим] REAL  NULL,
 
+	 [Номенклатура] UNIQUEIDENTIFIER  NOT NULL,
+
 	 [СпрКонтраг] UNIQUEIDENTIFIER  NOT NULL,
 
 	 [СпрСотр] UNIQUEIDENTIFIER  NOT NULL,
@@ -177,6 +187,8 @@ CREATE TABLE [ОтОРасОсМат] (
 	 [ОстПоСмет] REAL  NULL,
 
 	 [ЕдИзмер] UNIQUEIDENTIFIER  NOT NULL,
+
+	 [Номенклатура] UNIQUEIDENTIFIER  NOT NULL,
 
 	 [СпрСотр] UNIQUEIDENTIFIER  NOT NULL,
 
@@ -221,6 +233,8 @@ CREATE TABLE [ДокСмета] (
 
 	 [ЕдИзмер] UNIQUEIDENTIFIER  NOT NULL,
 
+	 [Номенклатура] UNIQUEIDENTIFIER  NOT NULL,
+
 	 [СпрКонтраг] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
@@ -237,6 +251,8 @@ CREATE TABLE [ДокУсловДог] (
 	 [Длительн] INT  NULL,
 
 	 [Объем] REAL  NULL,
+
+	 [Номенклатура] UNIQUEIDENTIFIER  NOT NULL,
 
 	 [СпрКонтраг] UNIQUEIDENTIFIER  NOT NULL,
 

@@ -47,6 +47,13 @@
     {
       "polymorphic": false,
       "presence": true,
+      "name": "номенклатура",
+      "relatedTo": "i-i-s-novyjj1-номенклатура",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
       "name": "спрСотр",
       "relatedTo": "i-i-s-novyjj1-спр-сотр",
       "inverse": null
@@ -62,28 +69,49 @@
           "name": "выпОбРаб",
           "caption": "Выполнение объема работ",
           "hidden": false,
-          "index": 0
+          "index": 2
         },
         {
           "name": "перВыпС",
           "caption": "Дата начала выполнения работ",
           "hidden": false,
-          "index": 1
+          "index": 3
         },
         {
           "name": "перВыпПо",
           "caption": "Дата окончания выполнения работ",
           "hidden": false,
-          "index": 2
+          "index": 4
         },
         {
           "name": "длит",
           "caption": "Длительность",
           "hidden": false,
-          "index": 3
+          "index": 5
         }
       ],
       "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Номенклатура",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наимРабот",
+              "caption": "Номенклатура",
+              "hidden": false,
+              "index": 1
+            }
+          ],
+          "index": 0,
+          "type": "default",
+          "caption": "Номенклатура",
+          "name": "номенклатура",
+          "relatedTo": "i-i-s-novyjj1-номенклатура",
+          "inverse": null
+        },
         {
           "lookupValue": null,
           "lookupValueField": null,
@@ -95,10 +123,10 @@
               "name": "фИО",
               "caption": "Сотрудник",
               "hidden": false,
-              "index": 5
+              "index": 7
             }
           ],
-          "index": 4,
+          "index": 6,
           "type": "default",
           "caption": "Сотрудник",
           "name": "спрСотр",
@@ -116,28 +144,49 @@
           "name": "выпОбРаб",
           "caption": "Выполнение объема работ",
           "hidden": false,
-          "index": 0
+          "index": 1
         },
         {
           "name": "перВыпС",
           "caption": "Дата начала выполнения работ",
           "hidden": false,
-          "index": 1
+          "index": 2
         },
         {
           "name": "перВыпПо",
           "caption": "Дата окончания выполнения работ",
           "hidden": false,
-          "index": 2
+          "index": 3
         },
         {
           "name": "длит",
           "caption": "Длительность",
           "hidden": false,
-          "index": 3
+          "index": 4
         }
       ],
       "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Номенклатура",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наимРабот",
+              "caption": "Номенклатура",
+              "hidden": false,
+              "index": 0
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Номенклатура",
+          "name": "номенклатура",
+          "relatedTo": "i-i-s-novyjj1-номенклатура",
+          "inverse": null
+        },
         {
           "lookupValue": null,
           "lookupValueField": null,
@@ -149,7 +198,7 @@
               "name": "фИО",
               "caption": "Сотрудник",
               "hidden": false,
-              "index": 4
+              "index": 5
             }
           ],
           "index": -1,

@@ -20,6 +20,13 @@
     {
       "polymorphic": false,
       "presence": true,
+      "name": "номенклатура",
+      "relatedTo": "i-i-s-novyjj1-номенклатура",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
       "name": "спрКонтраг",
       "relatedTo": "i-i-s-novyjj1-спр-контраг",
       "inverse": null
@@ -48,10 +55,31 @@
           "name": "общСтоим",
           "caption": "Общая стоимость",
           "hidden": false,
-          "index": 0
+          "index": 2
         }
       ],
       "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Номенклатура",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наимРабот",
+              "caption": "Номенклатура",
+              "hidden": false,
+              "index": 1
+            }
+          ],
+          "index": 0,
+          "type": "default",
+          "caption": "Номенклатура",
+          "name": "номенклатура",
+          "relatedTo": "i-i-s-novyjj1-номенклатура",
+          "inverse": null
+        },
         {
           "lookupValue": null,
           "lookupValueField": null,
@@ -63,10 +91,10 @@
               "name": "фИО",
               "caption": "Сотрудник",
               "hidden": false,
-              "index": 2
+              "index": 4
             }
           ],
-          "index": 1,
+          "index": 3,
           "type": "default",
           "caption": "Сотрудник",
           "name": "спрСотр",
@@ -84,10 +112,10 @@
               "name": "наименование",
               "caption": "Контрагент",
               "hidden": false,
-              "index": 4
+              "index": 6
             }
           ],
-          "index": 3,
+          "index": 5,
           "type": "default",
           "caption": "Контрагент",
           "name": "спрКонтраг",
@@ -113,10 +141,31 @@
           "name": "общСтоим",
           "caption": "Общая стоимость",
           "hidden": false,
-          "index": 0
+          "index": 1
         }
       ],
       "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Номенклатура",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наимРабот",
+              "caption": "Номенклатура",
+              "hidden": false,
+              "index": 0
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Номенклатура",
+          "name": "номенклатура",
+          "relatedTo": "i-i-s-novyjj1-номенклатура",
+          "inverse": null
+        },
         {
           "lookupValue": null,
           "lookupValueField": null,
@@ -128,7 +177,7 @@
               "name": "фИО",
               "caption": "Сотрудник",
               "hidden": false,
-              "index": 1
+              "index": 2
             }
           ],
           "index": -1,
@@ -149,7 +198,7 @@
               "name": "наименование",
               "caption": "Контрагент",
               "hidden": false,
-              "index": 2
+              "index": 3
             }
           ],
           "index": -1,

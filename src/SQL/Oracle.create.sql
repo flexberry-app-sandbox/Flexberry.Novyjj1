@@ -38,6 +38,8 @@ CREATE TABLE "ПлФАнВыпРаб"
 
 	"СпрСотр" RAW(16) NOT NULL,
 
+	"Номенклатура" RAW(16) NOT NULL,
+
 	 PRIMARY KEY ("primaryKey")
 ) ;
 
@@ -51,9 +53,11 @@ CREATE TABLE "ПланировСМР"
 
 	"ДатаНачала" DATE NULL,
 
+	"Длительность" NUMBER(10) NULL,
+
 	"ДатаОкончания" DATE NULL,
 
-	"Длительность" NUMBER(10) NULL,
+	"Номенклатура" RAW(16) NOT NULL,
 
 	 PRIMARY KEY ("primaryKey")
 ) ;
@@ -71,6 +75,8 @@ CREATE TABLE "ЖурУчВыпРаб"
 	"ВыпОбРаб" FLOAT(53) NULL,
 
 	"ПерВыпС" DATE NULL,
+
+	"Номенклатура" RAW(16) NOT NULL,
 
 	"СпрСотр" RAW(16) NOT NULL,
 
@@ -94,6 +100,8 @@ CREATE TABLE "БюдСтрои"
 	"БазСт" FLOAT(53) NULL,
 
 	"ОкоРаб" DATE NULL,
+
+	"Номенклатура" RAW(16) NOT NULL,
 
 	"ЕдИзмер" RAW(16) NOT NULL,
 
@@ -176,6 +184,8 @@ CREATE TABLE "АктВыпРаб"
 
 	"СпрКонтраг" RAW(16) NOT NULL,
 
+	"Номенклатура" RAW(16) NOT NULL,
+
 	"СпрСотр" RAW(16) NOT NULL,
 
 	 PRIMARY KEY ("primaryKey")
@@ -198,6 +208,8 @@ CREATE TABLE "ОтОРасОсМат"
 	"КолПоСме" FLOAT(53) NULL,
 
 	"СпрСотр" RAW(16) NOT NULL,
+
+	"Номенклатура" RAW(16) NOT NULL,
 
 	"ЕдИзмер" RAW(16) NOT NULL,
 
@@ -246,6 +258,8 @@ CREATE TABLE "ДокСмета"
 
 	"НомСмеРас" NUMBER(10) NULL,
 
+	"Номенклатура" RAW(16) NOT NULL,
+
 	"СпрКонтраг" RAW(16) NOT NULL,
 
 	"ЕдИзмер" RAW(16) NOT NULL,
@@ -266,6 +280,8 @@ CREATE TABLE "ДокУсловДог"
 	"Длительн" NUMBER(10) NULL,
 
 	"ДатаНач" DATE NULL,
+
+	"Номенклатура" RAW(16) NOT NULL,
 
 	"СпрКонтраг" RAW(16) NOT NULL,
 
@@ -476,10 +492,30 @@ ALTER TABLE "ПлФАнВыпРаб"
 
 CREATE INDEX "ПлФАнВыпРаб_I_6016" on "ПлФАнВыпРаб" ("СпрСотр");
 
+ALTER TABLE "ПлФАнВыпРаб"
+	ADD CONSTRAINT "ПлФАнВыпРаб_F_1254" FOREIGN KEY ("Номенклатура") REFERENCES "Номенклатура" ("primaryKey");
+
+CREATE INDEX "ПлФАнВыпРаб_I_3526" on "ПлФАнВыпРаб" ("Номенклатура");
+
+ALTER TABLE "ПланировСМР"
+	ADD CONSTRAINT "ПланировСМР_F_4193" FOREIGN KEY ("Номенклатура") REFERENCES "Номенклатура" ("primaryKey");
+
+CREATE INDEX "ПланировСМР_I_3470" on "ПланировСМР" ("Номенклатура");
+
+ALTER TABLE "ЖурУчВыпРаб"
+	ADD CONSTRAINT "ЖурУчВыпРаб_FН_550" FOREIGN KEY ("Номенклатура") REFERENCES "Номенклатура" ("primaryKey");
+
+CREATE INDEX "ЖурУчВыпРаб_I_9784" on "ЖурУчВыпРаб" ("Номенклатура");
+
 ALTER TABLE "ЖурУчВыпРаб"
 	ADD CONSTRAINT "ЖурУчВыпРаб_F_3605" FOREIGN KEY ("СпрСотр") REFERENCES "СпрСотр" ("primaryKey");
 
 CREATE INDEX "ЖурУчВыпРаб_I_2347" on "ЖурУчВыпРаб" ("СпрСотр");
+
+ALTER TABLE "БюдСтрои"
+	ADD CONSTRAINT "БюдСтрои_FНом_9389" FOREIGN KEY ("Номенклатура") REFERENCES "Номенклатура" ("primaryKey");
+
+CREATE INDEX "БюдСтрои_IНом_8795" on "БюдСтрои" ("Номенклатура");
 
 ALTER TABLE "БюдСтрои"
 	ADD CONSTRAINT "БюдСтрои_FЕдИ_5904" FOREIGN KEY ("ЕдИзмер") REFERENCES "ЕдИзмер" ("primaryKey");
@@ -502,6 +538,11 @@ ALTER TABLE "АктВыпРаб"
 CREATE INDEX "АктВыпРаб_IСп_5183" on "АктВыпРаб" ("СпрКонтраг");
 
 ALTER TABLE "АктВыпРаб"
+	ADD CONSTRAINT "АктВыпРаб_FНо_7466" FOREIGN KEY ("Номенклатура") REFERENCES "Номенклатура" ("primaryKey");
+
+CREATE INDEX "АктВыпРаб_IНом_47" on "АктВыпРаб" ("Номенклатура");
+
+ALTER TABLE "АктВыпРаб"
 	ADD CONSTRAINT "АктВыпРаб_FСп_8214" FOREIGN KEY ("СпрСотр") REFERENCES "СпрСотр" ("primaryKey");
 
 CREATE INDEX "АктВыпРаб_IСп_5470" on "АктВыпРаб" ("СпрСотр");
@@ -510,6 +551,11 @@ ALTER TABLE "ОтОРасОсМат"
 	ADD CONSTRAINT "ОтОРасОсМат_F_5315" FOREIGN KEY ("СпрСотр") REFERENCES "СпрСотр" ("primaryKey");
 
 CREATE INDEX "ОтОРасОсМат_I_4943" on "ОтОРасОсМат" ("СпрСотр");
+
+ALTER TABLE "ОтОРасОсМат"
+	ADD CONSTRAINT "ОтОРасОсМат_FН_669" FOREIGN KEY ("Номенклатура") REFERENCES "Номенклатура" ("primaryKey");
+
+CREATE INDEX "ОтОРасОсМат_I_5798" on "ОтОРасОсМат" ("Номенклатура");
 
 ALTER TABLE "ОтОРасОсМат"
 	ADD CONSTRAINT "ОтОРасОсМат_F_1777" FOREIGN KEY ("ЕдИзмер") REFERENCES "ЕдИзмер" ("primaryKey");
@@ -527,6 +573,11 @@ ALTER TABLE "ТЧАкт"
 CREATE INDEX "ТЧАкт_IАктВыпРаб" on "ТЧАкт" ("АктВыпРаб");
 
 ALTER TABLE "ДокСмета"
+	ADD CONSTRAINT "ДокСмета_FНом_8630" FOREIGN KEY ("Номенклатура") REFERENCES "Номенклатура" ("primaryKey");
+
+CREATE INDEX "ДокСмета_IНом_2095" on "ДокСмета" ("Номенклатура");
+
+ALTER TABLE "ДокСмета"
 	ADD CONSTRAINT "ДокСмета_FСпр_4492" FOREIGN KEY ("СпрКонтраг") REFERENCES "СпрКонтраг" ("primaryKey");
 
 CREATE INDEX "ДокСмета_IСпр_3353" on "ДокСмета" ("СпрКонтраг");
@@ -535,6 +586,11 @@ ALTER TABLE "ДокСмета"
 	ADD CONSTRAINT "ДокСмета_FЕдИз_127" FOREIGN KEY ("ЕдИзмер") REFERENCES "ЕдИзмер" ("primaryKey");
 
 CREATE INDEX "ДокСмета_IЕдИ_7507" on "ДокСмета" ("ЕдИзмер");
+
+ALTER TABLE "ДокУсловДог"
+	ADD CONSTRAINT "ДокУсловДог_F_8589" FOREIGN KEY ("Номенклатура") REFERENCES "Номенклатура" ("primaryKey");
+
+CREATE INDEX "ДокУсловДог_IН_441" on "ДокУсловДог" ("Номенклатура");
 
 ALTER TABLE "ДокУсловДог"
 	ADD CONSTRAINT "ДокУсловДог_F_2838" FOREIGN KEY ("СпрКонтраг") REFERENCES "СпрКонтраг" ("primaryKey");

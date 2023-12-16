@@ -42,6 +42,16 @@ public class ByudStroi {
     private Date окораб;
 
     @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "Nomenklatura")
+    @Convert("Nomenklatura")
+    @Column(name = "Номенклатура", length = 16, unique = true, nullable = false)
+    private UUID _nomenklaturaid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "Nomenklatura", insertable = false, updatable = false)
+    private Nomenklatura nomenklatura;
+
+    @EdmIgnore
     @Converter(converterClass = UUIDConverter.class, name = "EdIzmer")
     @Convert("EdIzmer")
     @Column(name = "ЕдИзмер", length = 16, unique = true, nullable = false)

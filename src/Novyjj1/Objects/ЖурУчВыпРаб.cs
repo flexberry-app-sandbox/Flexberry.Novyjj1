@@ -30,6 +30,8 @@ namespace IIS.Novyjj1
     [Caption("Журнал учета выполнения работа")]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("ЖурУчВыпРабE", new string[] {
+            "Номенклатура as \'Номенклатура\'",
+            "Номенклатура.НаимРабот as \'Номенклатура\'",
             "ВыпОбРаб as \'Выполнение объема работ\'",
             "ПерВыпС as \'Дата начала выполнения работ\'",
             "ПерВыпПо as \'Дата окончания выполнения работ\'",
@@ -37,6 +39,7 @@ namespace IIS.Novyjj1
             "СпрСотр as \'Сотрудник\'",
             "СпрСотр.ФИО as \'Сотрудник\'"})]
     [View("ЖурУчВыпРабL", new string[] {
+            "Номенклатура.НаимРабот as \'Номенклатура\'",
             "ВыпОбРаб as \'Выполнение объема работ\'",
             "ПерВыпС as \'Дата начала выполнения работ\'",
             "ПерВыпПо as \'Дата окончания выполнения работ\'",
@@ -52,6 +55,8 @@ namespace IIS.Novyjj1
         private float fВыпОбРаб;
         
         private System.DateTime fПерВыпС;
+        
+        private IIS.Novyjj1.Номенклатура fНоменклатура;
         
         private IIS.Novyjj1.СпрСотр fСпрСотр;
         
@@ -181,6 +186,40 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (ЖурУчВыпРаб.ПерВыпС Set end)
 
                 // *** End programmer edit section *** (ЖурУчВыпРаб.ПерВыпС Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Жур уч вып раб.
+        /// </summary>
+        // *** Start programmer edit section *** (ЖурУчВыпРаб.Номенклатура CustomAttributes)
+
+        // *** End programmer edit section *** (ЖурУчВыпРаб.Номенклатура CustomAttributes)
+        [PropertyStorage(new string[] {
+                "Номенклатура"})]
+        [NotNull()]
+        public virtual IIS.Novyjj1.Номенклатура Номенклатура
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ЖурУчВыпРаб.Номенклатура Get start)
+
+                // *** End programmer edit section *** (ЖурУчВыпРаб.Номенклатура Get start)
+                IIS.Novyjj1.Номенклатура result = this.fНоменклатура;
+                // *** Start programmer edit section *** (ЖурУчВыпРаб.Номенклатура Get end)
+
+                // *** End programmer edit section *** (ЖурУчВыпРаб.Номенклатура Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ЖурУчВыпРаб.Номенклатура Set start)
+
+                // *** End programmer edit section *** (ЖурУчВыпРаб.Номенклатура Set start)
+                this.fНоменклатура = value;
+                // *** Start programmer edit section *** (ЖурУчВыпРаб.Номенклатура Set end)
+
+                // *** End programmer edit section *** (ЖурУчВыпРаб.Номенклатура Set end)
             }
         }
         

@@ -30,6 +30,8 @@ namespace IIS.Novyjj1
     [Caption("Документ смета")]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("ДокСметаE", new string[] {
+            "Номенклатура as \'Номенклатура\'",
+            "Номенклатура.НаимРабот as \'Номенклатура\'",
             "НомСмеРас as \'Номер сметных расчетов\'",
             "ЕдИзмер as \'Единицы измерения\'",
             "ЕдИзмер.Наименование as \'Единицы измерения\'",
@@ -39,6 +41,7 @@ namespace IIS.Novyjj1
     [AssociatedDetailViewAttribute("ДокСметаE", "ТЧСметы", "ТЧСметыE", true, "", "Табличная часть сметы", true, new string[] {
             ""})]
     [View("ДокСметаL", new string[] {
+            "Номенклатура.НаимРабот as \'Номенклатура\'",
             "НомСмеРас as \'Номер сметных расчетов\'",
             "ЕдИзмер.Наименование as \'Единицы измерения\'",
             "ОбщСметСт as \'Общая сметная стоимость\'",
@@ -49,6 +52,8 @@ namespace IIS.Novyjj1
         private float fОбщСметСт;
         
         private int fНомСмеРас;
+        
+        private IIS.Novyjj1.Номенклатура fНоменклатура;
         
         private IIS.Novyjj1.СпрКонтраг fСпрКонтраг;
         
@@ -154,6 +159,40 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (ДокСмета.ЕдИзмер Set end)
 
                 // *** End programmer edit section *** (ДокСмета.ЕдИзмер Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Док смета.
+        /// </summary>
+        // *** Start programmer edit section *** (ДокСмета.Номенклатура CustomAttributes)
+
+        // *** End programmer edit section *** (ДокСмета.Номенклатура CustomAttributes)
+        [PropertyStorage(new string[] {
+                "Номенклатура"})]
+        [NotNull()]
+        public virtual IIS.Novyjj1.Номенклатура Номенклатура
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ДокСмета.Номенклатура Get start)
+
+                // *** End programmer edit section *** (ДокСмета.Номенклатура Get start)
+                IIS.Novyjj1.Номенклатура result = this.fНоменклатура;
+                // *** Start programmer edit section *** (ДокСмета.Номенклатура Get end)
+
+                // *** End programmer edit section *** (ДокСмета.Номенклатура Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ДокСмета.Номенклатура Set start)
+
+                // *** End programmer edit section *** (ДокСмета.Номенклатура Set start)
+                this.fНоменклатура = value;
+                // *** Start programmer edit section *** (ДокСмета.Номенклатура Set end)
+
+                // *** End programmer edit section *** (ДокСмета.Номенклатура Set end)
             }
         }
         

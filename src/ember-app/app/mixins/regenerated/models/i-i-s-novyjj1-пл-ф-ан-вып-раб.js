@@ -13,6 +13,7 @@ export let Model = Mixin.create({
   планСум: DS.attr('decimal'),
   реализовОб: DS.attr('decimal'),
   реализоСум: DS.attr('decimal'),
+  номенклатура: DS.belongsTo('i-i-s-novyjj1-номенклатура', { inverse: null, async: false }),
   спрСотр: DS.belongsTo('i-i-s-novyjj1-спр-сотр', { inverse: null, async: false })
 });
 
@@ -73,6 +74,13 @@ export let ValidationRules = {
       validator('number', { allowString: true, allowBlank: true }),
     ],
   },
+  номенклатура: {
+    descriptionKey: 'models.i-i-s-novyjj1-пл-ф-ан-вып-раб.validations.номенклатура.__caption__',
+    validators: [
+      validator('ds-error'),
+      validator('presence', true),
+    ],
+  },
   спрСотр: {
     descriptionKey: 'models.i-i-s-novyjj1-пл-ф-ан-вып-раб.validations.спрСотр.__caption__',
     validators: [
@@ -84,30 +92,36 @@ export let ValidationRules = {
 
 export let defineProjections = function (modelClass) {
   modelClass.defineProjection('ПлФАнВыпРабE', 'i-i-s-novyjj1-пл-ф-ан-вып-раб', {
-    планОб: attr('План объем', { index: 0 }),
-    планСум: attr('План сумма', { index: 1 }),
-    реализовОб: attr('Реализовано объем', { index: 2 }),
-    реализоСум: attr('Реализовано сумма', { index: 3 }),
-    выпОб: attr('Выполнено объем', { index: 4 }),
-    выпСум: attr('Выполнено сумма', { index: 5 }),
-    всегоОб: attr('Всего объем', { index: 6 }),
-    всегоСум: attr('Всего сумма', { index: 7 }),
+    номенклатура: belongsTo('i-i-s-novyjj1-номенклатура', 'Номенклатура', {
+      наимРабот: attr('Номенклатура', { index: 1 })
+    }, { index: 0 }),
+    планОб: attr('План объем', { index: 2 }),
+    планСум: attr('План сумма', { index: 3 }),
+    реализовОб: attr('Реализовано объем', { index: 4 }),
+    реализоСум: attr('Реализовано сумма', { index: 5 }),
+    выпОб: attr('Выполнено объем', { index: 6 }),
+    выпСум: attr('Выполнено сумма', { index: 7 }),
+    всегоОб: attr('Всего объем', { index: 8 }),
+    всегоСум: attr('Всего сумма', { index: 9 }),
     спрСотр: belongsTo('i-i-s-novyjj1-спр-сотр', 'Сотрудник', {
-      фИО: attr('Сотрудник', { index: 9 })
-    }, { index: 8 })
+      фИО: attr('Сотрудник', { index: 11 })
+    }, { index: 10 })
   });
 
   modelClass.defineProjection('ПлФАнВыпРабL', 'i-i-s-novyjj1-пл-ф-ан-вып-раб', {
-    планОб: attr('План объем', { index: 0 }),
-    планСум: attr('План сумма', { index: 1 }),
-    реализовОб: attr('Реализовано объем', { index: 2 }),
-    реализоСум: attr('Реализовано сумма', { index: 3 }),
-    выпОб: attr('Выполнено объем', { index: 4 }),
-    выпСум: attr('Выполнено сумма', { index: 5 }),
-    всегоОб: attr('Всего объем', { index: 6 }),
-    всегоСум: attr('Всего сумма', { index: 7 }),
+    номенклатура: belongsTo('i-i-s-novyjj1-номенклатура', 'Номенклатура', {
+      наимРабот: attr('Номенклатура', { index: 0 })
+    }, { index: -1, hidden: true }),
+    планОб: attr('План объем', { index: 1 }),
+    планСум: attr('План сумма', { index: 2 }),
+    реализовОб: attr('Реализовано объем', { index: 3 }),
+    реализоСум: attr('Реализовано сумма', { index: 4 }),
+    выпОб: attr('Выполнено объем', { index: 5 }),
+    выпСум: attr('Выполнено сумма', { index: 6 }),
+    всегоОб: attr('Всего объем', { index: 7 }),
+    всегоСум: attr('Всего сумма', { index: 8 }),
     спрСотр: belongsTo('i-i-s-novyjj1-спр-сотр', 'Сотрудник', {
-      фИО: attr('Сотрудник', { index: 8 })
+      фИО: attr('Сотрудник', { index: 9 })
     }, { index: -1, hidden: true })
   });
 };

@@ -30,6 +30,8 @@ namespace IIS.Novyjj1
     [Caption("Бюджет строительства")]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("БюдСтроиE", new string[] {
+            "Номенклатура as \'Номенклатура\'",
+            "Номенклатура.НаимРабот as \'Номенклатура\'",
             "ЕдИзмер as \'Единицы измерения\'",
             "ЕдИзмер.Наименование as \'Единицы измерения\'",
             "Объем as \'Объем\'",
@@ -39,6 +41,7 @@ namespace IIS.Novyjj1
             "БазСт as \'Базовая стоимость\'",
             "СтоимИто as \'Стоимость итого\'"})]
     [View("БюдСтроиL", new string[] {
+            "Номенклатура.НаимРабот as \'Номенклатура\'",
             "ЕдИзмер.Наименование as \'Единицы измерения\'",
             "Объем as \'Объем\'",
             "НачРаб as \'Начало работ\'",
@@ -60,6 +63,8 @@ namespace IIS.Novyjj1
         private float fБазСт;
         
         private System.DateTime fОкоРаб;
+        
+        private IIS.Novyjj1.Номенклатура fНоменклатура;
         
         private IIS.Novyjj1.ЕдИзмер fЕдИзмер;
         
@@ -285,6 +290,40 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (БюдСтрои.ЕдИзмер Set end)
 
                 // *** End programmer edit section *** (БюдСтрои.ЕдИзмер Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Бюд строи.
+        /// </summary>
+        // *** Start programmer edit section *** (БюдСтрои.Номенклатура CustomAttributes)
+
+        // *** End programmer edit section *** (БюдСтрои.Номенклатура CustomAttributes)
+        [PropertyStorage(new string[] {
+                "Номенклатура"})]
+        [NotNull()]
+        public virtual IIS.Novyjj1.Номенклатура Номенклатура
+        {
+            get
+            {
+                // *** Start programmer edit section *** (БюдСтрои.Номенклатура Get start)
+
+                // *** End programmer edit section *** (БюдСтрои.Номенклатура Get start)
+                IIS.Novyjj1.Номенклатура result = this.fНоменклатура;
+                // *** Start programmer edit section *** (БюдСтрои.Номенклатура Get end)
+
+                // *** End programmer edit section *** (БюдСтрои.Номенклатура Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (БюдСтрои.Номенклатура Set start)
+
+                // *** End programmer edit section *** (БюдСтрои.Номенклатура Set start)
+                this.fНоменклатура = value;
+                // *** Start programmer edit section *** (БюдСтрои.Номенклатура Set end)
+
+                // *** End programmer edit section *** (БюдСтрои.Номенклатура Set end)
             }
         }
         

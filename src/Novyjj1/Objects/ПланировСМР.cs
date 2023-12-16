@@ -30,11 +30,14 @@ namespace IIS.Novyjj1
     [Caption("Планирование СМР")]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("ПланировСМРE", new string[] {
+            "Номенклатура as \'Номенклатура\'",
+            "Номенклатура.НаимРабот as \'Номенклатура\'",
             "КодСДР as \'Код СДР\'",
             "ДатаНачала as \'Дата начала\'",
             "ДатаОкончания as \'Дата окончания\'",
             "Длительность as \'Длительность\'"})]
     [View("ПланировСМРL", new string[] {
+            "Номенклатура.НаимРабот as \'Номенклатура\'",
             "КодСДР as \'Код СДР\'",
             "ДатаНачала as \'Дата начала\'",
             "ДатаОкончания as \'Дата окончания\'",
@@ -46,9 +49,11 @@ namespace IIS.Novyjj1
         
         private System.DateTime fДатаНачала;
         
+        private int fДлительность;
+        
         private System.DateTime fДатаОкончания;
         
-        private int fДлительность;
+        private IIS.Novyjj1.Номенклатура fНоменклатура;
         
         // *** Start programmer edit section *** (ПланировСМР CustomMembers)
 
@@ -176,6 +181,40 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (ПланировСМР.КодСДР Set end)
 
                 // *** End programmer edit section *** (ПланировСМР.КодСДР Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Планиров СМР.
+        /// </summary>
+        // *** Start programmer edit section *** (ПланировСМР.Номенклатура CustomAttributes)
+
+        // *** End programmer edit section *** (ПланировСМР.Номенклатура CustomAttributes)
+        [PropertyStorage(new string[] {
+                "Номенклатура"})]
+        [NotNull()]
+        public virtual IIS.Novyjj1.Номенклатура Номенклатура
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ПланировСМР.Номенклатура Get start)
+
+                // *** End programmer edit section *** (ПланировСМР.Номенклатура Get start)
+                IIS.Novyjj1.Номенклатура result = this.fНоменклатура;
+                // *** Start programmer edit section *** (ПланировСМР.Номенклатура Get end)
+
+                // *** End programmer edit section *** (ПланировСМР.Номенклатура Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ПланировСМР.Номенклатура Set start)
+
+                // *** End programmer edit section *** (ПланировСМР.Номенклатура Set start)
+                this.fНоменклатура = value;
+                // *** Start programmer edit section *** (ПланировСМР.Номенклатура Set end)
+
+                // *** End programmer edit section *** (ПланировСМР.Номенклатура Set end)
             }
         }
         

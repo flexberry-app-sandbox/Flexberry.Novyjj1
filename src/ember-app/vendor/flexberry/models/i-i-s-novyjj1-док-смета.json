@@ -36,6 +36,13 @@
     {
       "polymorphic": false,
       "presence": true,
+      "name": "номенклатура",
+      "relatedTo": "i-i-s-novyjj1-номенклатура",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
       "name": "спрКонтраг",
       "relatedTo": "i-i-s-novyjj1-спр-контраг",
       "inverse": null
@@ -57,16 +64,37 @@
           "name": "номСмеРас",
           "caption": "Номер сметных расчетов",
           "hidden": false,
-          "index": 0
+          "index": 2
         },
         {
           "name": "общСметСт",
           "caption": "Общая сметная стоимость",
           "hidden": false,
-          "index": 3
+          "index": 5
         }
       ],
       "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Номенклатура",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наимРабот",
+              "caption": "Номенклатура",
+              "hidden": false,
+              "index": 1
+            }
+          ],
+          "index": 0,
+          "type": "default",
+          "caption": "Номенклатура",
+          "name": "номенклатура",
+          "relatedTo": "i-i-s-novyjj1-номенклатура",
+          "inverse": null
+        },
         {
           "lookupValue": null,
           "lookupValueField": null,
@@ -78,10 +106,10 @@
               "name": "наименование",
               "caption": "Единицы измерения",
               "hidden": false,
-              "index": 2
+              "index": 4
             }
           ],
-          "index": 1,
+          "index": 3,
           "type": "default",
           "caption": "Единицы измерения",
           "name": "едИзмер",
@@ -99,10 +127,10 @@
               "name": "наименование",
               "caption": "Контрагент",
               "hidden": false,
-              "index": 5
+              "index": 7
             }
           ],
-          "index": 4,
+          "index": 6,
           "type": "default",
           "caption": "Контрагент",
           "name": "спрКонтраг",
@@ -128,16 +156,37 @@
           "name": "номСмеРас",
           "caption": "Номер сметных расчетов",
           "hidden": false,
-          "index": 0
+          "index": 1
         },
         {
           "name": "общСметСт",
           "caption": "Общая сметная стоимость",
           "hidden": false,
-          "index": 2
+          "index": 3
         }
       ],
       "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Номенклатура",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наимРабот",
+              "caption": "Номенклатура",
+              "hidden": false,
+              "index": 0
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Номенклатура",
+          "name": "номенклатура",
+          "relatedTo": "i-i-s-novyjj1-номенклатура",
+          "inverse": null
+        },
         {
           "lookupValue": null,
           "lookupValueField": null,
@@ -149,7 +198,7 @@
               "name": "наименование",
               "caption": "Единицы измерения",
               "hidden": false,
-              "index": 1
+              "index": 2
             }
           ],
           "index": -1,
@@ -170,7 +219,7 @@
               "name": "наименование",
               "caption": "Контрагент",
               "hidden": false,
-              "index": 3
+              "index": 4
             }
           ],
           "index": -1,

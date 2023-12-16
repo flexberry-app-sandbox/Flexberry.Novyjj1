@@ -30,6 +30,8 @@ namespace IIS.Novyjj1
     [Caption("Отчет о расходах основных материалов")]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("ОтОРасОсМатE", new string[] {
+            "Номенклатура as \'Номенклатура\'",
+            "Номенклатура.НаимРабот as \'Номенклатура\'",
             "ЕдИзмер as \'Единицы измерения\'",
             "ЕдИзмер.Наименование as \'Единицы измерения\'",
             "НормРасх as \'Норма расхода\'",
@@ -40,6 +42,7 @@ namespace IIS.Novyjj1
             "СпрСотр as \'Сотрудник\'",
             "СпрСотр.ФИО as \'Сотрудник\'"})]
     [View("ОтОРасОсМатL", new string[] {
+            "Номенклатура.НаимРабот as \'Номенклатура\'",
             "ЕдИзмер.Наименование as \'Единицы измерения\'",
             "НормРасх as \'Норма расхода\'",
             "КолПоАкт as \'Количество по актам\'",
@@ -61,6 +64,8 @@ namespace IIS.Novyjj1
         private float fКолПоСме;
         
         private IIS.Novyjj1.СпрСотр fСпрСотр;
+        
+        private IIS.Novyjj1.Номенклатура fНоменклатура;
         
         private IIS.Novyjj1.ЕдИзмер fЕдИзмер;
         
@@ -255,6 +260,40 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (ОтОРасОсМат.ЕдИзмер Set end)
 
                 // *** End programmer edit section *** (ОтОРасОсМат.ЕдИзмер Set end)
+            }
+        }
+        
+        /// <summary>
+        /// От о рас ос мат.
+        /// </summary>
+        // *** Start programmer edit section *** (ОтОРасОсМат.Номенклатура CustomAttributes)
+
+        // *** End programmer edit section *** (ОтОРасОсМат.Номенклатура CustomAttributes)
+        [PropertyStorage(new string[] {
+                "Номенклатура"})]
+        [NotNull()]
+        public virtual IIS.Novyjj1.Номенклатура Номенклатура
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ОтОРасОсМат.Номенклатура Get start)
+
+                // *** End programmer edit section *** (ОтОРасОсМат.Номенклатура Get start)
+                IIS.Novyjj1.Номенклатура result = this.fНоменклатура;
+                // *** Start programmer edit section *** (ОтОРасОсМат.Номенклатура Get end)
+
+                // *** End programmer edit section *** (ОтОРасОсМат.Номенклатура Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ОтОРасОсМат.Номенклатура Set start)
+
+                // *** End programmer edit section *** (ОтОРасОсМат.Номенклатура Set start)
+                this.fНоменклатура = value;
+                // *** Start programmer edit section *** (ОтОРасОсМат.Номенклатура Set end)
+
+                // *** End programmer edit section *** (ОтОРасОсМат.Номенклатура Set end)
             }
         }
         

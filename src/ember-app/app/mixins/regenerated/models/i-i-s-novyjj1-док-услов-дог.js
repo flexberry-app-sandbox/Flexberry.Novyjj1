@@ -9,6 +9,7 @@ export let Model = Mixin.create({
   датаОконч: DS.attr('date'),
   длительн: DS.attr('number'),
   объем: DS.attr('decimal'),
+  номенклатура: DS.belongsTo('i-i-s-novyjj1-номенклатура', { inverse: null, async: false }),
   спрКонтраг: DS.belongsTo('i-i-s-novyjj1-спр-контраг', { inverse: null, async: false })
 });
 
@@ -41,6 +42,13 @@ export let ValidationRules = {
       validator('number', { allowString: true, allowBlank: true }),
     ],
   },
+  номенклатура: {
+    descriptionKey: 'models.i-i-s-novyjj1-док-услов-дог.validations.номенклатура.__caption__',
+    validators: [
+      validator('ds-error'),
+      validator('presence', true),
+    ],
+  },
   спрКонтраг: {
     descriptionKey: 'models.i-i-s-novyjj1-док-услов-дог.validations.спрКонтраг.__caption__',
     validators: [
@@ -52,22 +60,28 @@ export let ValidationRules = {
 
 export let defineProjections = function (modelClass) {
   modelClass.defineProjection('ДокУсловДогE', 'i-i-s-novyjj1-док-услов-дог', {
-    объем: attr('Объем', { index: 0 }),
-    датаНач: attr('Дата начала', { index: 1 }),
-    датаОконч: attr('Дата окончания', { index: 2 }),
-    длительн: attr('Длительность', { index: 3 }),
+    номенклатура: belongsTo('i-i-s-novyjj1-номенклатура', 'Номенклатура', {
+      наимРабот: attr('Номенклатура', { index: 1 })
+    }, { index: 0 }),
+    объем: attr('Объем', { index: 2 }),
+    датаНач: attr('Дата начала', { index: 3 }),
+    датаОконч: attr('Дата окончания', { index: 4 }),
+    длительн: attr('Длительность', { index: 5 }),
     спрКонтраг: belongsTo('i-i-s-novyjj1-спр-контраг', 'Контрагент', {
-      наименование: attr('Контрагент', { index: 5 })
-    }, { index: 4 })
+      наименование: attr('Контрагент', { index: 7 })
+    }, { index: 6 })
   });
 
   modelClass.defineProjection('ДокУсловДогL', 'i-i-s-novyjj1-док-услов-дог', {
-    объем: attr('Объем', { index: 0 }),
-    датаНач: attr('Дата начала', { index: 1 }),
-    датаОконч: attr('Дата окончания', { index: 2 }),
-    длительн: attr('Длительность', { index: 3 }),
+    номенклатура: belongsTo('i-i-s-novyjj1-номенклатура', 'Номенклатура', {
+      наимРабот: attr('Номенклатура', { index: 0 })
+    }, { index: -1, hidden: true }),
+    объем: attr('Объем', { index: 1 }),
+    датаНач: attr('Дата начала', { index: 2 }),
+    датаОконч: attr('Дата окончания', { index: 3 }),
+    длительн: attr('Длительность', { index: 4 }),
     спрКонтраг: belongsTo('i-i-s-novyjj1-спр-контраг', 'Контрагент', {
-      наименование: attr('Контрагент', { index: 4 })
+      наименование: attr('Контрагент', { index: 5 })
     }, { index: -1, hidden: true })
   });
 };

@@ -56,6 +56,16 @@ public class PlFAnVypRab {
     @JoinColumn(name = "SprSotr", insertable = false, updatable = false)
     private SprSotr sprsotr;
 
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "Nomenklatura")
+    @Convert("Nomenklatura")
+    @Column(name = "Номенклатура", length = 16, unique = true, nullable = false)
+    private UUID _nomenklaturaid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "Nomenklatura", insertable = false, updatable = false)
+    private Nomenklatura nomenklatura;
+
 
     public PlFAnVypRab() {
         super();

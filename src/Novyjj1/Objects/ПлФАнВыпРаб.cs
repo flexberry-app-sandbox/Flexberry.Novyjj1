@@ -30,6 +30,8 @@ namespace IIS.Novyjj1
     [Caption("План фактный анализ выполнения работ")]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("ПлФАнВыпРабE", new string[] {
+            "Номенклатура as \'Номенклатура\'",
+            "Номенклатура.НаимРабот as \'Номенклатура\'",
             "ПланОб as \'План объем\'",
             "ПланСум as \'План сумма\'",
             "РеализовОб as \'Реализовано объем\'",
@@ -41,6 +43,7 @@ namespace IIS.Novyjj1
             "СпрСотр as \'Сотрудник\'",
             "СпрСотр.ФИО as \'Сотрудник\'"})]
     [View("ПлФАнВыпРабL", new string[] {
+            "Номенклатура.НаимРабот as \'Номенклатура\'",
             "ПланОб as \'План объем\'",
             "ПланСум as \'План сумма\'",
             "РеализовОб as \'Реализовано объем\'",
@@ -70,6 +73,8 @@ namespace IIS.Novyjj1
         private float fРеализовОб;
         
         private IIS.Novyjj1.СпрСотр fСпрСотр;
+        
+        private IIS.Novyjj1.Номенклатура fНоменклатура;
         
         // *** Start programmer edit section *** (ПлФАнВыпРаб CustomMembers)
 
@@ -321,6 +326,40 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (ПлФАнВыпРаб.РеализоСум Set end)
 
                 // *** End programmer edit section *** (ПлФАнВыпРаб.РеализоСум Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Пл ф ан вып раб.
+        /// </summary>
+        // *** Start programmer edit section *** (ПлФАнВыпРаб.Номенклатура CustomAttributes)
+
+        // *** End programmer edit section *** (ПлФАнВыпРаб.Номенклатура CustomAttributes)
+        [PropertyStorage(new string[] {
+                "Номенклатура"})]
+        [NotNull()]
+        public virtual IIS.Novyjj1.Номенклатура Номенклатура
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ПлФАнВыпРаб.Номенклатура Get start)
+
+                // *** End programmer edit section *** (ПлФАнВыпРаб.Номенклатура Get start)
+                IIS.Novyjj1.Номенклатура result = this.fНоменклатура;
+                // *** Start programmer edit section *** (ПлФАнВыпРаб.Номенклатура Get end)
+
+                // *** End programmer edit section *** (ПлФАнВыпРаб.Номенклатура Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ПлФАнВыпРаб.Номенклатура Set start)
+
+                // *** End programmer edit section *** (ПлФАнВыпРаб.Номенклатура Set start)
+                this.fНоменклатура = value;
+                // *** Start programmer edit section *** (ПлФАнВыпРаб.Номенклатура Set end)
+
+                // *** End programmer edit section *** (ПлФАнВыпРаб.Номенклатура Set end)
             }
         }
         

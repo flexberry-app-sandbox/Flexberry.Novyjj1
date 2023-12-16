@@ -21,6 +21,7 @@ CREATE TABLE ПлФАнВыпРаб (
  РеализоСум REAL NULL,
  РеализовОб REAL NULL,
  СпрСотр UUID NOT NULL,
+ Номенклатура UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
@@ -28,8 +29,9 @@ CREATE TABLE ПланировСМР (
  primaryKey UUID NOT NULL,
  КодСДР INT NULL,
  ДатаНачала TIMESTAMP(3) NULL,
- ДатаОкончания TIMESTAMP(3) NULL,
  Длительность INT NULL,
+ ДатаОкончания TIMESTAMP(3) NULL,
+ Номенклатура UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
@@ -39,6 +41,7 @@ CREATE TABLE ЖурУчВыпРаб (
  ПерВыпПо TIMESTAMP(3) NULL,
  ВыпОбРаб REAL NULL,
  ПерВыпС TIMESTAMP(3) NULL,
+ Номенклатура UUID NOT NULL,
  СпрСотр UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
@@ -51,6 +54,7 @@ CREATE TABLE БюдСтрои (
  СтоимИто REAL NULL,
  БазСт REAL NULL,
  ОкоРаб TIMESTAMP(3) NULL,
+ Номенклатура UUID NOT NULL,
  ЕдИзмер UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
@@ -94,6 +98,7 @@ CREATE TABLE АктВыпРаб (
  primaryKey UUID NOT NULL,
  ОбщСтоим REAL NULL,
  СпрКонтраг UUID NOT NULL,
+ Номенклатура UUID NOT NULL,
  СпрСотр UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
@@ -106,6 +111,7 @@ CREATE TABLE ОтОРасОсМат (
  ОстПоСмет REAL NULL,
  КолПоСме REAL NULL,
  СпрСотр UUID NOT NULL,
+ Номенклатура UUID NOT NULL,
  ЕдИзмер UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
@@ -131,6 +137,7 @@ CREATE TABLE ДокСмета (
  primaryKey UUID NOT NULL,
  ОбщСметСт REAL NULL,
  НомСмеРас INT NULL,
+ Номенклатура UUID NOT NULL,
  СпрКонтраг UUID NOT NULL,
  ЕдИзмер UUID NOT NULL,
  PRIMARY KEY (primaryKey));
@@ -142,6 +149,7 @@ CREATE TABLE ДокУсловДог (
  ДатаОконч TIMESTAMP(3) NULL,
  Длительн INT NULL,
  ДатаНач TIMESTAMP(3) NULL,
+ Номенклатура UUID NOT NULL,
  СпрКонтраг UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
@@ -253,8 +261,20 @@ CREATE TABLE ApplicationLog (
  ALTER TABLE ПлФАнВыпРаб ADD CONSTRAINT FKd551d1476f70bd293a7a6b5aacf1b1afb9e3c439 FOREIGN KEY (СпрСотр) REFERENCES СпрСотр; 
 CREATE INDEX Indexd551d1476f70bd293a7a6b5aacf1b1afb9e3c439 on ПлФАнВыпРаб (СпрСотр); 
 
+ ALTER TABLE ПлФАнВыпРаб ADD CONSTRAINT FK61afaeaa0a7fed26f51c8e48c616ce54331442fc FOREIGN KEY (Номенклатура) REFERENCES Номенклатура; 
+CREATE INDEX Index61afaeaa0a7fed26f51c8e48c616ce54331442fc on ПлФАнВыпРаб (Номенклатура); 
+
+ ALTER TABLE ПланировСМР ADD CONSTRAINT FK6fb80ca793ba0a40b39ef0d16ce7b5e3e9411199 FOREIGN KEY (Номенклатура) REFERENCES Номенклатура; 
+CREATE INDEX Index6fb80ca793ba0a40b39ef0d16ce7b5e3e9411199 on ПланировСМР (Номенклатура); 
+
+ ALTER TABLE ЖурУчВыпРаб ADD CONSTRAINT FK45de9cd4ea284e3240165c411ae9727463a92c61 FOREIGN KEY (Номенклатура) REFERENCES Номенклатура; 
+CREATE INDEX Index45de9cd4ea284e3240165c411ae9727463a92c61 on ЖурУчВыпРаб (Номенклатура); 
+
  ALTER TABLE ЖурУчВыпРаб ADD CONSTRAINT FK42d2b68f2cca30eca47e4632c19f012c7f61e45c FOREIGN KEY (СпрСотр) REFERENCES СпрСотр; 
 CREATE INDEX Index42d2b68f2cca30eca47e4632c19f012c7f61e45c on ЖурУчВыпРаб (СпрСотр); 
+
+ ALTER TABLE БюдСтрои ADD CONSTRAINT FK66f9bf2f2faea3340cc94cdc3e4ee29c0e0766be FOREIGN KEY (Номенклатура) REFERENCES Номенклатура; 
+CREATE INDEX Index66f9bf2f2faea3340cc94cdc3e4ee29c0e0766be on БюдСтрои (Номенклатура); 
 
  ALTER TABLE БюдСтрои ADD CONSTRAINT FK5d08607dc1e7932ab4d6d06155871e3c7db7d354 FOREIGN KEY (ЕдИзмер) REFERENCES ЕдИзмер; 
 CREATE INDEX Index5d08607dc1e7932ab4d6d06155871e3c7db7d354 on БюдСтрои (ЕдИзмер); 
@@ -268,11 +288,17 @@ CREATE INDEX Indexde8e67e13f04a0c989a951169ec41b415726974b on ТЧСметы (Д
  ALTER TABLE АктВыпРаб ADD CONSTRAINT FK51968361c3a8f4842b680d44988bfbbd65bf15c7 FOREIGN KEY (СпрКонтраг) REFERENCES СпрКонтраг; 
 CREATE INDEX Index51968361c3a8f4842b680d44988bfbbd65bf15c7 on АктВыпРаб (СпрКонтраг); 
 
+ ALTER TABLE АктВыпРаб ADD CONSTRAINT FKffe32d94ea38891c554496772fccc1e693ace66c FOREIGN KEY (Номенклатура) REFERENCES Номенклатура; 
+CREATE INDEX Indexffe32d94ea38891c554496772fccc1e693ace66c on АктВыпРаб (Номенклатура); 
+
  ALTER TABLE АктВыпРаб ADD CONSTRAINT FK426f5ed0f4242552d3aeb5dee5a2c0c435596936 FOREIGN KEY (СпрСотр) REFERENCES СпрСотр; 
 CREATE INDEX Index426f5ed0f4242552d3aeb5dee5a2c0c435596936 on АктВыпРаб (СпрСотр); 
 
  ALTER TABLE ОтОРасОсМат ADD CONSTRAINT FK5216b05d83f8a41cf0f9d13d5513bd60b97613e3 FOREIGN KEY (СпрСотр) REFERENCES СпрСотр; 
 CREATE INDEX Index5216b05d83f8a41cf0f9d13d5513bd60b97613e3 on ОтОРасОсМат (СпрСотр); 
+
+ ALTER TABLE ОтОРасОсМат ADD CONSTRAINT FK539112ff220ec415dea22a2b017ed0ced2da1ddc FOREIGN KEY (Номенклатура) REFERENCES Номенклатура; 
+CREATE INDEX Index539112ff220ec415dea22a2b017ed0ced2da1ddc on ОтОРасОсМат (Номенклатура); 
 
  ALTER TABLE ОтОРасОсМат ADD CONSTRAINT FKb2e9502f46366905affcc4517617042b616f1f07 FOREIGN KEY (ЕдИзмер) REFERENCES ЕдИзмер; 
 CREATE INDEX Indexb2e9502f46366905affcc4517617042b616f1f07 on ОтОРасОсМат (ЕдИзмер); 
@@ -283,11 +309,17 @@ CREATE INDEX Index5446c44816d7e46a9a58ca38cbf06bc6dd31005f on ТЧАкт (ЕдИ
  ALTER TABLE ТЧАкт ADD CONSTRAINT FK04aec31c7869a48f76d108d273fea955d8166839 FOREIGN KEY (АктВыпРаб) REFERENCES АктВыпРаб; 
 CREATE INDEX Index04aec31c7869a48f76d108d273fea955d8166839 on ТЧАкт (АктВыпРаб); 
 
+ ALTER TABLE ДокСмета ADD CONSTRAINT FKfec11f74bb5ea8d2951bd21585b2a5ac07b6e78f FOREIGN KEY (Номенклатура) REFERENCES Номенклатура; 
+CREATE INDEX Indexfec11f74bb5ea8d2951bd21585b2a5ac07b6e78f on ДокСмета (Номенклатура); 
+
  ALTER TABLE ДокСмета ADD CONSTRAINT FKfdcd57f6886b31c67ef3d79f10d0e20496a920a3 FOREIGN KEY (СпрКонтраг) REFERENCES СпрКонтраг; 
 CREATE INDEX Indexfdcd57f6886b31c67ef3d79f10d0e20496a920a3 on ДокСмета (СпрКонтраг); 
 
  ALTER TABLE ДокСмета ADD CONSTRAINT FKf24a17eb896670836fe19d198bb57772e6e29aab FOREIGN KEY (ЕдИзмер) REFERENCES ЕдИзмер; 
 CREATE INDEX Indexf24a17eb896670836fe19d198bb57772e6e29aab on ДокСмета (ЕдИзмер); 
+
+ ALTER TABLE ДокУсловДог ADD CONSTRAINT FK8164f464a0a4ffa724e9e1536befe52b56bcd936 FOREIGN KEY (Номенклатура) REFERENCES Номенклатура; 
+CREATE INDEX Index8164f464a0a4ffa724e9e1536befe52b56bcd936 on ДокУсловДог (Номенклатура); 
 
  ALTER TABLE ДокУсловДог ADD CONSTRAINT FKd6af110b36a4e825659018fa00c1edffcc03b17d FOREIGN KEY (СпрКонтраг) REFERENCES СпрКонтраг; 
 CREATE INDEX Indexd6af110b36a4e825659018fa00c1edffcc03b17d on ДокУсловДог (СпрКонтраг); 

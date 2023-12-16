@@ -7,6 +7,7 @@ import Novyjj1.utils.UUIDConverter;
 import javax.persistence.*;
 import java.util.UUID;
 
+import com.sap.olingo.jpa.metadata.core.edm.annotation.EdmIgnore;
 import java.util.Date;
 
 /**
@@ -28,11 +29,21 @@ public class PlanirovSMR {
     @Column(name = "ДатаНачала")
     private Date датаначала;
 
+    @Column(name = "Длительность")
+    private Integer длительность;
+
     @Column(name = "ДатаОкончания")
     private Date датаокончания;
 
-    @Column(name = "Длительность")
-    private Integer длительность;
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "Nomenklatura")
+    @Convert("Nomenklatura")
+    @Column(name = "Номенклатура", length = 16, unique = true, nullable = false)
+    private UUID _nomenklaturaid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "Nomenklatura", insertable = false, updatable = false)
+    private Nomenklatura nomenklatura;
 
 
     public PlanirovSMR() {
@@ -63,20 +74,20 @@ public class PlanirovSMR {
       this.датаначала = датаначала;
     }
 
-    public Date getДатаОкончания() {
-      return датаокончания;
-    }
-
-    public void setДатаОкончания(Date датаокончания) {
-      this.датаокончания = датаокончания;
-    }
-
     public Integer getДлительность() {
       return длительность;
     }
 
     public void setДлительность(Integer длительность) {
       this.длительность = длительность;
+    }
+
+    public Date getДатаОкончания() {
+      return датаокончания;
+    }
+
+    public void setДатаОкончания(Date датаокончания) {
+      this.датаокончания = датаокончания;
     }
 
 

@@ -30,6 +30,8 @@ namespace IIS.Novyjj1
     [Caption("Документ условия договора")]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("ДокУсловДогE", new string[] {
+            "Номенклатура as \'Номенклатура\'",
+            "Номенклатура.НаимРабот as \'Номенклатура\'",
             "Объем as \'Объем\'",
             "ДатаНач as \'Дата начала\'",
             "ДатаОконч as \'Дата окончания\'",
@@ -37,6 +39,7 @@ namespace IIS.Novyjj1
             "СпрКонтраг as \'Контрагент\'",
             "СпрКонтраг.Наименование as \'Контрагент\'"})]
     [View("ДокУсловДогL", new string[] {
+            "Номенклатура.НаимРабот as \'Номенклатура\'",
             "Объем as \'Объем\'",
             "ДатаНач as \'Дата начала\'",
             "ДатаОконч as \'Дата окончания\'",
@@ -52,6 +55,8 @@ namespace IIS.Novyjj1
         private int fДлительн;
         
         private System.DateTime fДатаНач;
+        
+        private IIS.Novyjj1.Номенклатура fНоменклатура;
         
         private IIS.Novyjj1.СпрКонтраг fСпрКонтраг;
         
@@ -181,6 +186,40 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (ДокУсловДог.Объем Set end)
 
                 // *** End programmer edit section *** (ДокУсловДог.Объем Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Док услов дог.
+        /// </summary>
+        // *** Start programmer edit section *** (ДокУсловДог.Номенклатура CustomAttributes)
+
+        // *** End programmer edit section *** (ДокУсловДог.Номенклатура CustomAttributes)
+        [PropertyStorage(new string[] {
+                "Номенклатура"})]
+        [NotNull()]
+        public virtual IIS.Novyjj1.Номенклатура Номенклатура
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ДокУсловДог.Номенклатура Get start)
+
+                // *** End programmer edit section *** (ДокУсловДог.Номенклатура Get start)
+                IIS.Novyjj1.Номенклатура result = this.fНоменклатура;
+                // *** Start programmer edit section *** (ДокУсловДог.Номенклатура Get end)
+
+                // *** End programmer edit section *** (ДокУсловДог.Номенклатура Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ДокУсловДог.Номенклатура Set start)
+
+                // *** End programmer edit section *** (ДокУсловДог.Номенклатура Set start)
+                this.fНоменклатура = value;
+                // *** Start programmer edit section *** (ДокУсловДог.Номенклатура Set end)
+
+                // *** End programmer edit section *** (ДокУсловДог.Номенклатура Set end)
             }
         }
         
