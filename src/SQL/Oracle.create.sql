@@ -138,6 +138,8 @@ CREATE TABLE "СпрСотр"
 
 	"IDСотр" NUMBER(10) NULL,
 
+	"Должности" RAW(16) NOT NULL,
+
 	 PRIMARY KEY ("primaryKey")
 ) ;
 
@@ -442,6 +444,11 @@ CREATE TABLE "ApplicationLog"
 ) ;
 
 
+
+ALTER TABLE "СпрСотр"
+	ADD CONSTRAINT "СпрСотр_FДолж_4392" FOREIGN KEY ("Должности") REFERENCES "Должности" ("primaryKey");
+
+CREATE INDEX "СпрСотр_IДолж_3754" on "СпрСотр" ("Должности");
 
 ALTER TABLE "STORMWEBSEARCH"
 	ADD CONSTRAINT "STORMWEBSEARCH_FSTORMFILT_6521" FOREIGN KEY ("FilterSetting_m0") REFERENCES "STORMFILTERSETTING" ("primaryKey");

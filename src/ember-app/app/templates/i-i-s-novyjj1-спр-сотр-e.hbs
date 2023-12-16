@@ -44,4 +44,30 @@
     }}
     {{flexberry-validationmessage error=(v-get validationModel "iDСотр" "message")}}
   </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-novyjj1-спр-сотр-e.должности-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.должности
+      relationName="должности"
+      projection="ДолжностиL"
+      title=(t "forms.i-i-s-novyjj1-спр-сотр-e.должности-caption")
+      readonly=readonly
+      componentName="должностиLookup"
+      class=(if (v-get validationModel "должности" "isInvalid") "error")
+      data-test-i-i-s-novyjj1-спр-сотр-e-должности=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "должности" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.должности.наимен
+      class=(if (v-get validationModel.должности "наимен" "isInvalid") "error")
+      label=(t "forms.i-i-s-novyjj1-спр-сотр-e.должности.наимен-caption")
+      data-test-i-i-s-novyjj1-спр-сотр-e-должности-наимен=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.должности "наимен" "message")}}
+  </div>
 </form>

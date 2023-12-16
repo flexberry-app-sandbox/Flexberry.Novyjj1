@@ -31,16 +31,21 @@ namespace IIS.Novyjj1
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("СпрСотрE", new string[] {
             "ФИО as \'ФИО\'",
-            "IDСотр as \'ID Сотрудника\'"})]
+            "IDСотр as \'ID Сотрудника\'",
+            "Должности as \'Должность\'",
+            "Должности.Наимен as \'Должность\'"})]
     [View("СпрСотрL", new string[] {
             "ФИО as \'ФИО\'",
-            "IDСотр as \'ID Сотрудника\'"})]
+            "IDСотр as \'ID Сотрудника\'",
+            "Должности.Наимен as \'Должность\'"})]
     public class СпрСотр : ICSSoft.STORMNET.DataObject
     {
         
         private string fФИО;
         
         private int fIDСотр;
+        
+        private IIS.Novyjj1.Должности fДолжности;
         
         // *** Start programmer edit section *** (СпрСотр CustomMembers)
 
@@ -107,6 +112,40 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (СпрСотр.ФИО Set end)
 
                 // *** End programmer edit section *** (СпрСотр.ФИО Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Спр сотр.
+        /// </summary>
+        // *** Start programmer edit section *** (СпрСотр.Должности CustomAttributes)
+
+        // *** End programmer edit section *** (СпрСотр.Должности CustomAttributes)
+        [PropertyStorage(new string[] {
+                "Должности"})]
+        [NotNull()]
+        public virtual IIS.Novyjj1.Должности Должности
+        {
+            get
+            {
+                // *** Start programmer edit section *** (СпрСотр.Должности Get start)
+
+                // *** End programmer edit section *** (СпрСотр.Должности Get start)
+                IIS.Novyjj1.Должности result = this.fДолжности;
+                // *** Start programmer edit section *** (СпрСотр.Должности Get end)
+
+                // *** End programmer edit section *** (СпрСотр.Должности Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (СпрСотр.Должности Set start)
+
+                // *** End programmer edit section *** (СпрСотр.Должности Set start)
+                this.fДолжности = value;
+                // *** Start programmer edit section *** (СпрСотр.Должности Set end)
+
+                // *** End programmer edit section *** (СпрСотр.Должности Set end)
             }
         }
         

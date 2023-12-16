@@ -7,6 +7,7 @@ import Novyjj1.utils.UUIDConverter;
 import javax.persistence.*;
 import java.util.UUID;
 
+import com.sap.olingo.jpa.metadata.core.edm.annotation.EdmIgnore;
 
 /**
  * Entity implementation class for Entity: СпрСотр
@@ -26,6 +27,16 @@ public class SprSotr {
 
     @Column(name = "IDСотр")
     private Integer idсотр;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "Dolzhnosti")
+    @Convert("Dolzhnosti")
+    @Column(name = "Должности", length = 16, unique = true, nullable = false)
+    private UUID _dolzhnostiid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "Dolzhnosti", insertable = false, updatable = false)
+    private Dolzhnosti dolzhnosti;
 
 
     public SprSotr() {

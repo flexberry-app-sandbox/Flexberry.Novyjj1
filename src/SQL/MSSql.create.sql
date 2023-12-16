@@ -123,6 +123,8 @@ CREATE TABLE [СпрСотр] (
 
 	 [ФИО] VARCHAR(255)  NULL,
 
+	 [Должности] UNIQUEIDENTIFIER  NOT NULL,
+
 	 PRIMARY KEY ([primaryKey]))
 
 
