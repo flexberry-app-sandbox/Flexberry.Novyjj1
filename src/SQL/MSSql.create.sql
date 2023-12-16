@@ -138,6 +138,8 @@ CREATE TABLE [ТЧСметы] (
 
 	 [СтСтроиРаб] REAL  NULL,
 
+	 [ДокСмета] UNIQUEIDENTIFIER  NOT NULL,
+
 	 PRIMARY KEY ([primaryKey]))
 
 
@@ -146,6 +148,8 @@ CREATE TABLE [АктВыпРаб] (
 	 [primaryKey] UNIQUEIDENTIFIER  NOT NULL,
 
 	 [ОбщСтоим] REAL  NULL,
+
+	 [СпрСотр] UNIQUEIDENTIFIER  NOT NULL,
 
 	 PRIMARY KEY ([primaryKey]))
 

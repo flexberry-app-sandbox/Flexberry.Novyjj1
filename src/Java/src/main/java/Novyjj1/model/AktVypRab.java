@@ -7,6 +7,7 @@ import Novyjj1.utils.UUIDConverter;
 import javax.persistence.*;
 import java.util.UUID;
 
+import com.sap.olingo.jpa.metadata.core.edm.annotation.EdmIgnore;
 import java.util.List;
 
 /**
@@ -24,6 +25,16 @@ public class AktVypRab {
 
     @Column(name = "ОбщСтоим")
     private Float общстоим;
+
+    @EdmIgnore
+    @Converter(converterClass = UUIDConverter.class, name = "SprSotr")
+    @Convert("SprSotr")
+    @Column(name = "СпрСотр", length = 16, unique = true, nullable = false)
+    private UUID _sprsotrid;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "SprSotr", insertable = false, updatable = false)
+    private SprSotr sprsotr;
 
     @OneToMany(mappedBy = "aktvyprab", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<TCHAkt> tchakts;

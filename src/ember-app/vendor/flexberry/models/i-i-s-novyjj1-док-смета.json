@@ -26,7 +26,13 @@
     }
   ],
   "belongsTo": [],
-  "hasMany": [],
+  "hasMany": [
+    {
+      "name": "тЧСметы",
+      "relatedTo": "i-i-s-novyjj1-т-ч-сметы",
+      "inverse": "докСмета"
+    }
+  ],
   "projections": [
     {
       "name": "ДокСметаE",
@@ -46,7 +52,15 @@
         }
       ],
       "belongsTo": [],
-      "hasMany": []
+      "hasMany": [
+        {
+          "projectionName": "ТЧСметыE",
+          "caption": "Табличная часть сметы",
+          "name": "тЧСметы",
+          "relatedTo": "i-i-s-novyjj1-т-ч-сметы",
+          "inverse": null
+        }
+      ]
     },
     {
       "name": "ДокСметаL",

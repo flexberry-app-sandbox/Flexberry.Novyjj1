@@ -6,6 +6,7 @@ import { attr, belongsTo, hasMany } from 'ember-flexberry-data/utils/attributes'
 
 export let Model = Mixin.create({
   общСтоим: DS.attr('decimal'),
+  спрСотр: DS.belongsTo('i-i-s-novyjj1-спр-сотр', { inverse: null, async: false }),
   тЧАкт: DS.hasMany('i-i-s-novyjj1-т-ч-акт', { inverse: 'актВыпРаб', async: false })
 });
 
@@ -15,6 +16,13 @@ export let ValidationRules = {
     validators: [
       validator('ds-error'),
       validator('number', { allowString: true, allowBlank: true }),
+    ],
+  },
+  спрСотр: {
+    descriptionKey: 'models.i-i-s-novyjj1-акт-вып-раб.validations.спрСотр.__caption__',
+    validators: [
+      validator('ds-error'),
+      validator('presence', true),
     ],
   },
   тЧАкт: {
@@ -29,6 +37,9 @@ export let ValidationRules = {
 export let defineProjections = function (modelClass) {
   modelClass.defineProjection('АктВыпРабE', 'i-i-s-novyjj1-акт-вып-раб', {
     общСтоим: attr('Общая стоимость', { index: 0 }),
+    спрСотр: belongsTo('i-i-s-novyjj1-спр-сотр', 'Сотрудник', {
+      фИО: attr('Сотрудник', { index: 2 })
+    }, { index: 1 }),
     тЧАкт: hasMany('i-i-s-novyjj1-т-ч-акт', 'Табличная часть акта выполнения работ', {
       ценаЗаЕд: attr('Цена за единицу', { index: 0 }),
       количество: attr('Количество', { index: 1 }),
@@ -37,6 +48,9 @@ export let defineProjections = function (modelClass) {
   });
 
   modelClass.defineProjection('АктВыпРабL', 'i-i-s-novyjj1-акт-вып-раб', {
-    общСтоим: attr('Общая стоимость', { index: 0 })
+    общСтоим: attr('Общая стоимость', { index: 0 }),
+    спрСотр: belongsTo('i-i-s-novyjj1-спр-сотр', 'Сотрудник', {
+      фИО: attr('Сотрудник', { index: 1 })
+    }, { index: -1, hidden: true })
   });
 };

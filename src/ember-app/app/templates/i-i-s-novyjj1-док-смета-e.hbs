@@ -44,4 +44,18 @@
     }}
     {{flexberry-validationmessage error=(v-get validationModel "общСметСт" "message")}}
   </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-novyjj1-док-смета-e.тЧСметы-caption"}}</label>
+    {{flexberry-groupedit
+      componentName="тЧСметыGroupEdit"
+      mainModelProjection=modelProjection
+      modelProjection=modelProjection.attributes.тЧСметы
+      content=model.тЧСметы
+      readonly=readonly
+      orderable=false
+      class=(if (v-get validationModel "тЧСметы" "isInvalid") "error")
+      data-test-i-i-s-novyjj1-док-смета-e-тЧСметы=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "тЧСметы" "message")}}
+  </div>
 </form>

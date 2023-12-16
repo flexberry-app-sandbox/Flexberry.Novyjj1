@@ -32,6 +32,8 @@ namespace IIS.Novyjj1
     [View("ДокСметаE", new string[] {
             "НомСмеРас as \'Номер сметных расчетов\'",
             "ОбщСметСт as \'Общая сметная стоимость\'"})]
+    [AssociatedDetailViewAttribute("ДокСметаE", "ТЧСметы", "ТЧСметыE", true, "", "Табличная часть сметы", true, new string[] {
+            ""})]
     [View("ДокСметаL", new string[] {
             "НомСмеРас as \'Номер сметных расчетов\'",
             "ОбщСметСт as \'Общая сметная стоимость\'"})]
@@ -41,6 +43,8 @@ namespace IIS.Novyjj1
         private int fНомСмеРас;
         
         private float fОбщСметСт;
+        
+        private IIS.Novyjj1.DetailArrayOfТЧСметы fТЧСметы;
         
         // *** Start programmer edit section *** (ДокСмета CustomMembers)
 
@@ -106,6 +110,41 @@ namespace IIS.Novyjj1
                 // *** Start programmer edit section *** (ДокСмета.ОбщСметСт Set end)
 
                 // *** End programmer edit section *** (ДокСмета.ОбщСметСт Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Док смета.
+        /// </summary>
+        // *** Start programmer edit section *** (ДокСмета.ТЧСметы CustomAttributes)
+
+        // *** End programmer edit section *** (ДокСмета.ТЧСметы CustomAttributes)
+        public virtual IIS.Novyjj1.DetailArrayOfТЧСметы ТЧСметы
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ДокСмета.ТЧСметы Get start)
+
+                // *** End programmer edit section *** (ДокСмета.ТЧСметы Get start)
+                if ((this.fТЧСметы == null))
+                {
+                    this.fТЧСметы = new IIS.Novyjj1.DetailArrayOfТЧСметы(this);
+                }
+                IIS.Novyjj1.DetailArrayOfТЧСметы result = this.fТЧСметы;
+                // *** Start programmer edit section *** (ДокСмета.ТЧСметы Get end)
+
+                // *** End programmer edit section *** (ДокСмета.ТЧСметы Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ДокСмета.ТЧСметы Set start)
+
+                // *** End programmer edit section *** (ДокСмета.ТЧСметы Set start)
+                this.fТЧСметы = value;
+                // *** Start programmer edit section *** (ДокСмета.ТЧСметы Set end)
+
+                // *** End programmer edit section *** (ДокСмета.ТЧСметы Set end)
             }
         }
         

@@ -7,6 +7,7 @@ import Novyjj1.utils.UUIDConverter;
 import javax.persistence.*;
 import java.util.UUID;
 
+import java.util.List;
 
 /**
  * Entity implementation class for Entity: ДокСмета
@@ -26,6 +27,9 @@ public class DokSmeta {
 
     @Column(name = "ОбщСметСт")
     private Float общсметст;
+
+    @OneToMany(mappedBy = "doksmeta", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    private List<TCHSmety> tchsmetys;
 
 
     public DokSmeta() {

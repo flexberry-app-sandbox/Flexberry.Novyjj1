@@ -83,12 +83,14 @@ CREATE TABLE ТЧСметы (
  СтСтроиРаб REAL NULL,
  СтМонтРаб REAL NULL,
  СтОборуд REAL NULL,
+ ДокСмета UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
 CREATE TABLE АктВыпРаб (
  primaryKey UUID NOT NULL,
  ОбщСтоим REAL NULL,
+ СпрСотр UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
 
@@ -240,6 +242,12 @@ CREATE TABLE ApplicationLog (
 
  ALTER TABLE СпрСотр ADD CONSTRAINT FK84f5d0eee138f7821b89d17178555e868159e354 FOREIGN KEY (Должности) REFERENCES Должности; 
 CREATE INDEX Index84f5d0eee138f7821b89d17178555e868159e354 on СпрСотр (Должности); 
+
+ ALTER TABLE ТЧСметы ADD CONSTRAINT FKde8e67e13f04a0c989a951169ec41b415726974b FOREIGN KEY (ДокСмета) REFERENCES ДокСмета; 
+CREATE INDEX Indexde8e67e13f04a0c989a951169ec41b415726974b on ТЧСметы (ДокСмета); 
+
+ ALTER TABLE АктВыпРаб ADD CONSTRAINT FK426f5ed0f4242552d3aeb5dee5a2c0c435596936 FOREIGN KEY (СпрСотр) REFERENCES СпрСотр; 
+CREATE INDEX Index426f5ed0f4242552d3aeb5dee5a2c0c435596936 on АктВыпРаб (СпрСотр); 
 
  ALTER TABLE ТЧАкт ADD CONSTRAINT FK04aec31c7869a48f76d108d273fea955d8166839 FOREIGN KEY (АктВыпРаб) REFERENCES АктВыпРаб; 
 CREATE INDEX Index04aec31c7869a48f76d108d273fea955d8166839 on ТЧАкт (АктВыпРаб); 
