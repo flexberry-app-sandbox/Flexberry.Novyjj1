@@ -25,8 +25,8 @@ public class SprSotr {
     @Column(name = "ФИО")
     private String фио;
 
-    @Column(name = "IDСотр")
-    private Integer idсотр;
+    @Column(name = "ТабНом")
+    private Integer табном;
 
     @EdmIgnore
     @Converter(converterClass = UUIDConverter.class, name = "Dolzhnosti")
@@ -59,12 +59,12 @@ public class SprSotr {
       this.фио = фио;
     }
 
-    public Integer getIDСотр() {
-      return idсотр;
+    public Integer getТабНом() {
+      return табном;
     }
 
-    public void setIDСотр(Integer idсотр) {
-      this.idсотр = idсотр;
+    public void setТабНом(Integer табном) {
+      this.табном = табном;
     }
 
 

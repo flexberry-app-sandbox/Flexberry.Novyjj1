@@ -133,7 +133,7 @@ CREATE TABLE [СпрСотр] (
 
 	 [primaryKey] UNIQUEIDENTIFIER  NOT NULL,
 
-	 [IDСотр] INT  NULL,
+	 [ТабНом] INT  NULL,
 
 	 [ФИО] VARCHAR(255)  NULL,
 

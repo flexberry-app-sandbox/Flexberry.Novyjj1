@@ -150,7 +150,7 @@ CREATE TABLE "СпрСотр"
 
 	"ФИО" NVARCHAR2(255) NULL,
 
-	"IDСотр" NUMBER(10) NULL,
+	"ТабНом" NUMBER(10) NULL,
 
 	"Должности" RAW(16) NOT NULL,
 

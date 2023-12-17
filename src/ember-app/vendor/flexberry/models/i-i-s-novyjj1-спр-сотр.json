@@ -7,7 +7,7 @@
   "parentClassName": null,
   "attrs": [
     {
-      "name": "iDСотр",
+      "name": "табНом",
       "type": "number",
       "flexberryType": "int",
       "notNull": false,
@@ -47,8 +47,8 @@
           "index": 0
         },
         {
-          "name": "iDСотр",
-          "caption": "ID Сотрудника",
+          "name": "табНом",
+          "caption": "Табельный номер",
           "hidden": false,
           "index": 1
         }
@@ -89,8 +89,8 @@
           "index": 0
         },
         {
-          "name": "iDСотр",
-          "caption": "ID Сотрудника",
+          "name": "табНом",
+          "caption": "Табельный номер",
           "hidden": false,
           "index": 1
         }

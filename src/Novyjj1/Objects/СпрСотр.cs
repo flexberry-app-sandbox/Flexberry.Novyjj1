@@ -31,19 +31,19 @@ namespace IIS.Novyjj1
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("СпрСотрE", new string[] {
             "ФИО as \'ФИО\'",
-            "IDСотр as \'ID Сотрудника\'",
+            "ТабНом as \'Табельный номер\'",
             "Должности as \'Должность\'",
             "Должности.Наимен as \'Должность\'"})]
     [View("СпрСотрL", new string[] {
             "ФИО as \'ФИО\'",
-            "IDСотр as \'ID Сотрудника\'",
+            "ТабНом as \'Табельный номер\'",
             "Должности.Наимен as \'Должность\'"})]
     public class СпрСотр : ICSSoft.STORMNET.DataObject
     {
         
         private string fФИО;
         
-        private int fIDСотр;
+        private int fТабНом;
         
         private IIS.Novyjj1.Должности fДолжности;
         
@@ -53,33 +53,33 @@ namespace IIS.Novyjj1
 
         
         /// <summary>
-        /// IDСотр.
+        /// ТабНом.
         /// </summary>
-        // *** Start programmer edit section *** (СпрСотр.IDСотр CustomAttributes)
+        // *** Start programmer edit section *** (СпрСотр.ТабНом CustomAttributes)
 
-        // *** End programmer edit section *** (СпрСотр.IDСотр CustomAttributes)
-        public virtual int IDСотр
+        // *** End programmer edit section *** (СпрСотр.ТабНом CustomAttributes)
+        public virtual int ТабНом
         {
             get
             {
-                // *** Start programmer edit section *** (СпрСотр.IDСотр Get start)
+                // *** Start programmer edit section *** (СпрСотр.ТабНом Get start)
 
-                // *** End programmer edit section *** (СпрСотр.IDСотр Get start)
-                int result = this.fIDСотр;
-                // *** Start programmer edit section *** (СпрСотр.IDСотр Get end)
+                // *** End programmer edit section *** (СпрСотр.ТабНом Get start)
+                int result = this.fТабНом;
+                // *** Start programmer edit section *** (СпрСотр.ТабНом Get end)
 
-                // *** End programmer edit section *** (СпрСотр.IDСотр Get end)
+                // *** End programmer edit section *** (СпрСотр.ТабНом Get end)
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (СпрСотр.IDСотр Set start)
+                // *** Start programmer edit section *** (СпрСотр.ТабНом Set start)
 
-                // *** End programmer edit section *** (СпрСотр.IDСотр Set start)
-                this.fIDСотр = value;
-                // *** Start programmer edit section *** (СпрСотр.IDСотр Set end)
+                // *** End programmer edit section *** (СпрСотр.ТабНом Set start)
+                this.fТабНом = value;
+                // *** Start programmer edit section *** (СпрСотр.ТабНом Set end)
 
-                // *** End programmer edit section *** (СпрСотр.IDСотр Set end)
+                // *** End programmer edit section *** (СпрСотр.ТабНом Set end)
             }
         }
         

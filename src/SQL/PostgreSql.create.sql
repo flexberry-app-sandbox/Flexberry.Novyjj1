@@ -80,7 +80,7 @@ CREATE TABLE СпрКонтраг (
 CREATE TABLE СпрСотр (
  primaryKey UUID NOT NULL,
  ФИО VARCHAR(255) NULL,
- IDСотр INT NULL,
+ ТабНом INT NULL,
  Должности UUID NOT NULL,
  PRIMARY KEY (primaryKey));
 
